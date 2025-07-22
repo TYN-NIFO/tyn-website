@@ -7,7 +7,7 @@ const Sidebar = ({ authors }) => {
                 <div className="text-customBlack">Authors</div>
 
                 {authors.map((author, index) => (
-                    <div key={index} className="flex items-center gap-4">
+                    <div key={author.name} className="flex items-center gap-4">
                         <div className="rounded-full bg-gray-300 flex items-center justify-center">
                             <img
                                 src={author.image}

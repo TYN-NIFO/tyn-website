@@ -14,13 +14,13 @@ const CoInnovation = () => {
   return (
     <>
     <Navbar/>
-      <div className="flex flex-col sm:mx-20 2xl:mx-32 sm:pt-6 xl:pt-16 sm:h-screen sm:gap-6 mt-2 sm:mt-0 mx-6 mb-16 sm:mb-0">
+      <div className="flex flex-col sm:mx-20 2xl:mx-32 sm:pt-6 xl:pt-16 sm:h-screen sm:gap-6 mt-2 sm:mt-0 mx-6 mb-16 sm:mb-0" role="region" aria-label="Co-Innovation content">
         <div className="flex flex-row justify-between">
           <div className="text-xl sm:text-2xl font-medium sm:font-semibold text-customBlack py-8 sm:py-0">
             <div className="flex">
               <div className="relative">
                 <div className="sm:flex hidden absolute -top-8 -right-8 h-8 w-8">
-                  <img src="doublequotes.jpg" alt="Double Quotes" />
+                  <img src="doublequotes.jpg" alt="Decorative double quotes" />
                 </div>
                 <div className="">Enabling Co Innovation to Enterprises</div>
               </div>

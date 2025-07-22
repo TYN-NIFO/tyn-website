@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../Navbar";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import Footer from "../Footer";
-import { db } from "../../firebase";
-import { collection, addDoc } from "firebase/firestore";
 import Modal from "react-modal";
 import Speakers from "./Speakers";
 import AttendeesMarquee from "./AttendeesMarque";
@@ -12,46 +10,6 @@ import PhotoCarousel from "../PhotoCarousel";
 
 const EventReworked = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    designation: "",
-    company: "",
-    thoughtsOnInnovation: "",
-    shareThoughts: "",
-    contactNumber: "",
-    followUpPerson: "",
-    followUpContact: "",
-    mealPreference: "",
-    travelAssistance: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    await addRowToFirestore(formData);
-    setModalIsOpen(false);
-    alert("Registration Successful!");
-  };
-
-  const addRowToFirestore = async (data) => {
-    try {
-      await addDoc(collection(db, "registrations"), data);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  };
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
 
   return (
     <div>
@@ -87,7 +45,7 @@ const EventReworked = () => {
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center my-12 sm:my-16 text-3xl sm:text-5xl">
+      <div className="relative flex flex-col items-center justify-center my-12 sm:my-16 text-3xl sm:text-5xl" role="region" aria-label="Event highlights">
         <div className="relative">
           <div className="absolute -top-6 -right-8">
             <img
@@ -276,24 +234,26 @@ const EventReworked = () => {
         onRequestClose={() => setModalIsOpen(false)}
         className="fixed inset-0 flex items-center justify-center z-50"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="event-modal-title"
       >
         <div className="w-11/12 max-h-[70vh] sm:w-[450px] sm:max-h-[70vh] p-4 sm:p-6 bg-white rounded-lg shadow-lg overflow-y-auto relative">
           <button
             onClick={() => setModalIsOpen(false)}
             className="absolute top-4 right-4 text-gray-900 hover:text-gray-900"
+            aria-label="Close registration modal"
           >
             <FaTimes size={20} />
           </button>
-          <div className="text-2xl font-bold mb-4">Register for the Event</div>
-          <form onSubmit={handleFormSubmit} className="space-y-4">
+          <div className="text-2xl font-bold mb-4" id="event-modal-title">Register for the Event</div>
+          <form onSubmit={() => {}} className="space-y-4" aria-live="polite">
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
                 <label className="text-gray-900">First Name</label>
                 <input
                   type="text"
                   name="firstName"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
                   className="w-full p-2 border border-gray-300 rounded"
                   required
                 />
@@ -303,8 +263,6 @@ const EventReworked = () => {
                 <input
                   type="text"
                   name="lastName"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
                   className="w-full p-2 border border-gray-300 rounded"
                   required
                 />
@@ -316,8 +274,6 @@ const EventReworked = () => {
               <input
                 type="text"
                 name="designation"
-                value={formData.designation}
-                onChange={handleInputChange}
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               />
@@ -328,8 +284,6 @@ const EventReworked = () => {
               <input
                 type="text"
                 name="company"
-                value={formData.company}
-                onChange={handleInputChange}
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               />
@@ -357,8 +311,6 @@ const EventReworked = () => {
               <input
                 type="text"
                 name="contactNumber"
-                value={formData.contactNumber}
-                onChange={handleInputChange}
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               />
@@ -369,8 +321,6 @@ const EventReworked = () => {
                 <input
                   type="text"
                   name="followUpPerson"
-                  value={formData.followUpPerson}
-                  onChange={handleInputChange}
                   className="w-full p-2 border border-gray-300 rounded"
                 />
               </div>
@@ -379,8 +329,6 @@ const EventReworked = () => {
                 <input
                   type="text"
                   name="followUpContact"
-                  value={formData.followUpContact}
-                  onChange={handleInputChange}
                   className="w-full p-2 border border-gray-300 rounded"
                 />
               </div>
@@ -389,8 +337,6 @@ const EventReworked = () => {
               <label className="text-gray-900">Meal Preferences</label>
               <select
                 name="mealPreference"
-                value={formData.mealPreference}
-                onChange={handleInputChange}
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               >
@@ -405,8 +351,6 @@ const EventReworked = () => {
               </label>
               <select
                 name="travelAssistance"
-                value={formData.travelAssistance}
-                onChange={handleInputChange}
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               >
@@ -427,7 +371,7 @@ const EventReworked = () => {
           <div>
             <img
               src="/tyn-logo.png"
-              alt="Logo"
+              alt="TYN Logo in registration modal"
               className="flex mx-auto justify-center items-center w-48 mt-8"
             />
           </div>

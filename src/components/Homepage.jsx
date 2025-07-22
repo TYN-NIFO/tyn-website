@@ -8,9 +8,6 @@ import AdvisoryTeam from "./AdvisoryTeam";
 import OurDifferentiators from "./OurDifferentiators";
 import Footer from "./Footer";
 import OurIdeology from "./OurIdeology";
-import { useNavigate } from "react-router-dom";
-import SeptEvent from "./EventPage/SeptEvent";
-import SeptEventMob from "./EventPage/SeptEventMob";
 import Testimonials from "./Testimonials";
 
 const Homepage = () => {
@@ -18,7 +15,6 @@ const Homepage = () => {
     "Ynfinity 2024 Mumbai"
   ];
   const [currentSentence, setCurrentSentence] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,32 +26,7 @@ const Homepage = () => {
     return () => clearInterval(interval);
   }, [sentences.length]);
 
-  useEffect(() => {
-    if (currentSentence === sentences.length) {
-      setIsTransitioning(false);
-      setCurrentSentence(0);
-      setTimeout(() => {
-        setIsTransitioning(true);
-      }, 20);
-    }
-  }, [currentSentence, sentences.length]);
-
   const [activeSection, setActiveSection] = useState("home");
-  const navigate = useNavigate();
-
-  const handleNavigation = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    const navbarHeight = document.querySelector(".fixed").offsetHeight;
-    if (section) {
-      const sectionTop = section.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: sectionTop,
-        behavior: "smooth",
-      });
-      setActiveSection(sectionId);
-    }
-  };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,17 +56,16 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="" id="main-content">
       <Navbar
         activeSection={activeSection}
-        handleNavigation={handleNavigation}
       />
       <div className="relative flex items-center justify-center bg-white overflow-hidden">
         <div className="sm:flex hidden absolute right-0">
-          <img src="/circle1.png" alt="/" className="lg:h-[70vh] sm:w-auto" />
+          <img src="/circle1.png" alt="Decorative circle background right" className="lg:h-[70vh] sm:w-auto" />
         </div>
         <div className="sm:flex hidden absolute left-0">
-          <img src="/circle2.png" alt="/" className="lg:h-[70vh] sm:w-auto" />
+          <img src="/circle2.png" alt="Decorative circle background left" className="lg:h-[70vh] sm:w-auto" />
         </div>
 
         <div className="z-10 text-center">
@@ -113,7 +83,6 @@ const Homepage = () => {
             </div>
             <button
               className="flex border-[3px] border-customBlue text-base sm:text-xl lg:text-2xl font-medium text-customBlue w-max items-center justify-center py-1.5 px-3 sm:py-3 sm:px-5 rounded-2xl cursor-pointer mt-6 sm:mt-10 lg:mt-6 tracking-wider"
-              onClick={() => handleNavigation("Differentiators")}
             >
               Our Differentiators
             </button>
@@ -174,7 +143,7 @@ const Homepage = () => {
       </section>
 
       <section id="contact-us">
-        <Footer handleNavigation={handleNavigation} />
+        <Footer />
       </section>
     </div>
   );

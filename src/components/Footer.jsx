@@ -31,23 +31,27 @@ const Footer = () => {
   const handleCoInnovationNavigation = () => navigate("/alliance");
 
   return (
-    <div className="flex flex-col bg-bgBlue">
+    <footer role="contentinfo" className="flex flex-col bg-bgBlue">
       <div className="mx-6 xl:mx-20 flex flex-col lg:flex-row-reverse lg:justify-between gap-8 mt-10">
         <div className="flex flex-col gap-5 sm:flex-row sm:gap-16 lg:flex-col lg:gap-5">
           <div className="font-medium text-lg flex flex-col gap-1.5">
             <div>Services</div>
-            <p
-              className="font-normal text-customGreyishBlack cursor-pointer"
+            <button
+              className="font-normal text-customGreyishBlack cursor-pointer bg-transparent border-none text-left"
               onClick={handleAllianceNavigation}
+              tabIndex={0}
+              aria-label="Alliance as a service"
             >
               Alliance as a service
-            </p>
-            <p
-              className="font-normal text-customGreyishBlack cursor-pointer"
+            </button>
+            <button
+              className="font-normal text-customGreyishBlack cursor-pointer bg-transparent border-none text-left"
               onClick={handleCoInnovationNavigation}
+              tabIndex={0}
+              aria-label="Co Innovation as a service"
             >
               Co Innovation as a service
-            </p>
+            </button>
           </div>
 
           <div className="font-medium text-lg flex flex-col gap-1.5">
@@ -112,7 +116,7 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-center items-center my-5">
-          <img src="/tyn-logo.png" alt="tyn-footer-image" className="w-60" />
+          <img src="/tyn-logo.png" alt="TYN Logo in footer" className="w-60" />
         </div>
       </div>
 
@@ -126,7 +130,7 @@ const Footer = () => {
           <div>Cookie Policy</div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

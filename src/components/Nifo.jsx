@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSpring, animated } from "@react-spring/web";
+import { motion, useAnimation } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -8,6 +8,8 @@ const Nifo = () => {
   const [wordsVisible, setWordsVisible] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const imageRef = useRef(null);
+  const controls = useAnimation();
 
   const textArray = [
     "It provides ",
@@ -29,18 +31,6 @@ const Nifo = () => {
     ", guiding you from problem identification to execution.",
   ];
 
-  const imageRef = useRef(null);
-
-  const fadeSpring = useSpring({
-    opacity: fadeOut ? 0 : 1,
-    config: { duration: 500 },
-  });
-
-  const imageSpring = useSpring({
-    transform: `translateY(${scrollY}px)`,
-    config: { tension: 280, friction: 60 },
-  });
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -55,7 +45,7 @@ const Nifo = () => {
       } else {
         setFadeOut(false);
       }
-      setScrollY(Math.min(scrollPosition, imageHeight / 2)); 
+      setScrollY(Math.min(scrollPosition, imageHeight / 2));
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -64,11 +54,22 @@ const Nifo = () => {
     };
   }, [textArray.length]);
 
+  // Framer-motion variants for fade and translateY
+  const fadeVariant = {
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, transition: { duration: 0.5 } },
+  };
+  const imageVariant = {
+    initial: { y: 0 },
+    moved: { y: scrollY },
+  };
+
   return (
     <>
       <Navbar activeSection={activeSection} />
-      <animated.div
-        style={fadeSpring}
+      <motion.div
+        animate={fadeOut ? "hidden" : "visible"}
+        variants={fadeVariant}
         className="fixed inset-0 bg-gradient-to-b from-white via-white to-sky-200 flex flex-col sm:justify-center sm:items-center sm:grid grid-flow-col sm:grid-cols-5 sm:px-12 xl:px-16 h-screen sm:h-auto"
       >
         <div className="mt-24 sm:mt-0 flex flex-col sm:gap-4 sm:justify-center sm:items-center px-4 sm:px-8 sm:col-span-3">
@@ -84,15 +85,19 @@ const Nifo = () => {
         <div className="mt-8 flex justify-center items-center col-span-2">
           <div className="flex justify-around items-center flex-col rounded-md xs-only:h-[300px] xs-only:w-[300px] h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] xl:h-[400px] xl:w-[350px] bg-white shadow-lg border-2">
             <div className="w-24 sm:w-32 mx-auto flex justify-center items-center py-2">
-              <img src="/nifo.png" alt="Nifo Logo" />
+              <img src="/nifo.png" alt="Nifo Logo" loading="lazy" />
             </div>
             <div className="flex-mt-4 mb-2">
-              <animated.img
+              <motion.img
                 ref={imageRef}
-                style={imageSpring}
                 src="/nifodesktopmobile.png"
-                alt=""
+                alt="Nifo desktop and mobile illustration"
                 className="w-56 sm:w-64 select-none"
+                loading="lazy"
+                animate="moved"
+                initial="initial"
+                variants={imageVariant}
+                style={{ y: scrollY }}
               />
             </div>
             <a
@@ -105,12 +110,12 @@ const Nifo = () => {
             </a>
           </div>
         </div>
-      </animated.div>
+      </motion.div>
       <div className="hidden sm:flex justify-center items-center h-screen">
-        <img src="/nifobg.png" alt="" className="w-3/4 mt-96" />
+        <img src="/nifobg.png" alt="Nifo background" className="w-3/4 mt-96" loading="lazy" />
       </div>
       <div className="sm:hidden flex justify-center items-center ">
-        <img src="/nifomobile.png" alt="" className="w-2/3 mt-48" />
+        <img src="/nifomobile.png" alt="Nifo mobile background" className="w-2/3 mt-48" loading="lazy" />
       </div>
       <div className="text-xl sm:leading-loose mt-16 sm:mt-64 sm:mb-16 xl:mt-32 2xl:mt-64 sm:text-2xl font-medium px-8 sm:px-16 leading-loose text-justify sm:text-left justify-center items-center flex">
         <div>

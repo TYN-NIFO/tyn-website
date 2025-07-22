@@ -27,28 +27,31 @@ const PhotoCarousel = () => {
     }, 3000); // Change slide every 4000 ms (4 seconds)
 
     return () => clearInterval(interval); // Cleanup the interval on unmount
-  }, [currentIndex]);
+  }, []);
 
   return (
-    <div className="mx-8 sm:mx-auto">
+    <div className="mx-8 sm:mx-auto" role="region" aria-label="Photo carousel">
       <div className="flex justify-center items-center relative">
         <div className="w-full sm:w-7/12 h-full">
           <img
             src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
+            alt={`Carousel image ${currentIndex + 1}`}
             className="w-full h-full object-cover rounded-lg"
+            loading="lazy"
           />
         </div>
       </div>
       {/* Dots */}
       <div className="flex justify-center mt-4">
         {images.map((_, index) => (
-          <div
+          <button
             key={index}
-            className={`h-2 w-2 mx-2 rounded-full cursor-pointer ${
+            className={`h-2 w-2 mx-2 rounded-full cursor-pointer focus:outline-none ${
               index === currentIndex ? "bg-blue-500" : "bg-gray-400"
             }`}
             onClick={() => setCurrentIndex(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            tabIndex={0}
           />
         ))}
       </div>

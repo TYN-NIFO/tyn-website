@@ -23,7 +23,7 @@ const WhatWeDo = () => {
           <img
             className="rounded-2xl object-cover cursor-pointer h-[200px] w-[240px] sm:h-[300px] sm:w-[500px]  lg:h-auto lg:w-auto"
             src="/image3.png"
-            alt="image2"
+            alt="What We Do illustration"
           />
         </div>
         <div className="flex flex-col sm:gap-8">

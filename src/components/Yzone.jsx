@@ -42,7 +42,7 @@ const Yzone = () => {
               </div>
             </div>
             <div className="">
-              <img src="yzone1.png" alt="" />
+              <img src="yzone1.png" alt="Yzone section illustration 1" />
             </div>
           </div>
           <div className="flex flex-col sm:grid sm:grid-flow-col-dense  sm:grid-cols-3 gap-8 sm:gap-4">
@@ -61,7 +61,7 @@ const Yzone = () => {
               </div>
             </div>
             <div>
-              <img src="yzone2.png" alt="" />
+              <img src="yzone2.png" alt="Yzone section illustration 2" />
             </div>
           </div>
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-4">
@@ -78,7 +78,7 @@ const Yzone = () => {
               </div>
             </div>
             <div>
-              <img src="yzonebg.jpg" alt="" />
+              <img src="yzonebg.jpg" alt="Yzone section illustration 3" />
             </div>
           </div>
         </div>

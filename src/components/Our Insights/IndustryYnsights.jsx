@@ -115,6 +115,7 @@ const IndustryYnsights = () => {
                                                     src={selectedInsight.solutionProviderImageUrl}
                                                     alt={selectedInsight.solutionProviderName || "Provider Image"}
                                                     className="w-48 h-auto"
+                                                    loading="lazy"
                                                 />
                                             </div>
                                         )}
@@ -126,6 +127,7 @@ const IndustryYnsights = () => {
                                                     src={selectedInsight.enterpriseOneImageUrl}
                                                     alt={selectedInsight.enterpriseOneName || "Enterprise Image"}
                                                     className="w-48 h-auto"
+                                                    loading="lazy"
                                                 />
                                             </div>
                                         )}

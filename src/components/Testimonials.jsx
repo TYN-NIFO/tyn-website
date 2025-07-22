@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BiSolidQuoteLeft, BiSolidQuoteRight } from "react-icons/bi";
 
 const testimonialData = [
@@ -23,28 +23,33 @@ const testimonialData = [
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false); // State to track if the carousel is paused
+  const currentIndexRef = useRef(currentIndex);
+
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === testimonialData.length - 1;
-    setCurrentIndex(isLastSlide ? 0 : currentIndex + 1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonialData.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    setCurrentIndex(
-      isFirstSlide ? testimonialData.length - 1 : currentIndex - 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonialData.length - 1 : prevIndex - 1
     );
   };
 
   useEffect(() => {
-    if (isPaused) return; 
-
+    if (isPaused) return;
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonialData.length - 1 ? 0 : prevIndex + 1
+      );
     }, 6000);
-
     return () => clearInterval(interval);
-  }, [currentIndex, isPaused]);
+  }, [isPaused]);
 
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
@@ -54,6 +59,8 @@ const Testimonials = () => {
       className="mx-6 sm:mx-auto mt-8"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      role="region"
+      aria-label="Testimonials carousel"
     >
       <div className="flex justify-center items-center text-3xl sm:text-4xl text-customBlack font-medium py-16 sm:py-16">
         <div className="grid">
@@ -69,7 +76,7 @@ const Testimonials = () => {
         <div className="w-auto lg:w-[40%] text-center">
           <img
             src={testimonialData[currentIndex].profilePic}
-            alt={testimonialData[currentIndex].name}
+            alt={`Profile picture of ${testimonialData[currentIndex].name}`}
             className="rounded-full w-28 h-28 sm:w-48 sm:h-48 lg:w-48 lg:h-48 mx-auto"
           />
           <div className="mt-4 font-semibold text-lg sm:text-2xl lg:text-lg">
@@ -81,13 +88,13 @@ const Testimonials = () => {
           <div className="flex justify-center items-center mt-2">
             <img
               src={testimonialData[currentIndex].companyLogo}
-              alt={`${testimonialData[currentIndex].name} company`}
+              alt={`Company logo for ${testimonialData[currentIndex].name}`}
               className="h-12 sm:h-20 lg:h-12 w-auto"
             />
           </div>
         </div>
 
-        <div className="relative bg-blue-50 rounded-lg shadow-lg px-4 py-4 sm:px-8 text-gray-600 italic w-full flex h-[300px] sm:h-[250px] items-center">
+        <div className="relative bg-blue-50 rounded-lg shadow-lg px-4 py-4 sm:px-8 text-gray-600 italic w-full flex h-[300px] sm:h-[250px] items-center" aria-live="polite">
           <BiSolidQuoteLeft className="absolute text-customYellow text-3xl sm:text-6xl top-0 left-0 -translate-x-4 sm:-translate-x-4 -translate-y-4 sm:-translate-y-6" />
           <div className="sm:text-xl sm:leading-[32px] overflow-hidden text-ellipsis">
             {testimonialData[currentIndex].testimonial}
@@ -97,12 +104,14 @@ const Testimonials = () => {
       </div>
       <div className="flex justify-center mt-8">
         {testimonialData.map((_, index) => (
-          <div
+          <button
             key={index}
-            className={`h-2 w-2 mx-2 rounded-full cursor-pointer ${
+            className={`h-2 w-2 mx-2 rounded-full cursor-pointer focus:outline-none ${
               index === currentIndex ? "bg-blue-500" : "bg-gray-400"
             }`}
             onClick={() => setCurrentIndex(index)}
+            aria-label={`Go to testimonial ${index + 1}`}
+            tabIndex={0}
           />
         ))}
       </div>

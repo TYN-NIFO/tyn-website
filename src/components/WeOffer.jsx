@@ -18,7 +18,7 @@ const WeOffer = () => {
         <div className="grid">
           <div className="relative">
             <div className="absolute -top-8 -right-8 h-8 w-8">
-              <img src="doublequotes.jpg" alt="Double Quotes" />
+              <img src="doublequotes.jpg" alt="" />
             </div>
             <div className="">We Offer</div>
           </div>
@@ -34,12 +34,13 @@ const WeOffer = () => {
             business development through Global System Integrators (GSI) &
             established tech partners
           </div>
-          <div
+          <button
             onClick={handleAlliance}
             className="flex border-2 border-borderBlue text-lg bg-white font-medium text-customBlue sm:w-40 items-center justify-center py-1.5 rounded-xl cursor-pointer mt-4 tracking-wider shadow-sm"
+            aria-label="Find out how to enable alliances"
           >
             Find out how
-          </div>
+          </button>
         </div>
         <div className="border bg-bgBlue rounded-lg sm:px-4 xl:px-6 py-4 px-3 sm:py-4 xl:py-6">
           <div className="text-customBlue text-xl sm:text-xl 2xl:text-xl">
@@ -50,12 +51,13 @@ const WeOffer = () => {
             their complex requirements and cater their customer needs through
             ecosystems
           </div>
-          <div
+          <button
             className="flex border-2 border-borderBlue text-lg bg-white font-medium text-customBlue sm:w-40 items-center justify-center py-1.5 rounded-xl cursor-pointer mt-4 tracking-wider shadow-sm"
             onClick={handleInnovation}
+            aria-label="Find out how to enable co-innovation"
           >
             Find out how
-          </div>
+          </button>
         </div>
       </div>
     </div>

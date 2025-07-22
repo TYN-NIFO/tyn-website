@@ -16,11 +16,11 @@ const WhitepaperTwo = ({ authors }) => {
         }
     };
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen" role="region" aria-label="Whitepaper: Unlocking Enterprise Transformation through Market Innovation Adoption">
             <div class="relative w-full h-[400px]">
                 <img
                     src="https://res.cloudinary.com/dv0eaik7h/image/upload/v1749708621/global-business_bxe79k.webp"
-                    alt="Background"
+                    alt="Whitepaper background: Unlocking Enterprise Transformation through Market Innovation Adoption"
                     class="w-full h-full object-cover"
                 />
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -33,11 +33,12 @@ const WhitepaperTwo = ({ authors }) => {
                 <div className="w-[250px] h-screen sticky top-[72px] sm:block hidden">
                     <Sidebar authors={authors} />
                 </div>
-                <div className="sm:px-8 flex-1 flex flex-col gap-8 sm:py-10 p-6">
+                <div className="sm:px-8 flex-1 flex flex-col gap-8 sm:py-10 p-6" aria-live="polite">
                     <div className="flex gap-8 items-center justify-end px-4">
                         <button
                             onClick={() => handleShare('/insights', 'Unlocking Non-Linear Growth through Strategic Alliances')}
                             className="text-gray-600 hover:text-blue-500"
+                            aria-label="Share this whitepaper"
                         >
                             <FiShare2 size={16} />
                         </button>
@@ -45,6 +46,7 @@ const WhitepaperTwo = ({ authors }) => {
                             href="/whitepapers/Unlocking Enterprise Transformation through Market Innovation Adoption.pdf"
                             download={true}
                             className="text-gray-600 hover:text-blue-500"
+                            aria-label="Download this whitepaper as PDF"
                         >
                             <FiDownload size={16} />
                         </a>

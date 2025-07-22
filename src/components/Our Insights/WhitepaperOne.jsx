@@ -20,11 +20,11 @@ const WhitepaperOne = ({authors}) => {
     };
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen" role="region" aria-label="Whitepaper: Choosing the Right Partner for Channel-Led Growth">
             <div class="relative w-full h-[400px]">
                 <img
                     src="https://res.cloudinary.com/dv0eaik7h/image/upload/v1749708844/bgwhitepaper_fhv4be.jpg"
-                    alt="Background"
+                    alt="Whitepaper background: Choosing the Right Partner for Channel-Led Growth"
                     class="w-full h-full object-cover"
                 />
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -37,11 +37,12 @@ const WhitepaperOne = ({authors}) => {
                 <div className="w-[250px] h-screen sticky top-[72px] sm:block hidden">
                     <Sidebar authors={authors}/>
                 </div>
-                <div className="sm:px-8 flex-1 flex flex-col gap-8 sm:py-10 p-6">
+                <div className="sm:px-8 flex-1 flex flex-col gap-8 sm:py-10 p-6" aria-live="polite">
                     <div className="flex gap-8 items-center justify-end px-4">
                         <button
                             onClick={() => handleShare('/insights', 'Unlocking Non-Linear Growth through Strategic Alliances')}
                             className="text-gray-600 hover:text-blue-500"
+                            aria-label="Share this whitepaper"
                         >
                             <FiShare2 size={16} />
                         </button>
@@ -49,6 +50,7 @@ const WhitepaperOne = ({authors}) => {
                             href="/whitepapers/Unlocking Non Linear Growth through Strategic Alliances.pdf"
                             download={true}
                             className="text-gray-600 hover:text-blue-500"
+                            aria-label="Download this whitepaper as PDF"
                         >
                             <FiDownload size={16} />
                         </a>

@@ -17,11 +17,12 @@ const AttendeesMarquee = () => {
       <div className="relative sm:flex hidden overflow-hidden whitespace-nowrap select-none">
         <div className="flex gap-24 animate-marquee">
           {images.concat(images).map((item, index) => (
-            <div key={index} className="flex flex-shrink-0 ">
+            <div key={item.alt} className="flex flex-shrink-0 ">
               <img
                 src={item.src}
                 alt={item.alt}
                 className="w-60 object-contain"
+                loading="lazy"
               />
             </div>
           ))}
@@ -42,7 +43,7 @@ const AttendeesMarquee = () => {
           }}
         >
           {images.concat(images).map((item, index) => (
-            <div key={index} className="mx-2">
+            <div key={item.alt} className="mx-2">
               <img
                 src={item.src}
                 alt={item.alt}
@@ -62,7 +63,7 @@ const AttendeesMarquee = () => {
           }}
         >
           {images.concat(images).map((item, index) => (
-            <div key={index} className="mx-2">
+            <div key={item.alt} className="mx-2">
               <img src={item.src} alt={item.alt} className="h-24 w-full" />
             </div>
           ))}
