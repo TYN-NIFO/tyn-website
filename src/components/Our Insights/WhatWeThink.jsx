@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { sanity } from '../../sanityClient';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { FiDownload, FiShare2 } from 'react-icons/fi';
 import whitepapers from '../Our Insights/localWhitepapers';
+import Blog from './Blog';
 
 export const industriesData = [
     {
@@ -33,9 +34,19 @@ export const industriesData = [
 ];
 
 const WhatWeThink = () => {
-    const [activeTab, setActiveTab] = useState('ynsights');
+    const [searchParams] = useSearchParams();
+    const defaultTab = searchParams.get('tab') || 'ynsights';
+    const [activeTab, setActiveTab] = useState(defaultTab);
     const [ynsights, setYnsights] = useState([]);
     const navigate = useNavigate();
+
+    // Update active tab when URL params change
+    useEffect(() => {
+        const tabFromUrl = searchParams.get('tab');
+        if (tabFromUrl && ['whitepapers', 'ynsights', 'blogs'].includes(tabFromUrl)) {
+            setActiveTab(tabFromUrl);
+        }
+    }, [searchParams]);
 
     useEffect(() => {
         sanity.fetch(`*[_type == "ynsight"]{
@@ -74,6 +85,12 @@ const WhatWeThink = () => {
         }
     };
 
+    const handleTabChange = (tab) => {
+        setActiveTab(tab);
+        // Update URL with the new tab
+        navigate(`/ynsights?tab=${tab}`, { replace: true });
+    };
+
     return (
         <div className="mt-16 flex flex-col items-center justify-center">
             <div className="bg-bgBlue flex justify-center items-center flex-col w-full gap-6 py-8 sm:py-16">
@@ -85,10 +102,10 @@ const WhatWeThink = () => {
 
             <div className="relative w-full flex justify-center border-b-2 border-[#E0E0E0]">
                 <div className="flex gap-4 sm:gap-10">
-                    {['whitepapers', 'ynsights'].map((tab) => (
+                    {['whitepapers', 'ynsights', 'blogs'].map((tab) => (
                         <button
                             key={tab}
-                            onClick={() => setActiveTab(tab)}
+                            onClick={() => handleTabChange(tab)}
                             className={`relative pt-5 pb-[20px] px-2 sm:px-4 font-medium text-sm sm:text-sm ${activeTab === tab
                                     ? 'text-[#2287C0] after:content-[""] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[2px] after:bg-[#2287C0]'
                                     : 'text-[#626262]'
@@ -98,7 +115,9 @@ const WhatWeThink = () => {
                                 ? 'Whitepapers'
                                 : tab === 'ynsights'
                                     ? 'Use Cases'
-                                    : 'Case Studies'}
+                                    : tab === 'blogs'
+                                        ? 'Blog'
+                                        : 'Case Studies'}
                         </button>
                     ))}
 
@@ -170,6 +189,10 @@ const WhatWeThink = () => {
                         ))
                     )}
                 </div>
+            )}
+
+            {activeTab === 'blogs' && (
+                <Blog />
             )}
 
             {/* {activeTab === 'casestudies' && (

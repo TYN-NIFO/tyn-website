@@ -11,7 +11,8 @@ import NotFound from "./components/NotFound";
 import OurInsights from "./components/Our Insights/page";
 import YnsightDetail from "./components/Our Insights/YnsightDetail";
 import WhitepaperDetail from "./components/Our Insights/WhitepaperDetails";
-import IndustryYnsights from "./components/Our Insights/IndustryYnsights"
+import IndustryYnsights from "./components/Our Insights/IndustryYnsights";
+import BlogDetail from "./components/Our Insights/BlogDetail";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/ynsights/:slug" element={<WhitepaperDetail />} />
         <Route path="/ynsight/:slug" element={<YnsightDetail />} />
         <Route path="/ynsights/industry/:industrySlug" element={<IndustryYnsights />} />
+        <Route path="/ynsights/blog/:slug" element={<BlogDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
