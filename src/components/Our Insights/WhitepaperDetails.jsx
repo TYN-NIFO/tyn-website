@@ -47,7 +47,7 @@ const WhitepaperDetail = () => {
             <div className="mt-16 flex flex-col items-center justify-center">
                 <div className="max-w-4xl w-full px-4 sm:px-0">
                     {/* Back button */}
-                    <div className="mb-6">
+                    <div className="mb-3 mt-3">
                         <button
                             onClick={handleBackToYnsights}
                             className="flex items-center gap-2 p-0 h-auto text-[#2287C0] hover:text-[#333333] transition-colors duration-200"

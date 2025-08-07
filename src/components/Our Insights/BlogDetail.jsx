@@ -140,7 +140,7 @@ const BlogDetail = () => {
             <div className="mt-16 flex flex-col items-center justify-center">
                 <div className="max-w-4xl w-full px-4 sm:px-0">
                     {/* Animated Breadcrumb */}
-                    <div className="mb-6">
+                    <div className="mb-3 mt-3">
                         <Button
                             variant="ghost"
                             onClick={handleBackToYnsights}
