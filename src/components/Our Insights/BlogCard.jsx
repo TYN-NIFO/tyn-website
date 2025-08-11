@@ -26,29 +26,27 @@ export function BlogCard({ post, size = 'md' }) {
                 className="w-full h-full object-cover"
               />
             </div>
-            
-
 
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
           
-          <CardContent className="p-6 flex flex-col h-52">
-            <div className="flex-1">
+          <CardContent className="px-6 flex flex-col h-64">
+            <div className="flex flex-col gap-0">
               <h3 
-                className="line-clamp-2 mb-3 cursor-pointer transition-colors duration-200 text-lg font-semibold leading-tight text-[#2287C0] group-hover:text-[#1a6ba8]"
+                className="line-clamp-2 mb-2 cursor-pointer transition-colors duration-200 text-lg font-semibold leading-tight text-[#2287C0] group-hover:text-[#1a6ba8]"
               >
                 {post.title}
               </h3>
               
               <p 
-                className="text-sm line-clamp-3 mb-4 leading-relaxed text-[#626262]"
+                className="text-sm line-clamp-3  leading-relaxed text-[#626262]"
               >
                 {post.excerpt}
               </p>
             </div>
             
-            <div className="space-y-3">
+            <div className="space-y-3 pt-2">
               <AuthorInfo 
                 author={{
                   name: post.author,
