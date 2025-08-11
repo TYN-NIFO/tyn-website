@@ -26,14 +26,16 @@ const AttendeesMarquee = () => {
   return (
     <>
       {/* Regular div for larger screens */}
-      <div className="relative sm:flex hidden overflow-hidden whitespace-nowrap select-none">
+      <div className="relative sm:flex hidden overflow-hidden whitespace-nowrap select-none" role="region" aria-label="Attendees marquee">
         <div className="flex gap-24 animate-marquee">
           {images.concat(images).map((item, index) => (
-            <div key={index} className="flex flex-shrink-0 ">
+            <div key={item.alt} className="flex flex-shrink-0 ">
               <img
                 src={item.src}
                 alt={item.alt}
                 className="w-28 h-32 object-contain"
+                tabIndex={0}
+                loading="lazy"
               />
             </div>
           ))}
@@ -54,11 +56,13 @@ const AttendeesMarquee = () => {
           }}
         >
           {images.concat(images).map((item, index) => (
-            <div key={index} className="mx-2">
+            <div key={item.alt} className="mx-2">
               <img
                 src={item.src}
                 alt={item.alt}
                 className="w-32 h-24 object-contain"
+                tabIndex={0}
+                loading="lazy"
               />
             </div>
           ))}
@@ -74,11 +78,13 @@ const AttendeesMarquee = () => {
           }}
         >
           {images.concat(images).map((item, index) => (
-            <div key={index} className="mx-2">
+            <div key={item.alt} className="mx-2">
               <img
                 src={item.src}
                 alt={item.alt}
                 className="w-32 h-24 object-contain"
+                tabIndex={0}
+                loading="lazy"
               />
             </div>
           ))}

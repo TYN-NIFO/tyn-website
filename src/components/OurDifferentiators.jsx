@@ -75,13 +75,13 @@ const OurDifferentiators = () => {
           {[currentIndex, (currentIndex + 1) % DifferentiatorsData.length].map(
             (index) => (
               <div
-                key={index}
+                key={DifferentiatorsData[index].DifferentiatorsName}
                 className="bg-white flex flex-col gap-4 pt-4 shadow-customAdCard rounded-[8px] px-4 pb-4 transition-transform transform w-3/4 sm:h-[240px] xl:h-auto"
               >
                 <div className="relative rounded-full">
                   <img
                     src={DifferentiatorsData[index].DifferentiatorsLogo}
-                    alt=""
+                    alt={DifferentiatorsData[index].DifferentiatorsName + ' icon'}
                     className="h-8 w-8"
                   />
                 </div>
@@ -107,7 +107,7 @@ const OurDifferentiators = () => {
             <div className="relative rounded-full">
               <img
                 src={DifferentiatorsData[currentIndex].DifferentiatorsLogo}
-                alt=""
+                alt={DifferentiatorsData[currentIndex].DifferentiatorsName + ' icon'}
                 className="h-12 w-12"
               />
             </div>

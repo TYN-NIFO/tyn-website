@@ -50,7 +50,7 @@ const PartnerLandScape = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:mx-10">
       {contentForPartnerLandScape.map((content, index) => (
         <div
-          key={index}
+          key={content.title}
           className={`relative flex border border-gray-500 rounded-lg p-4 overflow-hidden ${
             index === contentForPartnerLandScape.length - 1 ? "md:col-span-2 md:mx-64" : ""
           }`}

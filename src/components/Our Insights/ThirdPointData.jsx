@@ -17,7 +17,7 @@ const ThirdPointData = () => {
                 </h3>
                 <ul className="pl-5  flex flex-col gap-4 text-lg">
                   {value.advantages.map((advantage, index) => (
-                    <li key={index} className="custom-bullet font-light">
+                    <li key={advantage} className="custom-bullet font-light">
                       {advantage}
                     </li>
                   ))}
@@ -29,7 +29,7 @@ const ThirdPointData = () => {
                 </h3>
                 <ul className="pl-5 space-y-2 flex flex-col gap-4 text-lg">
                   {value.challenges.map((challenge, index) => (
-                      <li key={index} className="custom-bullet font-light">
+                      <li key={challenge} className="custom-bullet font-light">
                       {challenge}
                     </li>
                   ))}
@@ -43,7 +43,7 @@ const ThirdPointData = () => {
               </h3>
               <ul className="pl-5 space-y-2 flex flex-col gap-2 text-lg">
                 {value.recommendations.map((recommendation, index) => (
-                    <li key={index} className="custom-bullet font-light">
+                    <li key={recommendation} className="custom-bullet font-light">
                     {recommendation}
                   </li>
                 ))}

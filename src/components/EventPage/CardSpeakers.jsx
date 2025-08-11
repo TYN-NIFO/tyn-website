@@ -63,7 +63,7 @@ const CardOurTeam = () => {
   };
 
   return (
-    <div className="relative w-full mt-24 sm:mt-32">
+    <div className="relative w-full mt-24 sm:mt-32" role="region" aria-label="Speakers carousel">
       <button
         onClick={goToPrevious}
         className="absolute top-1/2 transform -translate-y-1/2 left-0 z-10"
@@ -78,14 +78,14 @@ const CardOurTeam = () => {
           (currentIndex + 2) % cardData.length,
         ].map((index) => (
           <div
-            key={index}
+            key={cardData[index].name}
             className="bg-white shadow-customAdCard rounded-[24px] px-4 pb-4 transition-transform transform w-3/4"
           >
             <div className="relative h-[78px] w-[120px] rounded-full mx-auto">
               <img
                 className="absolute object-cover h-32 w-32 rounded-2xl -top-[66px] "
                 src={cardData[index].image}
-                alt=""
+                alt={`Profile picture of ${cardData[index].name}`}
               />
             </div>
             <div className="flex flex-col gap-y-3">
@@ -111,12 +111,13 @@ const CardOurTeam = () => {
         <div
           key={currentIndex}
           className="bg-white shadow-customAdCard rounded-[24px] px-4 transition-transform transform w-full "
+          aria-live="polite"
         >
           <div className="relative w-[160px] rounded-full mx-auto">
             <img
               className="absolute object-cover h-40 w-40 rounded-2xl -top-[76px]"
               src={cardData[currentIndex].image}
-              alt=""
+              alt={`Profile picture of ${cardData[currentIndex].name}`}
             />
           </div>
           <div className="pt-32 pb-12">
