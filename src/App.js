@@ -14,6 +14,7 @@ const NotFound = lazy(() => import("./components/NotFound"));
 const OurInsights = lazy(() => import("./components/Our Insights/page"));
 const YnsightDetail = lazy(() => import("./components/Our Insights/YnsightDetail"));
 const WhitepaperDetail = lazy(() => import("./components/Our Insights/WhitepaperDetails"));
+const BlogDetail = lazy(() => import("./components/Our Insights/BlogDetail"));
 const IndustryYnsights = lazy(() => import("./components/Our Insights/IndustryYnsights"));
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/yzone" element={<Yzone />} exact />
           <Route path="/nifo" element={<Nifo />} exact />
           <Route path="/ynsights" element={<OurInsights />} exact />
+          <Route path="/ynsights/blog/:slug" element={<BlogDetail />} />
           <Route path="/ynsights/:slug" element={<WhitepaperDetail />} />
           <Route path="/ynsight/:slug" element={<YnsightDetail />} />
           <Route path="/ynsights/industry/:industrySlug" element={<IndustryYnsights />} />

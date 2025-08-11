@@ -3,12 +3,13 @@ import { sanity } from '../../sanityClient';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FiClock, FiCalendar, FiArrowLeft } from 'react-icons/fi';
 import { PortableText } from '@portabletext/react';
-import { sampleBlog } from './localBlogs';
+import { blogs } from './localBlogs';
 import { BlogCard } from './BlogCard';
 import { AuthorInfo } from './AuthorInfo';
 import { BlogTag } from './BlogTag';
 import { Button } from './ui/button';
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 const BlogDetail = () => {
     const { slug } = useParams();
@@ -19,9 +20,12 @@ const BlogDetail = () => {
 
     useEffect(() => {
         // For now, use local data. Later this will fetch from Sanity
-        if (slug === sampleBlog.slug.current) {
-            setBlog(sampleBlog);
-            setRelatedBlogs([]); // No related blogs for now
+        const foundBlog = blogs.find(blog => blog.slug.current === slug);
+        if (foundBlog) {
+            setBlog(foundBlog);
+            // Set related blogs (other blogs excluding current one)
+            const otherBlogs = blogs.filter(blog => blog.slug.current !== slug);
+            setRelatedBlogs(otherBlogs);
         } else {
             setBlog(null);
         }
@@ -105,6 +109,7 @@ const BlogDetail = () => {
                         <div className="h-4 bg-gray-200 rounded w-3/4"></div>
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }
@@ -128,6 +133,7 @@ const BlogDetail = () => {
                         </button>
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }
@@ -239,7 +245,7 @@ const BlogDetail = () => {
 
                     {/* Related Articles */}
                     {relatedBlogs.length > 0 && (
-                        <section className="mt-12">
+                        <section className="mt-12 mb-16">
                             <h2 className="mb-8 text-2xl font-semibold text-[#333333]">
                                 More Articles
                             </h2>
@@ -255,6 +261,9 @@ const BlogDetail = () => {
                         </section>
                     )}
                 </div>
+            </div>
+            <div className="mt-16">
+                <Footer />
             </div>
         </div>
     );

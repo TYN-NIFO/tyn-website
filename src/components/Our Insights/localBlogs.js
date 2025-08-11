@@ -264,4 +264,280 @@ export const sampleBlog = {
     ]
 };
 
-export const blogs = [sampleBlog]; 
+export const gearsGptBlog = {
+    _id: 'gears-gpt-blog-2',
+    title: 'Gears & GPT: How AI Agents Are Re-Casting Auto Components in 2025',
+    slug: { current: 'gears-gpt-ai-agents-auto-components-2025' },
+    author: 'Senthilvelan Natarajan',
+    authorTitle: 'AI Products | Start-ups | Co-Innovation | Academia | Career Coach. Team Builder. Story Maker. || Ex-TCS ||',
+    authorImageUrl: '/velan.png',
+    publishedAt: '2025-08-11T00:00:00.000Z',
+    excerpt: 'A walk down the memory lane from the late \'90s precision of Shanthi Gears to today\'s AI-powered vision systems at Mahindra. How digital twins, agentic AI, and vision models are transforming auto component manufacturing.',
+    readTime: 7,
+    tags: ['Manufacturing', 'AutoComponents', 'AI', 'DigitalTwins', 'VisionAI', 'AgenticAI', 'Industry40', 'MSME', 'TheYellowNetwork', 'CoInnovation'],
+    featuredImageUrl: 'https://media.licdn.com/dms/image/v2/D5612AQHpKUvN2VKi4w/article-cover_image-shrink_720_1280/B56ZiXQMWaHMAI-/0/1754884262383?e=1760572800&v=beta&t=OGckrpTFSgfeZPi7KeL1j4PhGQcpre-oFnxSm77Hu0c',
+    content: [
+        {
+            _type: 'block',
+            style: 'h2',
+            children: [
+                {
+                    _type: 'span',
+                    text: '1. A Walk Down the Memory Lane and Now'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'In the late \'90s, I walked through Shanthi Gears in Coimbatore\'s MSME circle - the old-school grit, precision, and pride stitched into every tooth. The machinist eyeballed each gear tooth like seasoned astrologers. Last month, I walked Mahindra\'s assembly line and watched "vision AI" keep pace with takt - same factory buzz, but new digital senses.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'h2',
+            children: [
+                {
+                    _type: 'span',
+                    text: '2. Why This Year Feels Different'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Average cameras now meet \'giant\' vision models; digital twins mirror whole production lines; (Industrial twins, not the TCS TwinX) agentic AI brokers parts, plans shifts, and negotiates quotes while we sip cutting-chai. Schaeffler\'s move to build Omniverse-based twins is a good tell of where shop floors are headed.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'h2',
+            children: [
+                {
+                    _type: 'span',
+                    text: '3. Five Jobs Our Digital Colleagues Can Carry Out'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Vision Guru - Spots surface defects in seconds with large-vision models. It helps faster inspection.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Maintenance Sage - Reads vibration/thermal clues, flags bearings before they fail. We are blessed with less unplanned downtime and lower maintenance costs.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Process Whisperer - Tunes CNC feeds & cycle times using Bosch analytics. Shorter cycles, more parts per shift.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Supply Chain Navigator - Re-slots orders when steel prices or lanes shift (Blue Yonder/Kinaxis adding AI to the core). Fewer line shortages.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Documentation Monk - Auto-builds PPAP/APQP packets via QMS/PPAP tools. Engineers get more time for design, not forms.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'h2',
+            children: [
+                {
+                    _type: 'span',
+                    text: '4. Boots-on-Ground Proof'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Digital twins @ Schaeffler - Building plant-level twins on NVIDIA Omniverse to simulate & optimize production and future multi-robot work.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Vision AI @ scale - Rockwell\'s FactoryTalk® Analytics™ VisionAI™ pushes closed-loop quality; media and integrators show it cutting inspection time while feeding continuous improvement.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Chennai\'s Jidoka - Multi-camera, AI inspection keeping gears and engine blocks honest, 24×7.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Supply-chain brains - Blue Yonder and Kinaxis keep planners ahead of volatility with predictive planning and multi-tier visibility.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'h2',
+            children: [
+                {
+                    _type: 'span',
+                    text: '5. What Tier-2 & Tier-3 Players Gain'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Rent, don\'t build - Cloud QMS/PPAP + vision kits = no PhD hunt; start small and scale.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Faster RFQs - Agents draft quotes overnight; you bid on that surprise EV order before the big boys wake. (Kinaxis/Blue Yonder play nicely here.)'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Data karma - Even partial sensor data moves the needle; perfection can wait, ROI can\'t.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'h2',
+            children: [
+                {
+                    _type: 'span',
+                    text: '6. ZenV\'s Filter-Coffee Checklist'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Begin with one pain - scrap, stoppage, or schedule and plug the matching agent.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Pilot on a single cell; celebrate every saved micron or minute.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Marry vision data with machine logs early; insights brew stronger together.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Partner hungry startups; they customise before the OEM finishes its PowerPoint.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Keep humans in the loop (everyone says it! and I too need a job) - AI steers, Machinists still fine-tune.'
+                }
+            ]
+        },
+        {
+            _type: 'block',
+            style: 'normal',
+            children: [
+                {
+                    _type: 'span',
+                    text: 'Start small, spin steady, and let your digital agents carry the weight of repetition.'
+                }
+            ]
+        }
+    ]
+};
+
+export const blogs = [sampleBlog, gearsGptBlog]; 

@@ -27,23 +27,7 @@ export function BlogCard({ post, size = 'md' }) {
               />
             </div>
             
-            {/* Read time badge with gradient */}
-            <div className="absolute top-3 right-3">
-              <div className="px-3 py-1 rounded-full text-xs text-white flex items-center gap-1 bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm">
-                <FiClock size={12} />
-                {post.readTime} min read
-              </div>
-            </div>
 
-            {/* Trending indicator for featured posts */}
-            {post._id === 'sample-blog-1' && (
-              <div className="absolute top-3 left-3">
-                <div className="px-2 py-1 rounded-full text-xs text-white flex items-center gap-1 bg-gradient-to-r from-red-500 to-orange-500">
-                  <FiTrendingUp size={12} />
-                  Trending
-                </div>
-              </div>
-            )}
 
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
