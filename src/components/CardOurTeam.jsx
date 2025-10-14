@@ -67,8 +67,14 @@ const cardData = [
   {
     name:"Maharshi Vidhyarthi",
     role:"Innovation Consultant",
-    roleDescription:"Manufacturing professional and Great Lakes alumnus adapt at solving complex process challenges. Skilled in driving efficiency, optimizing workflows, business analytics and delivering client-focused solutions.",
+    roleDescription:"Manufacturing professional and Great Lakes alumnus adapt at solving complex process challenges. Skilled in driving efficiency, optimizing workflows, business analytics and delivering client-focused solutions.",
     image:"/maharshi.jpg"
+  },
+  {
+    name:"Vishnu Anbalagan",
+    role:"Manager - Innovation & Academic Partnerships",
+    roleDescription:"Research-driven robotics and automation engineer and innovation mentor, leveraging deep expertise in IoT, AI, and autonomous systems to solve real-world problems, create measurable value, and empower young mind backed by strong academic experience and a well-connected startup ecosystem network.",
+    image:"/vishnu-anbalagan.jpg"
   }
 ];
 
