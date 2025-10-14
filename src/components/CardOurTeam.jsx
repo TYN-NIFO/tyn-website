@@ -80,6 +80,7 @@ const cardData = [
 
 const CardOurTeam = () => {
   const [currentIndex, setCurrentIndex] = useState(4);
+  
 
   const goToPrevious = () => {
     const newIndex =
