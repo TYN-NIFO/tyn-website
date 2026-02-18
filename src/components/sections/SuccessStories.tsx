@@ -34,7 +34,7 @@ export const SuccessStories = () => {
   };
 
   return (
-    <section className="section-padding hero-gradient relative overflow-hidden">
+    <section id="success-stories" className="section-padding hero-gradient relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent" />
 
@@ -102,9 +102,8 @@ export const SuccessStories = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'w-8 bg-accent' : 'bg-primary-foreground/30 hover:bg-primary-foreground/50'
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-8 bg-accent' : 'bg-primary-foreground/30 hover:bg-primary-foreground/50'
+                }`}
             />
           ))}
         </div>

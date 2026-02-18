@@ -56,6 +56,10 @@
     --slate-light: 220 25% 96%;
     --slate: 220 15% 60%;
 
+    /* TYN Brand Tokens */
+    --tyn-yellow: #ffff00;
+    --tyn-blue: #073763;
+
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 65% 8%) 0%, hsl(220 60% 18%) 100%);
     --gradient-navy: linear-gradient(180deg, hsl(220 65% 8%) 0%, hsl(220 60% 12%) 100%);
@@ -433,5 +437,48 @@
 
   .clip-banner {
     clip-path: polygon(16px 0%, calc(100% - 16px) 0%, 100% 50%, calc(100% - 16px) 100%, 16px 100%, 0% 50%);
+  }
+
+  /* Card clip-path shape system — responsive, no fixed pixels */
+  /* Default: top-left + bottom-right corners cut (all sections except Differentiator) */
+  .clip-card-default {
+    clip-path: polygon(5% 0%, 100% 0%, 100% 95%,
+        95% 100%, 0% 100%, 0% 5%);
+  }
+
+  /* Differentiator (OurSolution home section): top-right + bottom-left corners cut */
+  .clip-card-differentiator {
+    clip-path: polygon(0% 0%, 95% 0%, 100% 5%,
+        100% 100%, 5% 100%, 0% 95%);
+  }
+
+  /* Button clip-path: top-left + bottom-right (non-hero buttons) */
+  .btn-clip-default {
+    clip-path: polygon(6% 0%, 100% 0%, 100% 85%,
+        94% 100%, 0% 100%, 0% 15%);
+    border-radius: 0;
+  }
+
+  /* Icon container — light background cards only */
+  /* Default: tyn-blue bg, tyn-yellow icon */
+  .icon-tyn {
+    background-color: var(--tyn-blue);
+    transition: background-color 0.3s ease;
+  }
+
+  .icon-tyn svg {
+    color: var(--tyn-yellow);
+    transition: color 0.3s ease;
+  }
+
+  /* Hover: tyn-yellow bg, tyn-blue icon */
+  .icon-tyn:hover,
+  .group:hover .icon-tyn {
+    background-color: var(--tyn-yellow);
+  }
+
+  .icon-tyn:hover svg,
+  .group:hover .icon-tyn svg {
+    color: var(--tyn-blue);
   }
 }

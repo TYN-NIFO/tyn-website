@@ -27,8 +27,8 @@ const navItems: NavItem[] = [
       {
         title: 'Our Services',
         items: [
-          { title: 'BUILD', description: 'Production-Grade AI Systems — Speed, control, and differentiation', href: '/services#build' },
-          { title: 'BUY', description: 'Ecosystem-Led Solution Selection — Speed-to-value with right-fit solutions', href: '/services#buy' },
+          { title: 'BUILD', description: 'Production-Grade AI Systems — Speed, control, and differentiation', href: '/services?tab=build' },
+          { title: 'BUY', description: 'Ecosystem-Led Solution Selection — Speed-to-value with right-fit solutions', href: '/services?tab=buy' },
           { title: 'AI COE', description: 'Build the Enterprise Muscle — Scale AI beyond one team', href: '/services/ai-coe' },
         ],
       },
@@ -64,7 +64,7 @@ const navItems: NavItem[] = [
         items: [
           { title: 'Whitepapers', description: 'In-depth research and insights', href: '#' },
           { title: 'Blog', description: 'Latest thoughts on enterprise AI', href: '#' },
-          { title: 'Success Stories', description: 'Real impact across industries', href: '#' },
+          { title: 'Success Stories', description: 'Real impact across industries', href: '/#success-stories' },
         ],
       },
     ],
@@ -78,7 +78,7 @@ const navItems: NavItem[] = [
         items: [
           { title: 'About Us', description: 'Learn about The Yellow Network mission', href: '/about' },
           { title: 'Careers', description: 'Join us in shaping the future of AI', href: '/careers' },
-          { title: 'Success Stories', description: 'Real impact across industries', href: '/#SuccessStories' },
+          { title: 'Success Stories', description: 'Real impact across industries', href: '/#success-stories' },
         ],
       },
     ],
@@ -112,7 +112,7 @@ export const Header = () => {
             <img
               src={isScrolled ? logoDark : logoLight}
               alt="The Yellow Network"
-              className="h-12 md:h-14 w-auto transition-all"
+              className={isScrolled ? 'h-12 md:h-14 w-auto transition-all' : 'h-16 md:h-20 w-auto transition-all'}
             />
           </a>
 
@@ -129,7 +129,7 @@ export const Header = () => {
                   <a
                     href={item.href}
                     className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isScrolled
-                      ? 'text-foreground hover:text-accent hover:bg-muted'
+                      ? 'text-foreground hover:text-tyn-blue hover:bg-muted'
                       : 'text-primary-foreground/90 hover:text-accent'
                       }`}
                   >
@@ -138,7 +138,7 @@ export const Header = () => {
                 ) : (
                   <button
                     className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isScrolled
-                      ? 'text-foreground hover:text-accent hover:bg-muted'
+                      ? 'text-foreground hover:text-tyn-blue hover:bg-muted'
                       : 'text-primary-foreground/90 hover:text-accent'
                       }`}
                   >

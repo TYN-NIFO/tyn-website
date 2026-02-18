@@ -1,4 +1,4 @@
-// File: C:\Users\varsh\Downloads\bold-ai-insights-main\bold-ai-insights-main\src\app\services\page.tsx
+// File: C:\Users\varsh\Downloads\bold-ai-insights-main\Website final\src\app\services\page.tsx
 import * as entry from '../../../../src/app/services/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

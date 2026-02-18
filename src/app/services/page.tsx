@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Hammer, ShoppingBag, Building2 } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -92,21 +93,43 @@ const services = [
 ];
 
 export default function ServicesPage() {
-    const [activeId, setActiveId] = useState(services[0].id);
-
     return (
         <div className="min-h-screen bg-background">
             <Header />
             <main>
                 <ServicesHero />
-                {/* Sticky pills span across services + engagement models */}
-                <ServiceTabPills services={services} activeId={activeId} onTabChange={setActiveId} />
-                <ServiceContent services={services} activeId={activeId} />
+                <Suspense fallback={null}>
+                    <ServicesContent />
+                </Suspense>
                 <EngagementModels />
                 <WhyThisWorks />
                 <ServicesCTA />
             </main>
             <Footer />
         </div>
+    );
+}
+
+function ServicesContent() {
+    const searchParams = useSearchParams();
+    const tabParam = searchParams.get('tab');
+    const validTabs = services.map((s) => s.id);
+    const initialTab = tabParam && validTabs.includes(tabParam) ? tabParam : services[0].id;
+    const [activeId, setActiveId] = useState(initialTab);
+
+    // Re-sync if the URL param changes (e.g. back/forward navigation)
+    useEffect(() => {
+        const tab = searchParams.get('tab');
+        if (tab && validTabs.includes(tab)) {
+            setActiveId(tab);
+        }
+    }, [searchParams]);
+
+    return (
+        <>
+            {/* Sticky pills span across services + engagement models */}
+            <ServiceTabPills services={services} activeId={activeId} onTabChange={setActiveId} />
+            <ServiceContent services={services} activeId={activeId} />
+        </>
     );
 }

@@ -76,6 +76,9 @@ export default {
           light: "hsl(var(--slate-light))",
           DEFAULT: "hsl(var(--slate))",
         },
+        // TYN Brand Tokens
+        'tyn-yellow': '#ffff00',
+        'tyn-blue': '#073763',
       },
       borderRadius: {
         lg: "var(--radius)",

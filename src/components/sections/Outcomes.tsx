@@ -47,11 +47,11 @@ export const Outcomes = () => {
           {outcomes.map((outcome, index) => (
             <div
               key={outcome.title}
-              className="metric-card group"
+              className="metric-card clip-card-default group"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors">
-                  <outcome.icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                <div className="icon-tyn w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <outcome.icon className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">

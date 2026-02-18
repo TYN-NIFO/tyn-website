@@ -48,10 +48,10 @@ export const NIFOSnapshot = () => {
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors group"
+                  className="flex items-start gap-3 p-4 clip-card-default bg-card border border-border hover:border-accent/50 transition-colors group"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <feature.icon className="w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors" />
+                  <div className="icon-tyn flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">
+                    <feature.icon className="w-5 h-5" />
                   </div>
                   <span className="font-medium text-foreground text-sm">
                     {feature.title}

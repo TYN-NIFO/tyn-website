@@ -4,8 +4,8 @@ const logoLight = '/assets/logo-light.png';
 
 const footerLinks = {
   services: [
-    { label: 'BUY', href: '/services#buy' },
-    { label: 'BUILD', href: '/services#build' },
+    { label: 'BUY', href: '/services?tab=buy' },
+    { label: 'BUILD', href: '/services?tab=build' },
     { label: 'AI COE', href: '/services/ai-coe' },
   ],
   industries: [
@@ -23,7 +23,7 @@ const footerLinks = {
   company: [
     { label: 'About Us', href: '/about' },
     { label: 'Careers', href: '/careers' },
-    { label: 'Success Stories', href: '/#SuccessStories' },
+    { label: 'Success Stories', href: '/#success-stories' },
     { label: 'Contact', href: '/contact?source_page=Footer&cta=Contact' },
   ],
 };
@@ -40,7 +40,7 @@ export const Footer = () => {
               <img
                 src={logoLight}
                 alt="The Yellow Network"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">

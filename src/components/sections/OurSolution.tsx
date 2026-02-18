@@ -56,10 +56,10 @@ export const OurSolution = () => {
               return (
                 <div key={step.title} className="relative group">
                   {/* Card */}
-                  <div className="card-elevated rounded-2xl p-6 h-full hover:-translate-y-2 transition-all duration-300 text-center">
+                  <div className="card-elevated clip-card-differentiator p-6 h-full hover:-translate-y-2 transition-all duration-300 text-center">
                     {/* Icon badge */}
-                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                      <StepIcon className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors" />
+                    <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                      <StepIcon className="w-7 h-7" />
                     </div>
 
                     <h3 className="text-lg font-display font-semibold text-foreground mb-2">
