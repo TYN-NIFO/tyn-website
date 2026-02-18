@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Yellow Network - Enterprise AI Design System
+   Brand Colors: Navy Blue + Yellow Accent
+   Style: Bold, Modern, Authoritative
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 220 30% 98%;
+    --foreground: 220 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 10%;
+
+    /* Primary: Deep Navy */
+    --primary: 220 60% 15%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light Navy/Slate */
+    --secondary: 220 25% 92%;
+    --secondary-foreground: 220 40% 15%;
+
+    /* Yellow Accent */
+    --accent: 48 100% 50%;
+    --accent-foreground: 220 60% 10%;
+
+    /* Muted tones */
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 15% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Extended palette */
+    --navy-deep: 220 65% 8%;
+    --navy: 220 60% 15%;
+    --navy-light: 220 45% 25%;
+    --yellow: 48 100% 50%;
+    --yellow-dark: 45 95% 42%;
+    --yellow-light: 48 100% 65%;
+    --slate-light: 220 25% 96%;
+    --slate: 220 15% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 65% 8%) 0%, hsl(220 60% 18%) 100%);
+    --gradient-navy: linear-gradient(180deg, hsl(220 65% 8%) 0%, hsl(220 60% 12%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(48 100% 50%) 0%, hsl(45 95% 42%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 25% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(220 60% 15% / 0.08);
+    --shadow-md: 0 8px 24px -6px hsl(220 60% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(220 60% 15% / 0.18);
+    --shadow-yellow: 0 8px 32px -8px hsl(48 100% 50% / 0.35);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 15% 26%;
+    --sidebar-primary: 220 60% 15%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 96%;
+    --sidebar-accent-foreground: 220 40% 10%;
+    --sidebar-border: 220 20% 91%;
+    --sidebar-ring: 48 100% 50%;
+  }
+
+  .dark {
+    --background: 220 65% 6%;
+    --foreground: 220 10% 95%;
+
+    --card: 220 50% 10%;
+    --card-foreground: 220 10% 95%;
+
+    --popover: 220 50% 10%;
+    --popover-foreground: 220 10% 95%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 220 60% 10%;
+
+    --secondary: 220 40% 18%;
+    --secondary-foreground: 220 10% 90%;
+
+    --muted: 220 40% 15%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 220 60% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 40% 18%;
+    --input: 220 40% 18%;
+    --ring: 48 100% 50%;
+
+    --sidebar-background: 220 50% 8%;
+    --sidebar-foreground: 220 10% 90%;
+    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary-foreground: 220 60% 10%;
+    --sidebar-accent: 220 40% 15%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 40% 15%;
+    --sidebar-ring: 48 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+
+  /* Hero section styling */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .navy-gradient {
+    background: var(--gradient-navy);
+  }
+
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  /* Card variations */
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+    @apply border border-border/50;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-lg);
+    @apply border-border;
+  }
+
+  /* Yellow accent underline for headings */
+  .accent-underline {
+    @apply relative inline-block;
+  }
+
+  .accent-underline::after {
+    content: '';
+    @apply absolute left-0 -bottom-2 h-1 rounded-full;
+    width: 60px;
+    background: var(--gradient-accent);
+  }
+
+  /* Button variations */
+  /* Angled clip-path shape — brand signature */
+  .clip-angled {
+    clip-path: polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%);
+  }
+
+  .btn-hero {
+    @apply px-10 py-4 text-lg font-semibold transition-all duration-300;
+    background: var(--gradient-accent);
+    color: hsl(var(--accent-foreground));
+    box-shadow: var(--shadow-yellow);
+    clip-path: polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%);
+    border-radius: 0;
+  }
+
+  .btn-hero:hover {
+    @apply scale-105;
+    box-shadow: 0 12px 40px -8px hsl(48 100% 50% / 0.5);
+  }
+
+  .btn-outline-hero {
+    @apply px-10 py-4 text-lg font-semibold border-2 transition-all duration-300;
+    border-color: hsl(0 0% 100% / 0.3);
+    color: hsl(0 0% 100%);
+    background: transparent;
+    clip-path: polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%);
+    border-radius: 0;
+  }
+
+  .btn-outline-hero:hover {
+    border-color: hsl(48 100% 50%);
+    color: hsl(48 100% 50%);
+  }
+
+  /* Geometric decorations */
+  .geo-accent {
+    @apply absolute w-24 h-24 opacity-10;
+    background: linear-gradient(135deg, hsl(48 100% 50%) 0%, transparent 70%);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+
+  /* Navigation mega menu */
+  .mega-menu {
+    @apply opacity-0 invisible translate-y-2 transition-all duration-200;
+  }
+
+  .nav-item:hover .mega-menu {
+    @apply opacity-100 visible translate-y-0;
+  }
+
+  /* Section padding consistency */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Container max-width with padding */
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Metric card styling */
+  .metric-card {
+    @apply relative overflow-hidden rounded-2xl p-8 transition-all duration-300;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+  }
+
+  .metric-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1;
+    background: var(--gradient-accent);
+  }
+
+  .metric-card:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Pain point card */
+  .pain-card {
+    @apply relative p-6 rounded-xl border border-border/50 bg-card transition-all duration-300;
+  }
+
+  .pain-card:hover {
+    @apply border-accent/30;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Success story card */
+  .story-card {
+    @apply relative overflow-hidden rounded-2xl border border-border/50 transition-all duration-300;
+    background: var(--gradient-card);
+  }
+
+  .story-card:hover {
+    box-shadow: var(--shadow-lg);
+    @apply border-accent/30;
+  }
+
+  /* Animated background pattern */
+  .pattern-grid {
+    background-image:
+      linear-gradient(hsl(220 60% 20% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 60% 20% / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer utilities {
+
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Stagger animation delays */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Infinite logo scroll */
+  @keyframes logo-scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-logo-scroll {
+    animation: logo-scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .animate-logo-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Text gradient yellow */
+  .text-gradient-yellow {
+    background: linear-gradient(90deg, hsl(48 96% 53%) 0%, hsl(48 100% 70%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Yellow highlight underline */
+  .highlight-yellow {
+    background: linear-gradient(180deg, transparent 60%, hsl(48 96% 53% / 0.4) 60%);
+  }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Pillar number badge */
+  .pillar-badge {
+    @apply inline-flex items-center justify-center w-8 h-8 text-sm font-bold;
+    background: hsl(var(--secondary));
+    color: hsl(var(--navy));
+  }
+
+  /* Hexagonal and Angular Clip Paths */
+  .clip-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .clip-hexagon-sm {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+
+  .clip-hexagon-badge {
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  }
+
+  .clip-card {
+    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+  }
+
+  .clip-tag {
+    clip-path: polygon(8px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 8px);
+  }
+
+  .clip-banner {
+    clip-path: polygon(16px 0%, calc(100% - 16px) 0%, 100% 50%, calc(100% - 16px) 100%, 16px 100%, 0% 50%);
+  }
+}

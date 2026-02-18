@@ -1,0 +1,92 @@
+import { GraduationCap, UserCheck, Timer, Building, Rocket } from 'lucide-react';
+
+const steps = [
+  {
+    icon: GraduationCap,
+    number: '01',
+    title: 'Training in Digital Technologies',
+    description:
+      "Participants are trained by TYN's core team across GenAI, automation, UI/UX, data, cloud and full-stack engineering — with strong emphasis on enterprise-grade thinking.",
+  },
+  {
+    icon: UserCheck,
+    number: '02',
+    title: 'Curated Talent Pool',
+    description:
+      'Participants are handpicked and grouped into balanced teams based on skills, problem-solving ability, and execution readiness.',
+  },
+  {
+    icon: Timer,
+    number: '03',
+    title: 'Sprint-Based Projects',
+    description:
+      'Teams work on clearly scoped, time-bound sprints aligned to real enterprise problem statements — not hypothetical case studies.',
+  },
+  {
+    icon: Building,
+    number: '04',
+    title: 'Enterprise Problem Alignment',
+    description:
+      'Projects are mapped to actual business workflows, constraints, and success metrics to ensure relevance.',
+  },
+  {
+    icon: Rocket,
+    number: '05',
+    title: 'Impactful Real-World Solutions',
+    description:
+      'Outcomes are working prototypes, PoCs, or deployable components — not slideware.',
+  },
+];
+
+export const HowYZoneWorks = () => {
+  return (
+    <section className="section-padding bg-background pattern-grid">
+      <div className="container-main">
+        <div className="max-w-3xl mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6 tracking-widest">
+            HOW YZONE WORKS
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
+            A structured execution pipeline
+          </h2>
+        </div>
+
+        <div className="relative">
+          {/* Vertical connecting line */}
+          <div className="absolute left-8 md:left-10 top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-accent/40 hidden md:block" />
+
+          <div className="space-y-6">
+            {steps.map((step, idx) => {
+              const StepIcon = step.icon;
+              return (
+                <div key={idx} className="relative flex gap-6 md:gap-10 group">
+                  {/* Node */}
+                  <div className="relative z-10 flex-shrink-0">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-primary border-2 border-accent/30 flex items-center justify-center group-hover:border-accent group-hover:shadow-[0_0_24px_-4px_hsl(48_100%_50%/0.4)] transition-all duration-300">
+                      <StepIcon className="w-7 h-7 md:w-8 md:h-8 text-accent" />
+                    </div>
+                  </div>
+
+                  {/* Content card */}
+                  <div className="card-elevated rounded-2xl p-6 md:p-8 flex-1 hover:-translate-y-0.5 transition-transform duration-300">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-sm font-display font-bold text-accent tracking-widest">
+                        {step.number}
+                      </span>
+                      <h3 className="text-lg md:text-xl font-display font-bold text-foreground">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
