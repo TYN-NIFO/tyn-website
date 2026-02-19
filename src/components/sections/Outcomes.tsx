@@ -50,8 +50,8 @@ export const Outcomes = () => {
               className="metric-card clip-card-default group"
             >
               <div className="flex items-start gap-4">
-                <div className="icon-tyn w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <outcome.icon className="w-6 h-6" />
+                <div className="icon-tyn w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <outcome.icon className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
                 <div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">

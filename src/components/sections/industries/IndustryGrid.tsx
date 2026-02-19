@@ -94,12 +94,12 @@ export const IndustryGrid = () => {
                 return (
                   <div
                     key={industry.id}
-                    className="card-elevated rounded-2xl cursor-pointer group p-8 transition-all duration-300 hover:ring-2 hover:ring-accent/40"
+                    className="card-elevated rounded-2xl cursor-pointer group p-6 md:p-8 transition-all duration-300 hover:ring-2 hover:ring-accent/40"
                     onClick={() => setActiveIndustry(index)}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="icon-tyn flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300">
-                        <Icon className="w-6 h-6 transition-colors duration-300" />
+                      <div className="icon-tyn flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-colors duration-300">
+                        <Icon className="w-6 h-6 md:w-7 md:h-7 transition-colors duration-300" />
                       </div>
                       <div>
                         <h3 className="text-xl font-display font-bold text-foreground mb-1">
@@ -119,7 +119,7 @@ export const IndustryGrid = () => {
             activeData && (() => {
               const Icon = activeData.icon;
               return (
-                <div className="w-full rounded-2xl bg-card border border-border shadow-xl p-10 md:p-14 animate-fade-in transition-all duration-500 ease-in-out">
+                <div className="w-full rounded-2xl bg-card border border-border shadow-xl p-6 md:p-10 lg:p-14 animate-fade-in transition-all duration-500 ease-in-out">
                   {/* Header with close button */}
                   <div className="relative flex items-start gap-5 mb-8">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent flex items-center justify-center">

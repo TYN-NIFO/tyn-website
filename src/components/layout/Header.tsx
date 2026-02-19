@@ -101,6 +101,10 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    // Initialize on mount
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -237,7 +241,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-card border-t border-border py-4 animate-fade-in">
+          <div className="lg:hidden bg-card border-t border-border py-4 animate-fade-in max-h-[85vh] overflow-y-auto">
             {navItems.map((item) => (
               <div key={item.label} className="px-4 py-2">
                 {item.href ? (

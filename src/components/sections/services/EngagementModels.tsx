@@ -43,10 +43,10 @@ export const EngagementModels = () => {
           {engagementOptions.map((option, idx) => (
             <div
               key={idx}
-              className="card-elevated rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+              className="card-elevated rounded-2xl p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
             >
-              <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300">
-                <option.icon className="w-7 h-7 transition-colors" />
+              <div className="icon-tyn w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300">
+                <option.icon className="w-6 h-6 md:w-7 md:h-7 transition-colors" />
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-2">
                 {option.title}

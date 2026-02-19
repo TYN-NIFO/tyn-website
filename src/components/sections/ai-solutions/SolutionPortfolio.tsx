@@ -126,8 +126,8 @@ export const SolutionPortfolio = () => {
               key={cat}
               onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${activeCategory === cat
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground'
+                ? 'bg-primary text-primary-foreground border-primary'
+                : 'bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground'
                 }`}
             >
               {cat}
@@ -144,12 +144,12 @@ export const SolutionPortfolio = () => {
                 return (
                   <div
                     key={solution.id}
-                    className="card-elevated rounded-2xl cursor-pointer group p-8 transition-all duration-300 hover:ring-2 hover:ring-accent/40"
+                    className="card-elevated rounded-2xl cursor-pointer group p-6 md:p-8 transition-all duration-300 hover:ring-2 hover:ring-accent/40"
                     onClick={() => handleExpand(solution.id)}
                   >
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="icon-tyn flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300">
-                        <Icon className="w-6 h-6 transition-colors duration-300" />
+                      <div className="icon-tyn flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-colors duration-300">
+                        <Icon className="w-6 h-6 md:w-7 md:h-7 transition-colors duration-300" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-display font-bold text-foreground mb-1 leading-tight">
@@ -181,7 +181,7 @@ export const SolutionPortfolio = () => {
               if (!solution) return null;
               const Icon = solution.icon;
               return (
-                <div className="w-full rounded-2xl bg-card border border-border shadow-xl p-10 md:p-14 animate-fade-in transition-all duration-500 ease-in-out">
+                <div className="w-full rounded-2xl bg-card border border-border shadow-xl p-6 md:p-10 lg:p-14 animate-fade-in transition-all duration-500 ease-in-out">
                   <div className="relative flex items-start gap-5 mb-8">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent flex items-center justify-center">
                       <Icon className="w-7 h-7 text-accent-foreground" />

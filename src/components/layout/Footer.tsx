@@ -41,7 +41,7 @@ export const Footer = () => {
               />
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
-              We help leaders cut through the vendor/LLM noise, choose what actually matters, and implement systems that intelligently create real business lift.
+              We help leaders cut through the AI noise, choose what actually matters, and implement systems that intelligently create real business lift.
             </p>
             <div className="flex gap-4">
               <a

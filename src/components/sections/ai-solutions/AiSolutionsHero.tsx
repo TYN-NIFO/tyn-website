@@ -59,7 +59,7 @@ export const AiSolutionsHero = () => {
         <div className="max-w-3xl">
 
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
+          <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
             AI Solution{' '}
             <span className="text-gradient">Portfolio</span>
           </h1>
