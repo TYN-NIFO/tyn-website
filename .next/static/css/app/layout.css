@@ -1159,9 +1159,6 @@ h1,
 .mt-10{
   margin-top: 2.5rem;
 }
-.mt-12{
-  margin-top: 3rem;
-}
 .mt-2{
   margin-top: 0.5rem;
 }
@@ -1176,9 +1173,6 @@ h1,
 }
 .mt-4{
   margin-top: 1rem;
-}
-.mt-6{
-  margin-top: 1.5rem;
 }
 .mt-8{
   margin-top: 2rem;
@@ -1971,9 +1965,6 @@ h1,
 .border-primary-foreground\/30{
   border-color: hsl(var(--primary-foreground) / 0.3);
 }
-.border-secondary\/15{
-  border-color: hsl(var(--secondary) / 0.15);
-}
 .border-secondary\/20{
   border-color: hsl(var(--secondary) / 0.2);
 }
@@ -2091,9 +2082,6 @@ h1,
 .bg-secondary\/30{
   background-color: hsl(var(--secondary) / 0.3);
 }
-.bg-secondary\/5{
-  background-color: hsl(var(--secondary) / 0.05);
-}
 .bg-sidebar{
   background-color: hsl(var(--sidebar-background));
 }
@@ -2188,9 +2176,6 @@ h1,
 .to-accent\/20{
   --tw-gradient-to: hsl(var(--accent) / 0.2) var(--tw-gradient-to-position);
 }
-.to-accent\/30{
-  --tw-gradient-to: hsl(var(--accent) / 0.3) var(--tw-gradient-to-position);
-}
 .to-accent\/40{
   --tw-gradient-to: hsl(var(--accent) / 0.4) var(--tw-gradient-to-position);
 }
@@ -2266,10 +2251,6 @@ h1,
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-.px-6{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .px-8{
   padding-left: 2rem;
@@ -3420,6 +3401,16 @@ h1,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.group:hover .group-hover\:brightness-100{
+  --tw-brightness: brightness(1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:hover .group-hover\:invert-0{
+  --tw-invert: invert(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .group.destructive .group-\[\.destructive\]\:border-muted\/40{
   border-color: hsl(var(--muted) / 0.4);
 }
@@ -4124,6 +4115,16 @@ h1,
 
 .dark\:border-destructive:is(.dark *){
   border-color: hsl(var(--destructive));
+}
+
+.dark\:brightness-100:is(.dark *){
+  --tw-brightness: brightness(1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.dark\:invert-0:is(.dark *){
+  --tw-invert: invert(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 640px){

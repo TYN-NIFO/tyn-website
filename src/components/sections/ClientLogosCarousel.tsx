@@ -5,7 +5,6 @@ const clientLogos = [
     { src: '/assets/client logos/Pluralsight_Logo.png', alt: 'Pluralsight' },
     { src: '/assets/client logos/TATA-Steel-logo.png', alt: 'TATA Steel' },
     { src: '/assets/client logos/ceil logo.png', alt: 'Ceil' },
-    { src: '/assets/client logos/croma logo.png', alt: 'Croma' },
     { src: '/assets/client logos/godrej logo.png', alt: 'Godrej' },
     { src: '/assets/client logos/indiafirst logo.png', alt: 'IndiaFirst' },
     { src: '/assets/client logos/kissflow logo.png', alt: 'Kissflow' },
@@ -19,7 +18,7 @@ export const ClientLogosCarousel = () => {
         <section className="py-20 bg-background border-y border-border/50 overflow-hidden">
             <div className="container-main mb-12">
                 <p className="text-center text-lg font-semibold uppercase tracking-widest text-muted-foreground">
-                    Trusted by Tech Enterprises
+                    Trusted by
                 </p>
             </div>
 

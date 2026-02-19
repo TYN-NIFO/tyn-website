@@ -26,13 +26,14 @@ export const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100">
-          Turn AI ambition into production-grade outcomes{' '}
+          Turn AI ambition into </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100"> production grade outcomes{' '}
           <span className="text-gradient"></span>
         </h1>
 
         {/* Supporting Line */}
         <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/80 mb-10 max-w-3xl mx-auto animate-fade-up delay-200">
-          We help leaders cut through the vendor/LLM noise, choose what actually matters, and implement systems that intelligently create real business lift.
+          We help leaders cut through the AI noise, choose what actually matters, and implement systems that intelligently create real business lift.
         </p>
 
         {/* CTA Buttons */}
@@ -41,11 +42,6 @@ export const HeroSection = () => {
             <Button className="btn-hero group">
               Discuss priorities
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </a>
-          <a href="/contact?source_page=Home&cta=Not-just-use-cases">
-            <Button className="btn-outline-hero">
-              not just use cases
             </Button>
           </a>
         </div>

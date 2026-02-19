@@ -55,7 +55,7 @@ export const HowNifoFits = () => {
 
           {/* Arrow */}
           <div className="hidden lg:flex items-center flex-shrink-0">
-            <div className="w-20 h-px bg-gradient-to-r from-accent to-accent/30" />
+            <div className="w-20 h-px bg-gradient-to-r from-accent to-transparent" />
             <ArrowRight className="w-7 h-7 text-accent -ml-1" />
           </div>
           <div className="lg:hidden">

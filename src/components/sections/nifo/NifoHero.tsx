@@ -65,9 +65,7 @@ export const NifoHero = () => {
 
       <div className="relative z-10 container-main py-24 md:py-32">
         <div className="max-w-3xl">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-8 animate-fade-up tracking-widest">
-            ACCELERATOR — NIFO
-          </span>
+
 
           <div className="mb-6 animate-fade-up delay-100">
             <img src={nifoLogo} alt="NiFo" className="h-16 md:h-20 lg:h-24 brightness-0 invert" />

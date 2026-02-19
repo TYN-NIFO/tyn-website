@@ -10,6 +10,7 @@ interface MenuItem {
   title: string;
   description: string;
   href: string;
+  logo?: string;
 }
 
 interface NavItem {
@@ -23,7 +24,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    label: 'Our Services',
+    label: 'Services',
     megaMenu: [
       {
         title: 'Our Services',
@@ -40,7 +41,7 @@ const navItems: NavItem[] = [
     href: '/industries',
   },
   {
-    label: 'AI Solutions',
+    label: 'Solutions',
     href: '/ai-solutions',
   },
 
@@ -50,9 +51,9 @@ const navItems: NavItem[] = [
       {
         title: 'Programs',
         items: [
-          { title: 'NiFo', description: 'The accelerator behind execution', href: '/accelerators/nifo' },
-          { title: 'yZone', description: 'Where AI talent turns into execution-ready teams', href: '/accelerators/yzone' },
-          { title: 'Ynfinity', description: 'Powering innovation through convergence of minds', href: '/accelerators/ynfinity' },
+          { title: 'NiFo', description: 'The accelerator behind execution', href: '/accelerators/nifo', logo: '/assets/nifo-logo.png' },
+          { title: 'yZone', description: 'Where AI talent turns into execution-ready teams', href: '/accelerators/yzone', logo: '/assets/yzone-logo.png' },
+          { title: 'Ynfinity', description: 'Powering innovation through convergence of minds', href: '/accelerators/ynfinity', logo: '/assets/ynfinity-logo.png' },
         ],
       },
     ],
@@ -141,7 +142,9 @@ export const Header = () => {
                         ? isActive
                           ? 'text-tyn-blue font-bold hover:bg-muted'
                           : 'text-foreground hover:text-tyn-blue hover:bg-muted'
-                        : 'text-primary-foreground/90 hover:text-accent'
+                        : isActive
+                          ? 'text-accent font-bold'
+                          : 'text-primary-foreground/90 hover:text-accent'
                         }`}
                     >
                       {item.label}
@@ -152,7 +155,9 @@ export const Header = () => {
                         ? isActive
                           ? 'text-tyn-blue font-bold hover:bg-muted'
                           : 'text-foreground hover:text-tyn-blue hover:bg-muted'
-                        : 'text-primary-foreground/90 hover:text-accent'
+                        : isActive
+                          ? 'text-accent font-bold'
+                          : 'text-primary-foreground/90 hover:text-accent'
                         }`}
                     >
                       {item.label}
@@ -180,10 +185,14 @@ export const Header = () => {
                                     href={menuItem.href}
                                     className="block p-3 rounded-lg hover:bg-muted transition-colors group"
                                   >
-                                    <div className="font-medium text-foreground group-hover:text-accent transition-colors">
-                                      {menuItem.title}
+                                    <div className="font-medium text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
+                                      {menuItem.logo ? (
+                                        <img src={menuItem.logo} alt={menuItem.title} className="h-6 w-auto object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all dark:brightness-100 dark:invert-0" />
+                                      ) : (
+                                        menuItem.title
+                                      )}
                                     </div>
-                                    <div className="text-sm text-muted-foreground">
+                                    <div className="text-sm text-muted-foreground mt-1">
                                       {menuItem.description}
                                     </div>
                                   </a>

@@ -144,35 +144,9 @@ const WhatPowersDelivery = () => {
                                         </li>
                                     ))}
                                 </ul>
-
-                                {/* Partner Tags for Ecosystem Card */}
-                                {pillar.partners && (
-                                    <div className="mt-6 pt-4 border-t border-secondary/15">
-                                        <p className="text-xs text-secondary/70 uppercase tracking-wide font-medium mb-3">Partners</p>
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {pillar.partners.map((partner, pIndex) => (
-                                                <span
-                                                    key={pIndex}
-                                                    className="px-2.5 py-1 bg-secondary/5 border border-secondary/20 text-xs text-primary-foreground/80 rounded-sm"
-                                                >
-                                                    {partner}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
                             </div>
                         </div>
                     ))}
-                </div>
-
-                {/* Bottom Summary */}
-                <div className="mt-12 flex justify-center">
-                    <div className="inline-flex items-center gap-3 px-6 py-3 bg-secondary/10 border border-secondary/30 rounded-sm">
-                        <span className="text-primary-foreground font-medium">
-                            50+ experts across strategy, AI, and delivery
-                        </span>
-                    </div>
                 </div>
             </div>
         </section>

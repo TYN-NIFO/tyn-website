@@ -58,9 +58,7 @@ export const YZoneHero = () => {
 
       <div className="relative z-10 container-main py-24 md:py-32">
         <div className="max-w-3xl">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-8 animate-fade-up tracking-widest">
-            ACCELERATOR — YZONE
-          </span>
+
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
             yZone: Where AI talent turns into{' '}
