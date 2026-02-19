@@ -119,7 +119,7 @@ export const Header = () => {
             <img
               src={isSolid ? logoDark : logoLight}
               alt="The Yellow Network"
-              className={isSolid ? 'h-12 md:h-14 w-auto transition-all' : 'h-16 md:h-20 w-auto transition-all'}
+              className={isSolid ? 'h-12 md:h-14 w-auto transition-all' : 'h-12 md:h-12 w-auto mt-3 transition-all'}
             />
           </a>
 
@@ -187,7 +187,13 @@ export const Header = () => {
                                   >
                                     <div className="font-medium text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
                                       {menuItem.logo ? (
-                                        <img src={menuItem.logo} alt={menuItem.title} className="h-6 w-auto object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all dark:brightness-100 dark:invert-0" />
+                                        <img
+                                          src={menuItem.logo}
+                                          alt={menuItem.title}
+                                          className={`w-auto object-contain transition-all 
+                                            ${menuItem.title === 'yZone' ? 'h-12' : menuItem.title === 'Ynfinity' ? 'h-10' : 'h-7'}
+                                          `}
+                                        />
                                       ) : (
                                         menuItem.title
                                       )}

@@ -30,9 +30,7 @@ export const WhereThisFits = () => {
       <div className="container-main relative z-10">
         {/* Where This Fits */}
         <div className="max-w-3xl mb-12">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6 tracking-widest">
-            WHERE THIS FITS
-          </span>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-6">
             Where this fits
           </h2>

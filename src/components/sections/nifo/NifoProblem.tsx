@@ -16,9 +16,7 @@ export const NifoProblem = () => {
   return (
     <section id="nifo-problem" className="section-padding bg-background pattern-grid">
       <div className="container-main">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6 tracking-widest">
-          THE CHALLENGE
-        </span>
+
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>

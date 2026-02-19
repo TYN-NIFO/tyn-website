@@ -25,7 +25,7 @@ export const ServicesHero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden hero-gradient min-h-[85vh] flex items-center">
+    <section className="relative overflow-hidden hero-gradient min-h-screen flex items-center">
       {/* Animated particle dots */}
       <div className="absolute inset-0 overflow-hidden">
         {dots.map((style, i) => (

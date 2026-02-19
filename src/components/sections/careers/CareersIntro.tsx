@@ -12,7 +12,7 @@ const valueProps = [
 
 export const CareersIntro = () => {
   return (
-    <section className="bg-background pt-32 md:pt-40 pb-20 md:pb-28">
+    <section className="bg-background min-h-screen flex items-center pt-32 md:pt-40 pb-20 md:pb-28">
       <div className="container-main">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="max-w-xl">

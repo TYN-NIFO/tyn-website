@@ -14,9 +14,7 @@ export const WhatNifoEnables = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent/5 to-transparent" />
 
       <div className="container-main relative z-10">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6 tracking-widest">
-          WHAT NIFO ENABLES
-        </span>
+
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-12">
           What <NifoInlineLogo className="h-8 md:h-10 lg:h-12 mx-1" invert /> enables
         </h2>

@@ -35,7 +35,7 @@ export const YZoneHero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden hero-gradient min-h-[85vh] flex items-center">
+    <section className="relative overflow-hidden hero-gradient min-h-screen flex items-center">
       {/* Animated network nodes */}
       <div className="absolute inset-0 overflow-hidden">
         {dots.map((style, i) => (

@@ -29,9 +29,7 @@ export const EngagementModels = () => {
     <section className="section-padding bg-background pattern-grid">
       <div className="container-main">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6">
-            ENGAGEMENT MODELS
-          </span>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
             Engagement models
           </h2>

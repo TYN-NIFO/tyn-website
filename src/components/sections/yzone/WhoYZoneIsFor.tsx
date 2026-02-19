@@ -23,9 +23,7 @@ export const WhoYZoneIsFor = () => {
     <section className="section-padding bg-background pattern-grid">
       <div className="container-main">
         <div className="max-w-3xl mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6 tracking-widest">
-            WHO YZONE IS FOR
-          </span>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
             Built for strategic leaders
           </h2>

@@ -32,9 +32,7 @@ export const OpenPositions = () => {
       <div className="container-main">
         <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-accent/10 text-accent-foreground border border-accent/20 mb-4">
-              Open Positions
-            </span>
+
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Open Positions
             </h2>

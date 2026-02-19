@@ -8,12 +8,10 @@ const footerLinks = {
     { label: 'BUILD', href: '/services?tab=build' },
     { label: 'AI COE', href: '/services/ai-coe' },
   ],
-  industries: [
-    { label: 'Insurance', href: '/industries' },
-    { label: 'Supply Chain & Logistics', href: '/industries' },
-    { label: 'Financial Services', href: '/industries' },
-    { label: 'Manufacturing & Industrial', href: '/industries' },
-    { label: 'Energy & Mining', href: '/industries' },
+  accelerators: [
+    { label: 'Nifo', href: '/accelerators/nifo' },
+    { label: 'Yzone', href: '/accelerators/yzone' },
+    { label: 'Ynfinity', href: '/accelerators/ynfinity' },
   ],
   resources: [
     { label: 'Whitepapers', href: '#' },
@@ -24,7 +22,6 @@ const footerLinks = {
     { label: 'About Us', href: '/about' },
     { label: 'Careers', href: '/careers' },
     { label: 'Success Stories', href: '/#success-stories' },
-    { label: 'Contact', href: '/contact?source_page=Footer&cta=Contact' },
   ],
 };
 
@@ -40,7 +37,7 @@ export const Footer = () => {
               <img
                 src={logoLight}
                 alt="The Yellow Network"
-                className="h-20 w-auto"
+                className="h-14 w-auto"
               />
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
@@ -63,8 +60,8 @@ export const Footer = () => {
           </div>
 
           {/* Links Columns */}
-          <div>
-            <h4 className="font-display font-semibold mb-4">Services</h4>
+          <div className="mt-2">
+            <h4 className="font-display font-semibold mb-4"><b>Services</b></h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
@@ -79,10 +76,10 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-display font-semibold mb-4">Industries</h4>
+          <div className="mt-2">
+            <h4 className="font-display font-semibold mb-4"><b>Industries</b></h4>
             <ul className="space-y-3">
-              {footerLinks.industries.map((link) => (
+              {footerLinks.accelerators.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -95,8 +92,8 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-display font-semibold mb-4">Resources</h4>
+          <div className="mt-2">
+            <h4 className="font-display font-semibold mb-4"><b>Resources</b></h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
@@ -111,8 +108,8 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-display font-semibold mb-4">Company</h4>
+          <div className="mt-2">
+            <h4 className="font-display font-semibold mb-4"><b>Company</b></h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>

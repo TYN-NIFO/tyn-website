@@ -11,9 +11,7 @@ export const WhatHappensAtYnfinity = () => {
     <section className="section-padding bg-background pattern-grid">
       <div className="container-main">
         <div className="max-w-3xl mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6 tracking-widest">
-            WHAT HAPPENS AT YNFINITY
-          </span>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
             What happens at Ynfinity
           </h2>

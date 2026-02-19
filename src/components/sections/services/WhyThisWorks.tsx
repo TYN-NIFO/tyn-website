@@ -35,9 +35,7 @@ export const WhyThisWorks = () => {
 
       <div className="container-main relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6">
-            BUILT ON PRINCIPLES
-          </span>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-6">
             Why this works
           </h2>

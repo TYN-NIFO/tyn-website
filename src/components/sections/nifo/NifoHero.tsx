@@ -30,7 +30,7 @@ export const NifoHero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden hero-gradient min-h-[85vh] flex items-center">
+    <section className="relative overflow-hidden hero-gradient min-h-screen flex items-center">
       {/* Orchestration Grid Background */}
       <div
         className="absolute inset-0"
