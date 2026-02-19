@@ -921,9 +921,6 @@ h1,
 .bottom-0{
   bottom: 0px;
 }
-.bottom-16{
-  bottom: 4rem;
-}
 .bottom-20{
   bottom: 5rem;
 }
@@ -2322,6 +2319,10 @@ h1,
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .pb-20{
   padding-bottom: 5rem;
 }
@@ -2602,9 +2603,6 @@ h1,
 }
 .opacity-100{
   opacity: 1;
-}
-.opacity-30{
-  opacity: 0.3;
 }
 .opacity-5{
   opacity: 0.05;

@@ -72,7 +72,7 @@ export const ContactForm = () => {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center text-center py-16 animate-fade-up">
+      <div className="flex flex-col items-center justify-center text-center py-8 animate-fade-up">
         <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-6">
           <CheckCircle className="w-8 h-8 text-accent" />
         </div>

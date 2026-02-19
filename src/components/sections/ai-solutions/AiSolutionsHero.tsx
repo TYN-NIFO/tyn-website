@@ -7,9 +7,6 @@ import { Button } from '@/components/ui/button';
 interface Dot { top: string; left: string; animationDelay: string; animation: string; }
 interface Line { top: string; left: string; width: string; transform: string; }
 
-const clientLogos = [
-  'Enterprise', 'Global Corp', 'InnovateTech', 'SecureFinance', 'DataFirst',
-];
 
 export const AiSolutionsHero = () => {
   const [dots, setDots] = useState<Dot[]>([]);
@@ -79,23 +76,10 @@ export const AiSolutionsHero = () => {
 
           <div className="animate-fade-up delay-400 flex items-center gap-2 text-sm text-primary-foreground/60">
             Looking for a custom build?{' '}
-            <a href="/services#build" className="text-accent hover:text-accent/80 font-medium inline-flex items-center gap-1 transition-colors">
+            <a href="/services?tab=build" className="text-accent hover:text-accent/80 font-medium inline-flex items-center gap-1 transition-colors">
               Our Services → Build
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Client logo strip */}
-      <div className="absolute bottom-16 left-0 right-0 z-10">
-        <div className="container-main">
-          <div className="flex items-center gap-12 opacity-30">
-            {clientLogos.map((name) => (
-              <span key={name} className="text-primary-foreground/60 text-sm font-medium tracking-wider uppercase whitespace-nowrap">
-                {name}
-              </span>
-            ))}
           </div>
         </div>
       </div>

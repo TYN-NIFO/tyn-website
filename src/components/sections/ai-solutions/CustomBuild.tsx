@@ -15,7 +15,7 @@ export const CustomBuild = () => {
             These accelerators provide a fast starting point. If your requirement is unique, we design and build tailored AI systems aligned to your enterprise architecture and security framework.
           </p>
           <a
-            href="/services#build"
+            href="/services?tab=build"
             className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all duration-200"
           >
             Explore our Build capabilities

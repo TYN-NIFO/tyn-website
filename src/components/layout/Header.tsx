@@ -93,7 +93,7 @@ export const Header = () => {
   const pathname = usePathname();
 
   // Force solid navbar on specific pages
-  const forceSolidNav = pathname === '/about' || pathname === '/careers';
+  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact';
   const isSolid = isScrolled || forceSolidNav;
 
   useEffect(() => {
@@ -124,72 +124,80 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <div
-                key={item.label}
-                className="nav-item relative"
-                onMouseEnter={() => setActiveMenu(item.label)}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
-                      ? 'text-foreground hover:text-tyn-blue hover:bg-muted'
-                      : 'text-primary-foreground/90 hover:text-accent'
-                      }`}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <button
-                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
-                      ? 'text-foreground hover:text-tyn-blue hover:bg-muted'
-                      : 'text-primary-foreground/90 hover:text-accent'
-                      }`}
-                  >
-                    {item.label}
-                    <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
-                  </button>
-                )}
+            {navItems.map((item) => {
+              const isActive = item.href === pathname || item.megaMenu?.some(section => section.items.some(child => child.href === pathname));
 
-                {/* Mega Menu */}
-                {item.megaMenu && (
-                  <div
-                    className={`mega-menu absolute top-full left-0 pt-4 ${activeMenu === item.label ? 'opacity-100 visible translate-y-0' : ''
-                      }`}
-                  >
-                    <div className="bg-card rounded-xl shadow-lg border border-border p-6 min-w-[400px]">
-                      <div className="grid gap-6">
-                        {item.megaMenu.map((section) => (
-                          <div key={section.title}>
-                            <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                              {section.title}
-                            </h3>
-                            <div className="space-y-1">
-                              {section.items.map((menuItem) => (
-                                <a
-                                  key={menuItem.title}
-                                  href={menuItem.href}
-                                  className="block p-3 rounded-lg hover:bg-muted transition-colors group"
-                                >
-                                  <div className="font-medium text-foreground group-hover:text-accent transition-colors">
-                                    {menuItem.title}
-                                  </div>
-                                  <div className="text-sm text-muted-foreground">
-                                    {menuItem.description}
-                                  </div>
-                                </a>
-                              ))}
+              return (
+                <div
+                  key={item.label}
+                  className="nav-item relative"
+                  onMouseEnter={() => setActiveMenu(item.label)}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
+                        ? isActive
+                          ? 'text-tyn-blue font-bold hover:bg-muted'
+                          : 'text-foreground hover:text-tyn-blue hover:bg-muted'
+                        : 'text-primary-foreground/90 hover:text-accent'
+                        }`}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
+                        ? isActive
+                          ? 'text-tyn-blue font-bold hover:bg-muted'
+                          : 'text-foreground hover:text-tyn-blue hover:bg-muted'
+                        : 'text-primary-foreground/90 hover:text-accent'
+                        }`}
+                    >
+                      {item.label}
+                      <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
+                    </button>
+                  )}
+
+                  {/* Mega Menu */}
+                  {item.megaMenu && (
+                    <div
+                      className={`mega-menu absolute top-full left-0 pt-4 ${activeMenu === item.label ? 'opacity-100 visible translate-y-0' : ''
+                        }`}
+                    >
+                      <div className="bg-card rounded-xl shadow-lg border border-border p-6 min-w-[400px]">
+                        <div className="grid gap-6">
+                          {item.megaMenu.map((section) => (
+                            <div key={section.title}>
+                              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                                {section.title}
+                              </h3>
+                              <div className="space-y-1">
+                                {section.items.map((menuItem) => (
+                                  <a
+                                    key={menuItem.title}
+                                    href={menuItem.href}
+                                    className="block p-3 rounded-lg hover:bg-muted transition-colors group"
+                                  >
+                                    <div className="font-medium text-foreground group-hover:text-accent transition-colors">
+                                      {menuItem.title}
+                                    </div>
+                                    <div className="text-sm text-muted-foreground">
+                                      {menuItem.description}
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* CTA Button */}

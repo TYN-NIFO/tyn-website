@@ -17,15 +17,10 @@ export const AiSolutionsCTA = () => {
               See how our production-ready accelerators can fit your enterprise environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact?source_page=AI-Solutions&cta=Explore-a-solution">
-                <Button className="btn-hero group">
-                  Explore a solution
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
               <a href="/contact?source_page=AI-Solutions&cta=Discuss-requirements">
-                <Button className="btn-outline-hero">
+                <Button className="btn-hero group">
                   Discuss your requirements
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
             </div>
