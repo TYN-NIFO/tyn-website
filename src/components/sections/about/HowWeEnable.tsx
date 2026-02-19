@@ -23,10 +23,10 @@ export const HowWeEnable = () => {
 
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {capabilities.map((cap, idx) => (
-            <div key={idx} className="card-elevated rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1">
+            <div key={idx} className="card-elevated rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 group">
               <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-accent to-accent/40" />
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                <cap.icon className="w-7 h-7 text-accent" />
+              <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <cap.icon className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">{cap.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{cap.description}</p>

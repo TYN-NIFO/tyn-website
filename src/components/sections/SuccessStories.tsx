@@ -4,20 +4,54 @@ import { ChevronLeft, ChevronRight, Shield, Truck, FileText } from 'lucide-react
 const stories = [
   {
     industry: 'Insurance',
-    title: 'AI-powered underwriting',
-    description: 'Transformed underwriting workflows with intelligent automation and risk assessment.',
+    title: 'AI-Powered Underwriting',
+    description: (
+      <>
+        <strong>Program Mandate:</strong>
+        <br />
+        To automate the critical underwriting process involving risk assessment, document validation, and policy issuance in the life insurance industry.
+        <br />
+        <br />
+        <strong>Solution Approach:</strong>
+        <br />
+        AI-led underwriting solution with OCR and analytics; projected 72% time savings and 99% document accuracy across formats, significantly improving customer turnaround time.
+      </>
+    ),
     icon: Shield,
   },
+
   {
     industry: 'Supply Chain',
-    title: 'AI-powered TMS optimization',
-    description: 'Optimized transportation management with predictive analytics and route optimization.',
+    title: 'AI-Powered Route Optimization',
+    description: (
+      <>
+        <strong>Program Mandate:</strong>
+        <br />
+        Customer runs thousands of trips daily, driving high transport costs. They needed a solution for route optimization and better load utilization.
+        <br />
+        <br />
+        <strong>Solution Approach:</strong>
+        <br />
+        AI-enabled TMS integrated with orders, fleet, and telematics to optimize loads and routes, re-optimize in real time, and provide a control-tower view. A vendor was shortlisted within budget, offering an AI-powered TMS tool already proven in the industry.
+      </>
+    ),
     icon: Truck,
   },
   {
-    industry: 'Financial Services',
-    title: 'AI-powered content engine',
-    description: 'Automated content generation and personalization at enterprise scale.',
+    industry: 'Finance',
+    title: 'AI-Powered Marketing',
+    description: (
+      <>
+        <strong>Program Mandate:</strong>
+        <br />
+        Address inefficiencies in agency-led creative production by enabling faster, scalable, and brand-compliant marketing content creation.
+        <br />
+        <br />
+        <strong>Solution Approach:</strong>
+        <br />
+        Enterprise AI solution integrated with existing MarTech to automate content generation and approvals. Projected outcomes: significantly reduced turnaround times, lower dependency on agencies, and the ability to scale personalised, multi-channel marketing content efficiently.
+      </>
+    ),
     icon: FileText,
   },
 ];
@@ -84,11 +118,11 @@ export const SuccessStories = () => {
                   {story.industry}
                 </span>
 
-                <h3 className="text-xl font-display font-semibold text-primary-foreground mb-3">
+                <h3 className="text-xl font-display font-semibold text-tyn-blue mb-3">
                   {story.title}
                 </h3>
 
-                <p className="text-primary-foreground/70">
+                <p className="text-black/90">
                   {story.description}
                 </p>
               </div>

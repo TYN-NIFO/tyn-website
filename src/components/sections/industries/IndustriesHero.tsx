@@ -45,7 +45,7 @@ export const IndustriesHero = () => {
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
             Enabling Enterprise Innovation Adoption{' '}
-            <span className="text-gradient">Across Sectors</span>
+            <span className="text-gradient">Across Industries</span>
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/70 mb-4 max-w-3xl animate-fade-up delay-200 leading-relaxed">

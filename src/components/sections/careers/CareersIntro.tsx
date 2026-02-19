@@ -46,10 +46,10 @@ export const CareersIntro = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-accent/30 transition-all duration-300"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-accent/30 transition-all duration-300 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-accent-foreground" />
+                <div className="icon-tyn w-10 h-10 rounded-lg flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="font-semibold text-foreground text-base mb-1">{item.label}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>

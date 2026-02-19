@@ -68,23 +68,23 @@ export const NIFOSnapshot = () => {
                 Why CXOs care:
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                NIFO bridges <span className="text-accent font-semibold">strategy</span> ↔{' '}
-                <span className="text-accent font-semibold">engineering</span> ↔{' '}
-                <span className="text-accent font-semibold">operations</span>, so programs don't stall after PoCs.
+                NIFO bridges <span className="text-tyn-blue font-semibold">strategy</span> ↔{' '}
+                <span className="text-tyn-blue font-semibold">engineering</span> ↔{' '}
+                <span className="text-tyn-blue font-semibold">operations</span>, so programs don't stall after PoCs.
               </p>
 
               {/* Visual representation */}
               <div className="mt-8 flex items-center justify-center gap-4">
-                <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-display font-bold text-sm text-center">Strategy</span>
+                <div className="w-24 h-24 rounded-full bg-tyn-blue flex items-center justify-center">
+                  <span className="text-tyn-yellow font-display font-bold text-sm text-center">Strategy</span>
                 </div>
                 <div className="w-8 h-0.5 bg-accent" />
-                <div className="w-24 h-24 rounded-full bg-accent flex items-center justify-center">
-                  <span className="text-accent-foreground font-display font-bold text-sm text-center">Engineering</span>
+                <div className="w-24 h-24 rounded-full bg-tyn-yellow flex items-center justify-center">
+                  <span className="text-tyn-blue font-display font-bold text-sm text-center">Engineering</span>
                 </div>
                 <div className="w-8 h-0.5 bg-accent" />
-                <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-display font-bold text-sm text-center">Operations</span>
+                <div className="w-24 h-24 rounded-full bg-tyn-blue flex items-center justify-center">
+                  <span className="text-tyn-yellow font-display font-bold text-sm text-center">Operations</span>
                 </div>
               </div>
             </div>

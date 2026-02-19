@@ -24,7 +24,7 @@ export const ClientRole = () => {
           </p>
         </div>
 
-        <div className="space-y-4 max-w-3xl mb-16">
+        <div className="space-y-4 max-w-full mb-16">
           {clientNeeds.map((need, idx) => (
             <div
               key={idx}
@@ -32,7 +32,8 @@ export const ClientRole = () => {
             >
               <div className="flex items-start gap-4">
                 <div className="w-1 h-8 rounded-full bg-accent flex-shrink-0 mt-0.5" />
-                <p className="text-lg text-primary-foreground/90 leading-relaxed">{need}</p>
+                <p className="text-lg text-primary-foreground/90 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {need}</p>
               </div>
             </div>
           ))}

@@ -1,14 +1,7 @@
 {
-  "/about/page": "app/about/page.js",
   "/accelerators/ynfinity/page": "app/accelerators/ynfinity/page.js",
-  "/accelerators/nifo/page": "app/accelerators/nifo/page.js",
-  "/accelerators/yzone/page": "app/accelerators/yzone/page.js",
-  "/careers/page": "app/careers/page.js",
-  "/ai-solutions/page": "app/ai-solutions/page.js",
-  "/contact/page": "app/contact/page.js",
   "/page": "app/page.js",
   "/industries/page": "app/industries/page.js",
-  "/services/ai-coe/page": "app/services/ai-coe/page.js",
-  "/services/page": "app/services/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/accelerators/nifo/page": "app/accelerators/nifo/page.js",
+  "/about/page": "app/about/page.js"
 }
