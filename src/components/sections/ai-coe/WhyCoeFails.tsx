@@ -32,8 +32,8 @@ export const WhyCoeFails = () => {
                 key={idx}
                 className="card-elevated rounded-2xl p-8 hover:-translate-y-0.5 transition-transform duration-300 group"
               >
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <Icon className="w-7 h-7 text-accent" />
+                <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                  <Icon className="w-7 h-7" />
                 </div>
                 <p className="text-base font-display font-semibold text-foreground leading-snug">
                   {c.text}

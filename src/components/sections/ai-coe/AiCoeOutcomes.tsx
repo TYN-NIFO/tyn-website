@@ -24,8 +24,8 @@ export const AiCoeOutcomes = () => {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
           {outcomes.map((o, idx) => (
             <div key={idx} className="metric-card text-center group">
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-accent/20 transition-colors">
-                <o.icon className="w-7 h-7 text-accent" />
+              <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                <o.icon className="w-7 h-7" />
               </div>
               <h3 className="text-base font-display font-bold text-foreground leading-snug">
                 {o.title}

@@ -98,8 +98,8 @@ export const IndustryGrid = () => {
                     onClick={() => setActiveIndustry(index)}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                        <Icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
+                      <div className="icon-tyn flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300">
+                        <Icon className="w-6 h-6 transition-colors duration-300" />
                       </div>
                       <div>
                         <h3 className="text-xl font-display font-bold text-foreground mb-1">

@@ -125,11 +125,10 @@ export const SolutionPortfolio = () => {
             <button
               key={cat}
               onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
-                activeCategory === cat
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${activeCategory === cat
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground'
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -149,8 +148,8 @@ export const SolutionPortfolio = () => {
                     onClick={() => handleExpand(solution.id)}
                   >
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                        <Icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
+                      <div className="icon-tyn flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300">
+                        <Icon className="w-6 h-6 transition-colors duration-300" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-display font-bold text-foreground mb-1 leading-tight">

@@ -47,8 +47,8 @@ export const EngagementModels = () => {
               key={idx}
               className="card-elevated rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
             >
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                <option.icon className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors" />
+              <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300">
+                <option.icon className="w-7 h-7 transition-colors" />
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-2">
                 {option.title}

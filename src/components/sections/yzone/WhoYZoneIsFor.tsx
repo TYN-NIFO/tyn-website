@@ -37,8 +37,8 @@ export const WhoYZoneIsFor = () => {
               key={idx}
               className="card-elevated rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                <a.icon className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors" />
+              <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300">
+                <a.icon className="w-7 h-7 transition-colors" />
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">{a.title}</h3>
               <p className="text-base text-muted-foreground leading-relaxed">{a.description}</p>
