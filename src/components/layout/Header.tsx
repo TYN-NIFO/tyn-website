@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -89,6 +90,11 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  // Force solid navbar on specific pages
+  const forceSolidNav = pathname === '/about' || pathname === '/careers';
+  const isSolid = isScrolled || forceSolidNav;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +106,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSolid
         ? 'bg-background/95 backdrop-blur-md shadow-md'
         : 'bg-transparent'
         }`}
@@ -110,9 +116,9 @@ export const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img
-              src={isScrolled ? logoDark : logoLight}
+              src={isSolid ? logoDark : logoLight}
               alt="The Yellow Network"
-              className={isScrolled ? 'h-12 md:h-14 w-auto transition-all' : 'h-16 md:h-20 w-auto transition-all'}
+              className={isSolid ? 'h-12 md:h-14 w-auto transition-all' : 'h-16 md:h-20 w-auto transition-all'}
             />
           </a>
 
@@ -128,7 +134,7 @@ export const Header = () => {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isScrolled
+                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
                       ? 'text-foreground hover:text-tyn-blue hover:bg-muted'
                       : 'text-primary-foreground/90 hover:text-accent'
                       }`}
@@ -137,7 +143,7 @@ export const Header = () => {
                   </a>
                 ) : (
                   <button
-                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isScrolled
+                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
                       ? 'text-foreground hover:text-tyn-blue hover:bg-muted'
                       : 'text-primary-foreground/90 hover:text-accent'
                       }`}
@@ -199,9 +205,9 @@ export const Header = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`} />
+              <X className={`w-6 h-6 ${isSolid ? 'text-foreground' : 'text-primary-foreground'}`} />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`} />
+              <Menu className={`w-6 h-6 ${isSolid ? 'text-foreground' : 'text-primary-foreground'}`} />
             )}
           </button>
         </div>

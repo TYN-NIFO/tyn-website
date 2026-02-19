@@ -67,8 +67,8 @@ export const WhatMakesDifferent = () => {
                 key={idx}
                 className="bg-card border border-border rounded-xl p-6 flex items-start gap-4 hover:border-accent/30 transition-all duration-300"
               >
-                <div className="w-1 h-8 rounded-full bg-accent flex-shrink-0 mt-0.5" />
-                <p className="text-lg font-medium text-foreground leading-relaxed">{need}</p>
+                <div className="w-2 h-8 rounded-full bg-accent flex-shrink-0 mt-0.5" />
+                <p className="text-lg font-medium text-foreground leading-relaxed whitespace-nowrap">{need}</p>
               </div>
             ))}
           </div>

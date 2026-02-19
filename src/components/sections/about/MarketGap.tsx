@@ -40,7 +40,7 @@ export const MarketGap = () => {
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent/10 to-transparent" />
           <div className="relative z-10 max-w-3xl space-y-4">
             <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
-              Traditional consultancies focused on strategy. Vendors pushed tools. System integrators optimized delivery — but no one owned <span className="px-1 py-0.5 bg-accent/30 rounded-sm">the end-to-end orchestration.</span>
+              Traditional consultancies focused on strategy. Vendors pushed tools. System integrators optimized delivery — but no one owned <span className="px-1 py-0.5 bg-accent/30 rounded-sm whitespace-nowrap">the end-to-end orchestration.</span>
             </p>
             <p className="text-xl md:text-2xl font-display font-bold text-primary-foreground">
               TYN was built to solve exactly that.
