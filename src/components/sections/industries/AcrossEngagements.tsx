@@ -19,7 +19,7 @@ export const AcrossEngagements = () => {
       <div className="relative z-10 container-main">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold tracking-widest mb-6">
-            ACROSS ENGAGEMENTS
+            OUR VALUES
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground">
             Across Engagements

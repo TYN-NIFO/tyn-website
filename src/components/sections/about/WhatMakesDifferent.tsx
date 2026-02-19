@@ -65,10 +65,10 @@ export const WhatMakesDifferent = () => {
             {clientNeeds.map((need, idx) => (
               <div
                 key={idx}
-                className="bg-card border border-border rounded-xl p-6 flex items-start gap-4 hover:border-accent/30 transition-all duration-300"
+                className="bg-card border border-border rounded-xl p-6 flex items-start gap-4 hover:border-accent/30 transition-all duration-300 h-full"
               >
                 <div className="w-2 h-8 rounded-full bg-accent flex-shrink-0 mt-0.5" />
-                <p className="text-lg font-medium text-foreground leading-relaxed whitespace-nowrap">{need}</p>
+                <p className="text-lg font-medium text-foreground leading-relaxed">{need}</p>
               </div>
             ))}
           </div>
