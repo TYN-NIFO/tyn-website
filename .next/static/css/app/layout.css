@@ -671,6 +671,9 @@ h1,
 /* Yellow accent underline for headings */
 /* Button variations */
 /* Angled clip-path shape — brand signature */
+.clip-angled {
+    clip-path: polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%);
+  }
 .btn-hero{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -2243,6 +2246,9 @@ h1,
 .bg-yellow-dark\/5{
   background-color: hsl(var(--yellow-dark) / 0.05);
 }
+.bg-tyn-blue\/10{
+  background-color: rgb(7 55 99 / 0.1);
+}
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -3600,6 +3606,12 @@ h1,
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.group:hover .group-hover\:scale-110{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .group:hover .group-hover\:border-accent{
   border-color: hsl(var(--accent));
 }
@@ -3618,6 +3630,10 @@ h1,
 
 .group:hover .group-hover\:bg-accent\/40{
   background-color: hsl(var(--accent) / 0.4);
+}
+
+.group:hover .group-hover\:bg-accent{
+  background-color: hsl(var(--accent));
 }
 
 .group:hover .group-hover\:text-accent{
@@ -4454,6 +4470,14 @@ h1,
     margin-bottom: 0px;
   }
 
+  .md\:mb-16{
+    margin-bottom: 4rem;
+  }
+
+  .md\:mb-4{
+    margin-bottom: 1rem;
+  }
+
   .md\:block{
     display: block;
   }
@@ -4570,6 +4594,10 @@ h1,
     gap: 1.5rem;
   }
 
+  .md\:gap-8{
+    gap: 2rem;
+  }
+
   .md\:p-10{
     padding: 2.5rem;
   }
@@ -4641,6 +4669,11 @@ h1,
   .md\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .md\:opacity-0{
