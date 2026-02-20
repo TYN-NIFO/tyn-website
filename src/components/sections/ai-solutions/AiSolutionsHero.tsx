@@ -1,35 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface Dot { top: string; left: string; animationDelay: string; animation: string; }
 interface Line { top: string; left: string; width: string; transform: string; }
 
-
 export const AiSolutionsHero = () => {
-  const [dots, setDots] = useState<Dot[]>([]);
-  const [lines, setLines] = useState<Line[]>([]);
-
-  useEffect(() => {
-    setDots(
-      [...Array(30)].map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 3}s`,
-        animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
-      }))
-    );
-    setLines(
-      [...Array(8)].map(() => ({
-        top: `${20 + Math.random() * 60}%`,
-        left: `${Math.random() * 30}%`,
-        width: `${200 + Math.random() * 300}px`,
-        transform: `rotate(${-20 + Math.random() * 40}deg)`,
-      }))
-    );
-  }, []);
+  const [dots] = useState<Dot[]>(() =>
+    [...Array(30)].map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
+    })),
+  );
+  const [lines] = useState<Line[]>(() =>
+    [...Array(8)].map(() => ({
+      top: `${20 + Math.random() * 60}%`,
+      left: `${Math.random() * 30}%`,
+      width: `${200 + Math.random() * 300}px`,
+      transform: `rotate(${-20 + Math.random() * 40}deg)`,
+    })),
+  );
 
   const scrollToContent = () => {
     document.getElementById('solutions-grid')?.scrollIntoView({ behavior: 'smooth' });

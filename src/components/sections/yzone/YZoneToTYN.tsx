@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 const yzoneLogo = '/assets/yzone-logo.png';
@@ -46,7 +47,7 @@ export const YZoneToTYN = () => {
             <div className="flex flex-col items-center gap-4">
               {/* Top: yZone (highlighted) */}
               <div className="relative rounded-2xl border-2 border-accent bg-accent/10 p-6 text-center min-w-[160px] shadow-glow animate-pulse-glow">
-                <img src={yzoneLogo} alt="yZone" className="h-14 w-auto object-contain mx-auto" />
+                <Image src={yzoneLogo} alt="yZone" width={140} height={56} className="h-14 w-auto object-contain mx-auto" />
                 <p className="text-xs mt-2 text-primary-foreground/60">AI Talent Accelerator</p>
               </div>
               {/* Bottom row: NIFO & Ynfinity */}
@@ -58,7 +59,7 @@ export const YZoneToTYN = () => {
                       key={acc.alt}
                       className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 text-center min-w-[140px] hover:border-primary-foreground/30 transition-all duration-300"
                     >
-                      <img src={acc.logo} alt={acc.alt} className="h-12 w-auto object-contain mx-auto" />
+                      <Image src={acc.logo} alt={acc.alt} width={120} height={48} className="h-12 w-auto object-contain mx-auto" />
                       <p className="text-xs mt-2 text-primary-foreground/40">{acc.subtitle}</p>
                     </div>
                   ))}

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -68,7 +69,7 @@ export const NifoHero = () => {
 
 
           <div className="mb-6 animate-fade-up delay-100">
-            <img src={nifoLogo} alt="NiFo" className="h-16 md:h-20 lg:h-24 brightness-0 invert" />
+            <Image src={nifoLogo} alt="NiFo" width={200} height={96} className="h-16 md:h-20 lg:h-24 brightness-0 invert" />
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">

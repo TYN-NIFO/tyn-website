@@ -1,23 +1,19 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 interface Dot { top: string; left: string; animationDelay: string; animation: string; }
 
 export const IndustriesHero = () => {
-  const [dots, setDots] = useState<Dot[]>([]);
-
-  useEffect(() => {
-    setDots(
-      [...Array(40)].map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 3}s`,
-        animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
-      }))
-    );
-  }, []);
+  const [dots] = useState<Dot[]>(() =>
+    [...Array(40)].map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
+    })),
+  );
 
   const scrollToGrid = () => {
     document.getElementById('industry-grid')?.scrollIntoView({ behavior: 'smooth' });

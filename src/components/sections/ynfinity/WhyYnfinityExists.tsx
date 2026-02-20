@@ -1,31 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface Dot { top: string; left: string; animation: string; }
 interface Line { top: string; left: string; width: string; transform: string; }
 
 export const WhyYnfinityExists = () => {
-  const [dots, setDots] = useState<Dot[]>([]);
-  const [lines, setLines] = useState<Line[]>([]);
-
-  useEffect(() => {
-    setDots(
-      [...Array(20)].map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
-      }))
-    );
-    setLines(
-      [...Array(6)].map(() => ({
-        top: `${20 + Math.random() * 60}%`,
-        left: `${Math.random() * 20}%`,
-        width: `${150 + Math.random() * 200}px`,
-        transform: `rotate(${-30 + Math.random() * 60}deg)`,
-      }))
-    );
-  }, []);
+  const [dots] = useState<Dot[]>(() =>
+    [...Array(20)].map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
+    })),
+  );
+  const [lines] = useState<Line[]>(() =>
+    [...Array(6)].map(() => ({
+      top: `${20 + Math.random() * 60}%`,
+      left: `${Math.random() * 20}%`,
+      width: `${150 + Math.random() * 200}px`,
+      transform: `rotate(${-30 + Math.random() * 60}deg)`,
+    })),
+  );
 
   return (
     <section id="why-ynfinity" className="section-padding bg-background pattern-grid">

@@ -4,6 +4,7 @@ import { client } from "@/lib/sanity/client";
 import { GET_BLOG_BY_SLUG, GET_RELATED_BLOGS } from "@/lib/sanity/queries";
 import { Blog } from "@/lib/sanity/types";
 import { PortableText } from "@/components/ui/PortableText";
+import type { PortableTextBlock } from "@portabletext/types";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -123,7 +124,7 @@ export default async function BlogPage({ params }: PageProps) {
 
                     {/* Content */}
                     <div className="prose prose-lg max-w-none text-foreground prose-headings:text-foreground prose-p:text-muted-foreground">
-                        <PortableText value={blog.content} />
+                        <PortableText value={blog.content as PortableTextBlock[]} />
                     </div>
                 </article>
 
