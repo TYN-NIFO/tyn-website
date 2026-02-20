@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ArrowRight, Calendar, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -18,19 +19,19 @@ export const ServicesCTA = () => {
               Choose the service that matches your priority — or let us help you decide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact?source_page=Services&cta=Discuss-with-portfolio">
+              <Link href="/contact?source_page=Services&cta=Discuss-with-portfolio">
                 <Button className="btn-hero group">
                   <Calendar className="mr-2 w-5 h-5" />
                   Discuss with our portfolio
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </a>
-              <a href="/#engagement-models">
+              </Link>
+              <Link href="/#engagement-models">
                 <Button className="btn-outline-hero group">
                   <Search className="mr-2 w-5 h-5 text-accent group-hover:text-current transition-colors" />
                   Explore Engagement Models
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

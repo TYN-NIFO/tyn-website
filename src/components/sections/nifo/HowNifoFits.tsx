@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 const nifoLogo = '/assets/nifo-logo.png';
@@ -37,16 +38,16 @@ export const HowNifoFits = () => {
             </h4>
             <div className="flex flex-col items-center gap-4">
               <div className="relative rounded-2xl border-2 border-accent bg-accent/10 p-6 text-center min-w-[160px] shadow-glow animate-pulse-glow">
-                <img src={nifoLogo} alt="NiFo" className="h-14 w-auto object-contain mx-auto" />
+                <Image src={nifoLogo} alt="NiFo" width={140} height={56} className="h-14 w-auto object-contain mx-auto" />
                 <p className="text-xs mt-2 text-primary-foreground/60">Execution Accelerator</p>
               </div>
               <div className="flex gap-4">
                 <div className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 text-center min-w-[140px] hover:border-primary-foreground/30 transition-all duration-300">
-                  <img src={ynfinityLogo} alt="Ynfinity" className="h-12 w-auto object-contain mx-auto" />
+                  <Image src={ynfinityLogo} alt="Ynfinity" width={120} height={48} className="h-12 w-auto object-contain mx-auto" />
                   <p className="text-xs mt-2 text-primary-foreground/40">Continuous Learning</p>
                 </div>
                 <div className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 text-center min-w-[140px] hover:border-primary-foreground/30 transition-all duration-300">
-                  <img src={yzoneLogo} alt="yZone" className="h-12 w-auto object-contain mx-auto" />
+                  <Image src={yzoneLogo} alt="yZone" width={120} height={48} className="h-12 w-auto object-contain mx-auto" />
                   <p className="text-xs mt-2 text-primary-foreground/40">AI Talent Accelerator</p>
                 </div>
               </div>

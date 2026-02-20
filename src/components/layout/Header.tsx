@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -120,13 +122,15 @@ export const Header = () => {
       <nav className="container-main">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center">
-            <img
+          <Link href="/" className="flex items-center">
+            <Image
               src={isSolid ? logoDark : logoLight}
               alt="The Yellow Network"
+              width={180}
+              height={56}
               className={isSolid ? 'h-12 md:h-14 w-auto transition-all' : 'h-12 md:h-12 w-auto mt-3 transition-all'}
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
@@ -144,7 +148,7 @@ export const Header = () => {
                   onMouseLeave={() => setActiveMenu(null)}
                 >
                   {item.href ? (
-                    <a
+                    <Link
                       href={item.href}
                       className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
                         ? (isActive || activeMenu === item.label)
@@ -156,10 +160,14 @@ export const Header = () => {
                         }`}
                     >
                       {item.label}
+<<<<<<< HEAD
                       {item.megaMenu && (
                         <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
                       )}
                     </a>
+=======
+                    </Link>
+>>>>>>> da0a7ff4313254f589c6505ef3c9914340dcf017
                   ) : (
                     <button
                       className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
@@ -188,16 +196,18 @@ export const Header = () => {
                             <div key={section.title}>
                               <div className="space-y-1">
                                 {section.items.map((menuItem) => (
-                                  <a
+                                  <Link
                                     key={menuItem.title}
                                     href={menuItem.href}
                                     className="block p-3 rounded-lg hover:bg-muted transition-colors group"
                                   >
                                     <div className="font-medium text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
                                       {menuItem.logo ? (
-                                        <img
+                                        <Image
                                           src={menuItem.logo}
                                           alt={menuItem.title}
+                                          width={120}
+                                          height={48}
                                           className={`w-auto object-contain transition-all 
                                             ${menuItem.title === 'yZone' ? 'h-12' : menuItem.title === 'Ynfinity' ? 'h-10' : 'h-7'}
                                           `}
@@ -209,7 +219,7 @@ export const Header = () => {
                                     <div className="text-sm text-muted-foreground mt-1">
                                       {menuItem.description}
                                     </div>
-                                  </a>
+                                  </Link>
                                 ))}
                               </div>
                             </div>
@@ -225,9 +235,9 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <a href="/contact?source_page=Header&cta=Contact-Us">
+            <Link href="/contact?source_page=Header&cta=Contact-Us">
               <Button className="btn-hero">Contact Us</Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -249,10 +259,16 @@ export const Header = () => {
             {navItems.map((item) => (
               <div key={item.label} className="px-4 py-2">
                 {item.href ? (
+<<<<<<< HEAD
                   <a href={item.href} className="flex items-center justify-between py-2 font-medium">
                     {item.label}
                     {item.megaMenu && <ChevronDown className="w-4 h-4" />}
                   </a>
+=======
+                  <Link href={item.href} className="block py-2 font-medium">
+                    {item.label}
+                  </Link>
+>>>>>>> da0a7ff4313254f589c6505ef3c9914340dcf017
                 ) : (
                   <div>
                     <div className="py-2 font-medium flex items-center justify-between">
@@ -262,13 +278,13 @@ export const Header = () => {
                     <div className="pl-4 space-y-1">
                       {item.megaMenu?.map((section) =>
                         section.items.map((menuItem) => (
-                          <a
+                          <Link
                             key={menuItem.title}
                             href={menuItem.href}
                             className="block py-2 text-sm text-muted-foreground hover:text-foreground"
                           >
                             {menuItem.title}
-                          </a>
+                          </Link>
                         ))
                       )}
                     </div>
@@ -277,9 +293,9 @@ export const Header = () => {
               </div>
             ))}
             <div className="px-4 pt-4">
-              <a href="/contact?source_page=Header&cta=Contact-Us">
+              <Link href="/contact?source_page=Header&cta=Contact-Us">
                 <Button className="btn-hero w-full">Contact Us</Button>
-              </a>
+              </Link>
             </div>
           </div>
         )}

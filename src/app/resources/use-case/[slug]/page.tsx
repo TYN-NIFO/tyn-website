@@ -4,6 +4,7 @@ import { client } from "@/lib/sanity/client";
 import { GET_YNSIGHT_BY_SLUG } from "@/lib/sanity/queries";
 import { Ynsight } from "@/lib/sanity/types";
 import { PortableText } from "@/components/ui/PortableText";
+import type { PortableTextBlock } from "@portabletext/types";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
@@ -131,7 +132,7 @@ export default async function UseCasePage({ params }: PageProps) {
                             <div className="prose prose-lg max-w-none text-muted-foreground">
                                 {typeof ynsight.impact === "string"
                                     ? <p className="leading-relaxed">{ynsight.impact}</p>
-                                    : <PortableText value={ynsight.impact} />}
+                                    : <PortableText value={ynsight.impact as PortableTextBlock[]} />}
                             </div>
                         </section>
 

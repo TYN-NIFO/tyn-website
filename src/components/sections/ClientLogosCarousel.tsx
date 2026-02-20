@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 const clientLogos = [
     { src: '/assets/client logos/CoreStack logo.png', alt: 'CoreStack' },
     { src: '/assets/client logos/Pluralsight_Logo.png', alt: 'Pluralsight' },
@@ -31,9 +33,11 @@ export const ClientLogosCarousel = () => {
                             key={logo.alt}
                             className="flex-shrink-0 flex items-center justify-center h-16"
                         >
-                            <img
+                            <Image
                                 src={logo.src}
                                 alt={logo.alt}
+                                width={180}
+                                height={64}
                                 className="h-16 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
                             />
                         </div>
@@ -44,9 +48,11 @@ export const ClientLogosCarousel = () => {
                             key={`${logo.alt}-dup`}
                             className="flex-shrink-0 flex items-center justify-center h-16"
                         >
-                            <img
+                            <Image
                                 src={logo.src}
                                 alt={logo.alt}
+                                width={180}
+                                height={64}
                                 className="h-16 w-auto max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
                             />
                         </div>

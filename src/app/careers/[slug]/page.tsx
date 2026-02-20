@@ -4,6 +4,7 @@ import { client } from "@/lib/sanity/client";
 import { GET_OPEN_POSITION_BY_SLUG } from "@/lib/sanity/queries";
 import { OpenPosition } from "@/lib/sanity/types";
 import { PortableText } from "@/components/ui/PortableText";
+import type { PortableTextBlock } from "@portabletext/types";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -87,7 +88,7 @@ export default async function JobPage({ params }: PageProps) {
                             <section>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4">About the Role</h2>
                                 <div className="prose prose-lg max-w-none text-gray-700">
-                                    <PortableText value={position.description} />
+                                    <PortableText value={position.description as PortableTextBlock[]} />
                                 </div>
                             </section>
                         )}
@@ -96,7 +97,7 @@ export default async function JobPage({ params }: PageProps) {
                             <section>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Responsibilities</h2>
                                 <div className="prose prose-lg max-w-none text-gray-700">
-                                    <PortableText value={position.responsibilities} />
+                                    <PortableText value={position.responsibilities as PortableTextBlock[]} />
                                 </div>
                             </section>
                         )}
@@ -105,7 +106,7 @@ export default async function JobPage({ params }: PageProps) {
                             <section>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Requirements</h2>
                                 <div className="prose prose-lg max-w-none text-gray-700">
-                                    <PortableText value={position.requirements} />
+                                    <PortableText value={position.requirements as PortableTextBlock[]} />
                                 </div>
                             </section>
                         )}

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { Suspense, useMemo } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Hammer, ShoppingBag, Building2 } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -92,13 +92,22 @@ const services = [
     },
 ];
 
+function ServicesContentFallback() {
+    return (
+        <>
+            <ServiceTabPills services={services} activeId={services[0].id} onTabChange={() => {}} />
+            <ServiceContent services={services} activeId={services[0].id} />
+        </>
+    );
+}
+
 export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-background">
             <Header />
             <main>
                 <ServicesHero />
-                <Suspense fallback={null}>
+                <Suspense fallback={<ServicesContentFallback />}>
                     <ServicesContent />
                 </Suspense>
                 {/* <EngagementModels />
@@ -112,23 +121,23 @@ export default function ServicesPage() {
 
 function ServicesContent() {
     const searchParams = useSearchParams();
-    const tabParam = searchParams.get('tab');
-    const validTabs = services.map((s) => s.id);
-    const initialTab = tabParam && validTabs.includes(tabParam) ? tabParam : services[0].id;
-    const [activeId, setActiveId] = useState(initialTab);
+    const pathname = usePathname();
+    const router = useRouter();
 
-    // Re-sync if the URL param changes (e.g. back/forward navigation)
-    useEffect(() => {
-        const tab = searchParams.get('tab');
-        if (tab && validTabs.includes(tab)) {
-            setActiveId(tab);
-        }
-    }, [searchParams]);
+    const validTabs = useMemo(() => services.map((s) => s.id), []);
+    const tab = searchParams.get('tab');
+    const activeId = tab && validTabs.includes(tab) ? tab : services[0].id;
+
+    const handleTabChange = (id: string) => {
+        const nextParams = new URLSearchParams(searchParams.toString());
+        nextParams.set('tab', id);
+        router.replace(`${pathname}?${nextParams.toString()}`, { scroll: false });
+    };
 
     return (
         <>
             {/* Sticky pills span across services + engagement models */}
-            <ServiceTabPills services={services} activeId={activeId} onTabChange={setActiveId} />
+            <ServiceTabPills services={services} activeId={activeId} onTabChange={handleTabChange} />
             <ServiceContent services={services} activeId={activeId} />
         </>
     );

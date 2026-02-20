@@ -1,24 +1,20 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface Dot { top: string; left: string; animationDelay: string; animation: string; }
 
 export const ServicesHero = () => {
-  const [dots, setDots] = useState<Dot[]>([]);
-
-  useEffect(() => {
-    setDots(
-      [...Array(40)].map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 3}s`,
-        animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
-      }))
-    );
-  }, []);
+  const [dots] = useState<Dot[]>(() =>
+    [...Array(40)].map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
+    })),
+  );
 
   const scrollToServices = () => {
     document.getElementById('services-tabs')?.scrollIntoView({ behavior: 'smooth' });

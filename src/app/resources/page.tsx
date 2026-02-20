@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { HeaderWrapper } from "@/components/layout/HeaderWrapper";
 import { FooterWrapper } from "@/components/layout/FooterWrapper";
 import { ResourcesList } from "@/components/sections/resources/ResourcesList";
@@ -31,11 +32,13 @@ export default async function ResourcesPage() {
         <div className="min-h-screen bg-background flex flex-col">
             <HeaderWrapper />
             <main className="flex-grow pt-20">
-                <ResourcesList
-                    blogs={blogs}
-                    whitepapers={mergedWhitepapers}
-                    ynsights={ynsights ?? []}
-                />
+                <Suspense fallback={<div className="section-padding container-main min-h-screen flex items-center justify-center">Loading...</div>}>
+                    <ResourcesList
+                        blogs={blogs}
+                        whitepapers={mergedWhitepapers}
+                        ynsights={ynsights ?? []}
+                    />
+                </Suspense>
             </main>
             <FooterWrapper />
         </div>

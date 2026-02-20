@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const nifoLogo = '/assets/nifo-logo.png';
 
 interface NifoInlineLogoProps {
@@ -6,9 +8,11 @@ interface NifoInlineLogoProps {
 }
 
 export const NifoInlineLogo = ({ className = 'h-6', invert = false }: NifoInlineLogoProps) => (
-  <img
+  <Image
     src={nifoLogo}
     alt="NiFo"
+    width={80}
+    height={24}
     className={`inline-block align-baseline ${invert ? 'brightness-0 invert' : ''} ${className}`}
   />
 );

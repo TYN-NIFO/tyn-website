@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -8,27 +9,22 @@ interface Dot { top: string; left: string; animationDelay: string; animation: st
 interface Line { top: string; left: string; width: string; transform: string; }
 
 export const YZoneHero = () => {
-  const [dots, setDots] = useState<Dot[]>([]);
-  const [lines, setLines] = useState<Line[]>([]);
-
-  useEffect(() => {
-    setDots(
-      [...Array(30)].map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 3}s`,
-        animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
-      }))
-    );
-    setLines(
-      [...Array(8)].map(() => ({
-        top: `${20 + Math.random() * 60}%`,
-        left: `${Math.random() * 30}%`,
-        width: `${200 + Math.random() * 300}px`,
-        transform: `rotate(${-20 + Math.random() * 40}deg)`,
-      }))
-    );
-  }, []);
+  const [dots] = useState<Dot[]>(() =>
+    [...Array(30)].map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
+    })),
+  );
+  const [lines] = useState<Line[]>(() =>
+    [...Array(8)].map(() => ({
+      top: `${20 + Math.random() * 60}%`,
+      left: `${Math.random() * 30}%`,
+      width: `${200 + Math.random() * 300}px`,
+      transform: `rotate(${-20 + Math.random() * 40}deg)`,
+    })),
+  );
 
   const scrollToContent = () => {
     document.getElementById('why-yzone')?.scrollIntoView({ behavior: 'smooth' });
@@ -61,7 +57,11 @@ export const YZoneHero = () => {
 
 
           <div className="mb-6 animate-fade-up delay-100">
+<<<<<<< HEAD
             {/* <img src="/assets/Yzone Logo White.png" alt="yZone" className="h-16 md:h-24 lg:h-36" /> */}
+=======
+            <Image src="/assets/yzone-logo.png" alt="yZone" width={200} height={128} className="h-16 md:h-24 lg:h-32" />
+>>>>>>> da0a7ff4313254f589c6505ef3c9914340dcf017
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -96,9 +97,9 @@ export const ContactForm = () => {
         <p className="text-lg text-muted-foreground mb-8">
           Our team will get back to you shortly.
         </p>
-        <a href="/">
+        <Link href="/">
           <Button className="btn-hero">Return to homepage</Button>
-        </a>
+        </Link>
       </div>
     );
   }

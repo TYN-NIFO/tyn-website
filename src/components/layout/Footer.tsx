@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
 const logoLight = '/assets/logo-light.png';
@@ -32,13 +34,15 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="/" className="inline-block mb-6">
-              <img
+            <Link href="/" className="inline-block mb-6">
+              <Image
                 src={logoLight}
                 alt="The Yellow Network"
+                width={180}
+                height={56}
                 className="h-14 w-auto"
               />
-            </a>
+            </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
               We help leaders cut through the AI noise, choose what actually matters, and implement systems that intelligently create real business lift.
             </p>
