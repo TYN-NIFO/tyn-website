@@ -27,7 +27,7 @@ export const ServicesCTA = () => {
               </a>
               <a href="/#engagement-models">
                 <Button className="btn-outline-hero group">
-                  <Search className="mr-2 w-5 h-5 text-accent group-hover:text-primary transition-colors" />
+                  <Search className="mr-2 w-5 h-5 text-accent group-hover:text-current transition-colors" />
                   Explore Engagement Models
                 </Button>
               </a>
