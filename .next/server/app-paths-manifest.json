@@ -1,3 +1,8 @@
 {
-  "/page": "app/page.js"
+  "/accelerators/ynfinity/page": "app/accelerators/ynfinity/page.js",
+  "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js",
+  "/resources/page": "app/resources/page.js",
+  "/resources/use-case/[slug]/page": "app/resources/use-case/[slug]/page.js"
 }

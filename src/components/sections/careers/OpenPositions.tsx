@@ -1,32 +1,14 @@
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { OpenPosition } from '@/lib/sanity/types';
 
 const careersTeamImg = '/assets/careers-team.png';
 
-const positions = [
-  {
-    title: 'AI Solutions Architect',
-    location: 'Remote',
-    experience: 'Senior',
-    type: 'Full-Time',
-    description: 'Lead the design and delivery of production-grade AI systems for enterprise clients across financial services, healthcare, and manufacturing.',
-  },
-  {
-    title: 'Enterprise AI Engineer',
-    location: 'Hybrid — US / India',
-    experience: 'Mid-Senior',
-    type: 'Full-Time',
-    description: 'Build and deploy AI/ML pipelines, agentic systems, and intelligent workflows within complex enterprise environments.',
-  },
-  {
-    title: 'AI Transformation Consultant',
-    location: 'Remote',
-    experience: 'Mid-Senior',
-    type: 'Full-Time',
-    description: 'Drive AI strategy, stakeholder alignment, and program orchestration for large-scale enterprise transformation initiatives.',
-  },
-];
+interface OpenPositionsProps {
+  positions: OpenPosition[];
+}
 
-export const OpenPositions = () => {
+export const OpenPositions = ({ positions }: OpenPositionsProps) => {
   return (
     <section className="bg-background pattern-grid section-padding">
       <div className="container-main">
@@ -47,31 +29,41 @@ export const OpenPositions = () => {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {positions.map((position, index) => (
-            <div
-              key={index}
-              className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow duration-300 flex flex-col"
-            >
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {position.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                {position.location} &nbsp;|&nbsp; {position.experience} &nbsp;|&nbsp; {position.type}
-              </p>
-              <p className="text-foreground/70 mb-6 flex-1">
-                {position.description}
-              </p>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-accent-foreground hover:text-accent transition-colors group"
+        {positions.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {positions.map((position) => (
+              <div
+                key={position._id}
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow duration-300 flex flex-col"
               >
-                View Details / Apply
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          ))}
-        </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {position.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {position.location} &nbsp;|&nbsp; {position.experience} &nbsp;|&nbsp; {position.employmentType}
+                </p>
+                {/* Description is PortableText, but for card we might want a snippet. 
+                    Assuming description is array, we might not render it here directly or need a helper.
+                    For now, I'll link to detail page. */}
+                <div className="text-foreground/70 mb-6 flex-1 line-clamp-3">
+                  {/* Simplified rendering of blocks if needed, or just static text if description is complex */}
+                  Check details for more info.
+                </div>
+                <Link
+                  href={`/careers/${position.slug.current}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent-foreground hover:text-accent transition-colors group mt-auto"
+                >
+                  View Details / Apply
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 bg-muted/30 rounded-xl border border-border">
+            <p className="text-lg text-muted-foreground">No open positions at the moment. Please check back later.</p>
+          </div>
+        )}
       </div>
     </section>
   );
