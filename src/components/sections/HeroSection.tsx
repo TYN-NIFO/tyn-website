@@ -27,7 +27,7 @@ export const HeroSection = () => {
         {/* Main Headline */}
         <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100">
           Turn AI ambition into </h1>
-        <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100"> production grade outcomes{' '}
+        <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100 whitespace-nowrap"> production grade outcomes{' '}
           <span className="text-gradient"></span>
         </h1>
 

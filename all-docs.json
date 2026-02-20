@@ -1,0 +1,387 @@
+[
+  {
+    "_createdAt": "2025-05-06T09:36:10Z",
+    "_id": "0d5c1946-c947-40fb-a155-518e5e82f4ca",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AI-Driven Idle Time & Cycle Time Optimization"
+  },
+  {
+    "_createdAt": "2025-05-06T09:09:29Z",
+    "_id": "1cccbc2b-8329-4baf-bac1-588003e89497",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AI-Driven Green Anode Production Optimization"
+  },
+  {
+    "_createdAt": "2025-05-06T09:04:59Z",
+    "_id": "24c6f531-cacd-4445-9390-318fe57e816d",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AQI Particulate Matter Settlement"
+  },
+  {
+    "_createdAt": "2025-05-06T08:12:01Z",
+    "_id": "25277443-66a7-4aa1-a5a5-890acb642687",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Non-Invasive health assessment"
+  },
+  {
+    "_createdAt": "2025-05-02T05:36:39Z",
+    "_id": "349ac5ba-55f2-4b50-acbf-6fd128a46db7",
+    "_type": "Ynsight",
+    "name": null,
+    "title": "AI-Driven Demand Forecasting for Retail"
+  },
+  {
+    "_createdAt": "2025-05-06T09:26:40Z",
+    "_id": "3da5cd5e-6dcf-4a81-8e75-0b2d5a8ca8f5",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Zero-Defect Manufacturing"
+  },
+  {
+    "_createdAt": "2025-05-06T09:15:31Z",
+    "_id": "488ab2ce-906f-486c-aa23-b78b21b5ff1d",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AI-Powered Potline Optimization"
+  },
+  {
+    "_createdAt": "2025-05-06T09:30:39Z",
+    "_id": "520f9fa8-ac10-46a9-b083-bcc615838daf",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Accelerated Valve Design"
+  },
+  {
+    "_createdAt": "2025-05-06T09:21:39Z",
+    "_id": "6cd5ce2e-9c0e-41f2-87e1-d95716d73409",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Pot Life Span Expansion"
+  },
+  {
+    "_createdAt": "2025-05-06T10:05:39Z",
+    "_id": "6e581ead-9bf5-4ca6-b2b5-25dd4f18e729",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Omnichannel Fulfillment Engine"
+  },
+  {
+    "_createdAt": "2025-05-06T08:21:25Z",
+    "_id": "849ae63e-d1d9-4bdf-a36d-1fc4edc5e808",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AI-driven mass record analysis"
+  },
+  {
+    "_createdAt": "2025-05-06T09:13:00Z",
+    "_id": "8588b162-9550-44e5-8041-7bc15d680595",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Precision Molten Metal Temperature Measurement"
+  },
+  {
+    "_createdAt": "2025-05-06T09:48:27Z",
+    "_id": "8c2b2fbb-5588-407c-9b37-a42f51720767",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Smart Warehouse Operations"
+  },
+  {
+    "_createdAt": "2025-05-06T09:39:48Z",
+    "_id": "932ff40f-08b4-4e29-ac2b-4e302fabdf47",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Agile Merchandising Model"
+  },
+  {
+    "_createdAt": "2025-05-06T09:02:18Z",
+    "_id": "9f10c397-ac82-456a-a813-81cdfe7b4db4",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Smart Root Cause Analysis System"
+  },
+  {
+    "_createdAt": "2025-05-06T08:30:50Z",
+    "_id": "b4af6bd9-a3a0-49f9-a4a8-8cc3171ce42d",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Instant underwriting intelligence"
+  },
+  {
+    "_createdAt": "2025-05-06T08:56:26Z",
+    "_id": "c724ff44-1190-4538-b50d-af3f028726d2",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Advanced Diagnostic Software for Fleet Uptime"
+  },
+  {
+    "_createdAt": "2025-05-06T09:44:12Z",
+    "_id": "e68e5f37-c992-4c62-9883-15856b745c06",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AI-driven Loss Prevention"
+  },
+  {
+    "_createdAt": "2025-05-06T08:46:57Z",
+    "_id": "e9a6bf94-79cc-4533-9125-670729ac0012",
+    "_type": "ynsight",
+    "name": null,
+    "title": "AI-Enhanced Transmission Assembly"
+  },
+  {
+    "_createdAt": "2025-05-06T10:18:23Z",
+    "_id": "f9f51772-a18b-4f2d-b04c-0c573116b4dd",
+    "_type": "ynsight",
+    "name": null,
+    "title": "Integrated Retail Planning"
+  },
+  {
+    "_createdAt": "2025-05-09T05:01:16Z",
+    "_id": "image-06fbfc55cb036ab3e3f4df1d49605a5d3371e091-200x43-svg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T08:54:17Z",
+    "_id": "image-0e6aedfd6621c296d78c72906e8523059b181de7-366x138-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T10:04:00Z",
+    "_id": "image-1782c6aae5319faa621f03f0e6d0162e6d94872c-225x225-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:16:48Z",
+    "_id": "image-22a2844dcedcebc51d3e7eb2433e8c4efcff8efb-121x34-svg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T08:28:15Z",
+    "_id": "image-2c5220267607c5b93ba8797e6735c2522fd6dacb-185x82-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T10:20:13Z",
+    "_id": "image-3b83c68023ed3c8ef70b1c8300f0061e2f018158-900x300-svg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:10:39Z",
+    "_id": "image-3f08e34cc88f87818b04dac4465505bf23b832cb-211x36-svg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T10:12:00Z",
+    "_id": "image-3f34c833192c0f161b502d90af2cfa42a63b9c8b-512x512-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T08:34:57Z",
+    "_id": "image-453dd85abe7fe5315969ab95b2d0a099b1c4f451-1536x133-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T10:19:19Z",
+    "_id": "image-48baeec3d1802aca8f51dff40dcba2c770d934ce-409x123-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:31:51Z",
+    "_id": "image-52a71893b58feef7025cd5ed35bd5d8ded989725-1977x901-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:22:21Z",
+    "_id": "image-52f920ae64b72cc3ec2e17177f83250ffc431505-1000x360-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:19:42Z",
+    "_id": "image-5402acca18412a44f6c092f0cf95f2b76610c88f-145x80-svg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T08:50:12Z",
+    "_id": "image-5ed9a14f794a0b091af8d8d9637fa81399d5d3f1-250x125-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:37:10Z",
+    "_id": "image-65ddfc4bfad99b3caf4e0bd4d8f1c2eb5d5b55c5-303x64-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:42:00Z",
+    "_id": "image-660c682bec279e1469a66bb29eb8adf7e1cbaf8d-739x217-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-09T05:18:08Z",
+    "_id": "image-683e724416a9e6096e1d65f95cbf179f9464bb86-200x200-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:15:01Z",
+    "_id": "image-686af23ba46fc40fc892b4d58c660ba999918fef-500x224-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-09T05:15:36Z",
+    "_id": "image-6d9d53407df8141e678ddeaaf38b81cc5685b3e4-789x330-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:35:10Z",
+    "_id": "image-862f217439b6902e34e5e78597dbc555e5640be6-327x154-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:06:24Z",
+    "_id": "image-8c230cba6c1b0f4eda1ab25a89d0fee53a8af599-789x330-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:47:27Z",
+    "_id": "image-9c7818d23fcfdf629ce0c04ede75d4f5023e3929-300x168-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:01:13Z",
+    "_id": "image-a0fc38f584b4d04f06de2547071137c4d7968183-600x600-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:29:16Z",
+    "_id": "image-a1790ea07d9b7f8290199dc925aeb296468a5d73-200x200-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T08:26:11Z",
+    "_id": "image-a35f522dddbc54dbb17e0b487df9af915e2d9c05-135x29-svg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:28:29Z",
+    "_id": "image-a64f0dfd92becf84986f51a0028ce94120bc5397-494x102-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:00:25Z",
+    "_id": "image-af922f7572ca3a59b701146c34f3197cc174d3e9-500x117-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T06:57:33Z",
+    "_id": "image-afea25579fae8fe01e42f2edbe1518fa006a4b54-600x315-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-05T00:05:39Z",
+    "_id": "image-b1f807fc718cde528ff700761b65987e556a9743-98x62-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T09:04:17Z",
+    "_id": "image-b4b259023fb1b5338cfecbee24933435a3ad0d5b-500x111-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T08:33:01Z",
+    "_id": "image-e1a64d289e5d1c5d8ae77732718528a7b74b3bbc-140x60-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-05T06:23:26Z",
+    "_id": "image-f7dca4274c533f4111c6aec6553ef41a2b39754f-1920x1080-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T06:58:41Z",
+    "_id": "image-fbe1856bb2c6d23eac3b87b43b5f018c3f74ff48-600x600-png",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T10:05:06Z",
+    "_id": "image-fc04affb488cfe512dcc5a204803bcf34e9d0e57-260x142-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  },
+  {
+    "_createdAt": "2025-05-06T06:53:25Z",
+    "_id": "image-fc653fef1c289d6f2eed351521da1f610a109a76-1080x1080-jpg",
+    "_type": "sanity.imageAsset",
+    "name": null,
+    "title": null
+  }
+]
