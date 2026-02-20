@@ -65,7 +65,7 @@ export const AiSolutionsHero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-4 animate-fade-up delay-200 leading-relaxed">
-            Production-ready AI accelerators built and deployed internally. Designed to integrate with enterprise data, workflows, and security controls — and fully customisable to your environment.
+            Production ready AI accelerators built and deployed internally. Designed to integrate with enterprise data, workflows, and security controls and fully customisable to your environment.
           </p>
 
           <p className="text-base md:text-lg text-primary-foreground/50 mb-6 animate-fade-up delay-300 leading-relaxed max-w-2xl">

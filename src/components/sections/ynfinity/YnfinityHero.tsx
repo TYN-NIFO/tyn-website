@@ -71,7 +71,7 @@ export const YnfinityHero = () => {
             Many of the hardest enterprise challenges sit at the intersection of technology, regulation, operations, and ecosystem readiness. No single organization solves these in isolation.
           </p>
 
-          <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed">
+          <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">
             Ynfinity is TYN's accelerator designed to bring together the people shaping the future of enterprise innovation — in a trusted, curated environment where meaningful conversations and long-term collaborations can begin.
           </p>
 
