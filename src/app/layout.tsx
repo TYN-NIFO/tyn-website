@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: 'The Yellow Network | Enterprise AI Consulting',
     description:
         'We help leaders cut through the vendor/LLM noise, choose what actually matters, and implement systems that intelligently create real business lift.',
+    icons: {
+        icon: '/favicon.png',
+    },
 };
 
 export default function RootLayout({

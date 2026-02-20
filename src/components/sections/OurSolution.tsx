@@ -1,4 +1,4 @@
-import { Target, BarChart3, GitBranch, Cog, TrendingUp, ArrowRight } from 'lucide-react';
+import { Target, BarChart3, GitBranch, Cog, ArrowRight, ShoppingBag, Hammer } from 'lucide-react';
 
 const steps = [
   {
@@ -21,11 +21,6 @@ const steps = [
     title: 'Redesign workflows to embed AI',
     description: 'Transform processes for seamless AI adoption across the enterprise.',
   },
-  {
-    icon: TrendingUp,
-    title: 'Track outcomes end-to-end',
-    description: 'Measure and prove value from pilot to production at scale.',
-  },
 ];
 
 export const OurSolution = () => {
@@ -46,9 +41,20 @@ export const OurSolution = () => {
         </div>
 
         {/* Process Steps */}
-        <div className="relative">
+        <div className="relative border border-accent/20 rounded-3xl bg-accent/5 p-8 md:p-12 pt-16">
+          {/* AI CoE Header Pill */}
+          <div className="absolute top-6 left-8 flex items-center gap-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold shadow-sm">
+              AI CoE
+            </span>
+            <span className="text-sm font-medium text-muted-foreground">
+              End-to-end orchestration
+            </span>
+          </div>
+          <br /><br />
+
           {/* Connection Line - Desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-[55%] left-12 right-12 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {steps.map((step, index) => {
@@ -73,13 +79,46 @@ export const OurSolution = () => {
 
                   {/* Arrow connector - Desktop */}
                   {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 z-10">
-                      <ArrowRight className="w-6 h-6 text-accent/50" />
+                    <div className="hidden lg:block absolute top-1/2 -right-7 -translate-y-1/2 z-10">
+                      <ArrowRight className="w-5 h-5 text-accent/50" />
+                    </div>
+                  )}
+                  {/* Final arrow before BUY/BUILD stack */}
+                  {index === steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-7 -translate-y-1/2 z-10">
+                      <ArrowRight className="w-5 h-5 text-accent/50" />
                     </div>
                   )}
                 </div>
               );
             })}
+
+            {/* Added Stacked Action Cards (BUY / BUILD) */}
+            <div className="flex flex-col gap-4 justify-center relative z-10">
+              {/* BUY Card */}
+              <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <ShoppingBag className="w-5 h-5 text-accent" />
+                  <h4 className="font-display font-bold text-foreground text-sm">BUY</h4>
+                </div>
+                <p className="text-xs text-tyn-blue font-medium">Scout → Evaluate → Deploy</p>
+              </div>
+
+              {/* BUILD Card */}
+              <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <Hammer className="w-5 h-5 text-accent" />
+                  <h4 className="font-display font-bold text-foreground text-sm">BUILD</h4>
+                </div>
+                <p className="text-xs text-tyn-blue font-medium">Design → Build → Hypercare</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-sm text-muted-foreground">
+              Engage end-to-end through AI CoE, or modularly via BUILD or BUY.
+            </p>
           </div>
         </div>
       </div>
