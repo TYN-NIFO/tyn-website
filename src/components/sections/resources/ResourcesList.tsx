@@ -1,27 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 import { Blog, Whitepaper, Ynsight } from "@/lib/sanity/types";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ResourceCard } from "./ResourceCard";
 
+/** Whitepaper from Sanity or local data (old website content). */
+export type WhitepaperOrLocal = Whitepaper | { _id: string; title: string; description: string; fileUrl: string };
+
+const TAB_VALUES = ["blogs", "use-cases", "whitepapers"] as const;
+type TabValue = (typeof TAB_VALUES)[number];
+
+function isValidTab(tab: string | null): tab is TabValue {
+    return tab !== null && TAB_VALUES.includes(tab as TabValue);
+}
+
 interface ResourcesListProps {
     blogs: Blog[];
-    whitepapers: Whitepaper[];
+    whitepapers: WhitepaperOrLocal[];
     ynsights: Ynsight[];
 }
 
 export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListProps) => {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const tabFromUrl = searchParams.get("tab");
+    const activeTab = useMemo(() => (isValidTab(tabFromUrl) ? tabFromUrl : "blogs"), [tabFromUrl]);
+
+    const onTabChange = (value: string) => {
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("tab", value);
+        router.replace(`/resources?${params.toString()}`, { scroll: false });
+    };
+
     return (
         <section className="section-padding container-main min-h-screen">
             <div className="mb-12 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Resources</h1>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Explore our latest thinking, in-depth research, and success stories.
+                <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">Resources</h1>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    Explore our latest thinking, in-depth research, and use cases.
                 </p>
             </div>
 
-            <Tabs defaultValue="blogs" className="w-full">
+            <Tabs value={activeTab} onValueChange={onTabChange} defaultValue="blogs" className="w-full">
                 <div className="flex justify-center mb-12">
                     <TabsList className="grid w-full max-w-md grid-cols-3">
                         <TabsTrigger value="blogs">Blogs</TabsTrigger>
@@ -40,7 +62,7 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-20 text-gray-500">
+                        <div className="text-center py-20 text-muted-foreground">
                             No blogs found. Check back soon.
                         </div>
                     )}
@@ -56,7 +78,7 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-20 text-gray-500">
+                        <div className="text-center py-20 text-muted-foreground">
                             No use cases found. Check back soon.
                         </div>
                     )}
@@ -72,7 +94,7 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-20 text-gray-500">
+                        <div className="text-center py-20 text-muted-foreground">
                             No whitepapers found. Check back soon.
                         </div>
                     )}

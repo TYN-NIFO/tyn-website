@@ -36,8 +36,8 @@ export default async function UseCasePage({ params }: PageProps) {
                 <HeaderWrapper />
                 <main className="flex-grow flex items-center justify-center">
                     <div className="text-center">
-                        <h1 className="text-2xl font-bold mb-4">Use Case Not Found</h1>
-                        <Link href="/resources?tab=use-cases" className="text-blue-600 hover:underline">
+                        <h1 className="text-2xl font-bold text-foreground mb-4">Use Case Not Found</h1>
+                        <Link href="/resources?tab=use-cases" className="text-tyn-blue hover:underline">
                             Back to Resources
                         </Link>
                     </div>
@@ -62,21 +62,21 @@ export default async function UseCasePage({ params }: PageProps) {
             <HeaderWrapper />
             <main className="flex-grow pt-24 pb-16">
                 {/* Top Banner */}
-                <div className="bg-blue-50 py-8 mb-8">
+                <div className="bg-muted py-8 mb-8">
                     <div className="container-main">
-                        <div className="text-sm text-gray-500 mb-2">
+                        <div className="text-sm text-muted-foreground mb-2">
                             What We Think → {ynsight.industry} → Ynsight
                         </div>
-                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
                             {ynsight.title}
                         </h1>
                         <div className="flex items-center gap-3">
                             {ynsight.industry && (
-                                <span className="text-xs bg-blue-600 text-white font-medium px-3 py-1 rounded-full">
+                                <span className="text-xs bg-tyn-blue text-primary-foreground font-medium px-3 py-1 rounded-full">
                                     {ynsight.industry}
                                 </span>
                             )}
-                            <span className="text-xs text-gray-500">
+                            <span className="text-xs text-muted-foreground">
                                 {new Date(ynsight._createdAt).toLocaleDateString()}
                             </span>
                         </div>
@@ -95,13 +95,13 @@ export default async function UseCasePage({ params }: PageProps) {
                 <div className="container-main flex flex-col lg:flex-row gap-12">
                     {/* Sidebar Navigation */}
                     <aside className="hidden lg:block w-64 flex-shrink-0">
-                        <div className="sticky top-24 border-r border-gray-200 pr-4">
+                        <div className="sticky top-24 border-r border-border pr-4">
                             <nav className="space-y-1">
                                 {sections.map(section => (
                                     <a
                                         key={section.id}
                                         href={`#${section.id}`}
-                                        className="block px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                                        className="block px-3 py-2 text-sm font-medium text-muted-foreground rounded-md hover:text-tyn-blue hover:bg-muted transition-colors"
                                     >
                                         {section.label}
                                     </a>
@@ -113,40 +113,42 @@ export default async function UseCasePage({ params }: PageProps) {
                     {/* Main Content */}
                     <div className="flex-1 space-y-16">
                         <section id="problem" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold text-blue-600 mb-4">Problem Statement</h2>
-                            <p className="text-gray-700 leading-relaxed text-lg">
+                            <h2 className="text-2xl font-bold text-tyn-blue mb-4">Problem Statement</h2>
+                            <p className="text-muted-foreground leading-relaxed text-lg">
                                 {ynsight.problemStatement}
                             </p>
                         </section>
 
                         <section id="solution" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold text-blue-600 mb-4">Solution</h2>
-                            <p className="text-gray-700 leading-relaxed text-lg">
+                            <h2 className="text-2xl font-bold text-tyn-blue mb-4">Solution</h2>
+                            <p className="text-muted-foreground leading-relaxed text-lg">
                                 {ynsight.solution}
                             </p>
                         </section>
 
                         <section id="impact" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold text-blue-600 mb-4">Impact</h2>
-                            <div className="prose prose-lg max-w-none text-gray-700">
-                                <PortableText value={ynsight.impact} />
+                            <h2 className="text-2xl font-bold text-tyn-blue mb-4">Impact</h2>
+                            <div className="prose prose-lg max-w-none text-muted-foreground">
+                                {typeof ynsight.impact === "string"
+                                    ? <p className="leading-relaxed">{ynsight.impact}</p>
+                                    : <PortableText value={ynsight.impact} />}
                             </div>
                         </section>
 
                         <section id="competitor" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold text-blue-600 mb-4">Competitor Positioning</h2>
-                            <p className="text-gray-700 leading-relaxed text-lg">
+                            <h2 className="text-2xl font-bold text-tyn-blue mb-4">Competitor Positioning</h2>
+                            <p className="text-muted-foreground leading-relaxed text-lg">
                                 {ynsight.competitorPositioning}
                             </p>
                         </section>
 
                         <section id="provider" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold text-blue-600 mb-4">Solution Provider</h2>
-                            <div className="md:flex md:items-center md:gap-6 bg-gray-50 p-6 rounded-xl border border-gray-100">
-                                {ynsight.solutionProviderImage && (
-                                    <div className="relative w-24 h-24 mb-4 md:mb-0 flex-shrink-0 bg-white rounded-lg p-2 shadow-sm">
+                            <h2 className="text-2xl font-bold text-tyn-blue mb-4">Solution Provider</h2>
+                            <div className="md:flex md:items-center md:gap-6 bg-muted p-6 rounded-xl border border-border">
+                                {(ynsight.solutionProviderImage ?? (ynsight as { solutionProviderImageUrl?: string }).solutionProviderImageUrl) && (
+                                    <div className="relative w-24 h-24 mb-4 md:mb-0 flex-shrink-0 bg-card rounded-lg p-2 shadow-sm">
                                         <Image
-                                            src={ynsight.solutionProviderImage}
+                                            src={(ynsight.solutionProviderImage ?? (ynsight as { solutionProviderImageUrl?: string }).solutionProviderImageUrl)!}
                                             alt={ynsight.solutionProviderName || "Provider"}
                                             width={96}
                                             height={96}
@@ -155,7 +157,7 @@ export default async function UseCasePage({ params }: PageProps) {
                                     </div>
                                 )}
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900">
+                                    <h3 className="text-xl font-bold text-foreground">
                                         {ynsight.solutionProviderName}
                                     </h3>
                                 </div>
@@ -163,38 +165,38 @@ export default async function UseCasePage({ params }: PageProps) {
                         </section>
 
                         <section id="enterprise" className="scroll-mt-24">
-                            <h2 className="text-2xl font-bold text-blue-600 mb-4">Enterprise</h2>
+                            <h2 className="text-2xl font-bold text-tyn-blue mb-4">Enterprise</h2>
                             <div className="grid md:grid-cols-2 gap-6">
-                                {ynsight.enterpriseOneName && (
-                                    <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                                        {ynsight.enterpriseOneImage && (
-                                            <div className="relative w-16 h-16 bg-white rounded p-1 shadow-sm flex-shrink-0">
+                                {(ynsight.enterpriseName || ynsight.enterpriseOneName) && (
+                                    <div className="flex items-center gap-4 p-4 bg-muted rounded-lg border border-border">
+                                        {(ynsight.enterpriseOneImage ?? (ynsight as { enterpriseOneImageUrl?: string }).enterpriseOneImageUrl) && (
+                                            <div className="relative w-16 h-16 bg-card rounded p-1 shadow-sm flex-shrink-0">
                                                 <Image
-                                                    src={ynsight.enterpriseOneImage}
-                                                    alt={ynsight.enterpriseOneName}
+                                                    src={(ynsight.enterpriseOneImage ?? (ynsight as { enterpriseOneImageUrl?: string }).enterpriseOneImageUrl)!}
+                                                    alt={ynsight.enterpriseOneName ?? ynsight.enterpriseName ?? "Enterprise"}
                                                     width={64}
                                                     height={64}
                                                     className="object-contain w-full h-full"
                                                 />
                                             </div>
                                         )}
-                                        <span className="font-semibold text-gray-800">{ynsight.enterpriseOneName}</span>
+                                        <span className="font-semibold text-foreground">{ynsight.enterpriseOneName ?? ynsight.enterpriseName}</span>
                                     </div>
                                 )}
                                 {ynsight.enterpriseTwoName && (
-                                    <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
-                                        {ynsight.enterpriseTwoImage && (
-                                            <div className="relative w-16 h-16 bg-white rounded p-1 shadow-sm flex-shrink-0">
+                                    <div className="flex items-center gap-4 p-4 bg-muted rounded-lg border border-border">
+                                        {(ynsight.enterpriseTwoImage ?? (ynsight as { enterpriseTwoImageUrl?: string }).enterpriseTwoImageUrl) && (
+                                            <div className="relative w-16 h-16 bg-card rounded p-1 shadow-sm flex-shrink-0">
                                                 <Image
-                                                    src={ynsight.enterpriseTwoImage}
-                                                    alt={ynsight.enterpriseTwoName}
+                                                    src={(ynsight.enterpriseTwoImage ?? (ynsight as { enterpriseTwoImageUrl?: string }).enterpriseTwoImageUrl)!}
+                                                    alt={ynsight.enterpriseTwoName ?? "Enterprise"}
                                                     width={64}
                                                     height={64}
                                                     className="object-contain w-full h-full"
                                                 />
                                             </div>
                                         )}
-                                        <span className="font-semibold text-gray-800">{ynsight.enterpriseTwoName}</span>
+                                        <span className="font-semibold text-foreground">{ynsight.enterpriseTwoName}</span>
                                     </div>
                                 )}
                             </div>
@@ -202,10 +204,10 @@ export default async function UseCasePage({ params }: PageProps) {
 
                         {ynsight.testimonials && ynsight.testimonials.length > 0 && (
                             <section id="testimonials" className="scroll-mt-24">
-                                <h2 className="text-2xl font-bold text-blue-600 mb-4">Testimonials</h2>
+                                <h2 className="text-2xl font-bold text-tyn-blue mb-4">Testimonials</h2>
                                 <ul className="space-y-4">
                                     {ynsight.testimonials.map((quote, i) => (
-                                        <li key={i} className="bg-blue-50 p-6 rounded-xl border border-blue-100 italic text-gray-700">
+                                        <li key={i} className="bg-muted p-6 rounded-xl border border-border italic text-muted-foreground">
                                             "{quote}"
                                         </li>
                                     ))}
@@ -214,7 +216,7 @@ export default async function UseCasePage({ params }: PageProps) {
                         )}
 
                         <div className="pt-8">
-                            <Link href="/resources?tab=use-cases" className="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                            <Link href="/resources?tab=use-cases" className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
                                 <ArrowLeft className="mr-2 w-4 h-4" /> Back to Resources
                             </Link>
                         </div>

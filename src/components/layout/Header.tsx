@@ -64,9 +64,9 @@ const navItems: NavItem[] = [
       {
         title: 'Learn',
         items: [
-          { title: 'Whitepapers', description: 'In-depth research and insights', href: '#' },
-          { title: 'Blog', description: 'Latest thoughts on enterprise AI', href: '#' },
-          { title: 'Success Stories', description: 'Real impact across industries', href: '/#success-stories' },
+          { title: 'Whitepapers', description: 'In-depth research and insights', href: '/resources?tab=whitepapers' },
+          { title: 'Blog', description: 'Latest thoughts on enterprise AI', href: '/resources?tab=blogs' },
+          { title: 'Use Cases', description: 'Industry use cases and insights', href: '/resources?tab=use-cases' },
         ],
       },
     ],

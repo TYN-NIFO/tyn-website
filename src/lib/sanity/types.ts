@@ -49,16 +49,22 @@ export interface Ynsight extends SanityBody {
     usecaseDescription?: string;
     problemStatement?: string;
     solution?: string;
-    impact?: PortableTextBlock[];
+    impact?: PortableTextBlock[] | string; // block array or plain string (old CMS)
     testimonials?: string[];
     competitorPositioning?: string;
+    expertsTake?: string;
+    enterpriseName?: string; // singular, from old YnsightDetail
     enterpriseOneName?: string;
-    enterpriseOneImage?: string; // mapped from asset->url
+    enterpriseOneImage?: string;
+    enterpriseOneImageUrl?: string; // list query
     enterpriseTwoName?: string;
-    enterpriseTwoImage?: string; // mapped from asset->url
+    enterpriseTwoImage?: string;
+    enterpriseTwoImageUrl?: string; // list query
     solutionProviderName?: string;
-    solutionProviderImage?: string; // mapped from asset->url
-    imageUrl?: string; // mapped from asset->url
+    solutionProviderImage?: string; // detail
+    solutionProviderImageUrl?: string; // list query
+    imageUrl?: string; // detail thumbnail
+    thumbnailUrl?: string; // list query
 }
 
 export interface OpenPosition extends SanityBody {
