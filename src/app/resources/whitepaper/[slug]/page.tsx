@@ -33,7 +33,7 @@ export default async function WhitepaperPage({ params }: PageProps) {
                         <h1 className="text-2xl font-bold text-foreground mb-4">Whitepaper Not Found</h1>
                         <p className="text-muted-foreground mb-6">The whitepaper you're looking for doesn't exist or has been removed.</p>
                         <Link href="/resources?tab=whitepapers" className="text-tyn-blue hover:underline">
-                            Back to Resources
+                            Back to Ynsights
                         </Link>
                     </div>
                 </main>
@@ -52,7 +52,7 @@ export default async function WhitepaperPage({ params }: PageProps) {
                         href="/resources?tab=whitepapers"
                         className="inline-flex items-center text-tyn-blue hover:text-tyn-blue/90 transition-colors font-medium"
                     >
-                        <ArrowLeft className="mr-2 w-4 h-4" /> Back to Resources
+                        <ArrowLeft className="mr-2 w-4 h-4" /> Back to Ynsights
                     </Link>
                 </div>
 

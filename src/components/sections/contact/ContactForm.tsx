@@ -45,29 +45,43 @@ export const ContactForm = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     // Honeypot check — silent reject
     if (honeypot) {
       setSubmitted(true);
       return;
     }
 
-    const submission = {
+    const payload = {
       ...data,
       metadata: {
         source_page: sourcePage,
         cta: ctaLabel,
         page_url: window.location.href,
-        timestamp: new Date().toISOString(),
         device_type: getDeviceType(),
         referrer: document.referrer || 'Direct',
       },
     };
 
-    // TODO: Replace with backend API call (Supabase edge function / email service)
-    console.log('[Contact Submission]', JSON.stringify(submission, null, 2));
-    toast.success('Message sent successfully');
-    setSubmitted(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      toast.success('Message sent successfully!');
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error('Something went wrong. Please try again later.');
+    }
   };
 
   if (submitted) {

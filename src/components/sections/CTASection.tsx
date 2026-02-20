@@ -28,11 +28,6 @@ export const CTASection = () => {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="/contact?source_page=Home&cta=Share-priorities">
-                <Button className="btn-outline-hero">
-                  Share priorities
-                </Button>
-              </a>
             </div>
           </div>
         </div>

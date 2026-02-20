@@ -35,10 +35,13 @@ export const ServiceTabPills = ({
         return (
           <button
             key={service.id}
-            onClick={() => onTabChange(service.id)}
+            onClick={() => {
+              onTabChange(service.id);
+              document.getElementById('services-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
             className={`px-8 py-3 rounded-lg text-base font-display font-semibold tracking-wide border-2 transition-all duration-300 ${isActive
-                ? 'bg-accent text-accent-foreground border-accent shadow-glow'
-                : 'bg-transparent text-foreground border-border hover:border-accent/50 hover:text-accent'
+              ? 'bg-accent text-accent-foreground border-accent shadow-glow'
+              : 'bg-transparent text-foreground border-border hover:border-accent/50 hover:text-accent'
               }`}
           >
             {service.title}
@@ -54,7 +57,7 @@ export const ServiceContent = ({ services, activeId }: Omit<ServiceTabsProps, 'o
   const Icon = active.icon;
 
   return (
-    <section id="services-tabs" className="section-padding bg-background pattern-grid">
+    <section id="services-tabs" className="section-padding bg-background pattern-grid scroll-mt-40">
       <div className="container-main">
         {/* Active service content */}
         <div className="animate-fade-in" key={active.id}>

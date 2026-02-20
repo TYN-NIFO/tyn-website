@@ -106,11 +106,11 @@ const WhatPowersDelivery = () => {
                     {pillars.map((pillar, index) => (
                         <div
                             key={index}
-                            className="group relative"
+                            className="group relative h-full"
                             style={{ animationDelay: `${index * 100}ms` }}
                         >
                             {/* Card with subtle angular corners */}
-                            <div className="relative bg-navy-light/80 border border-secondary/20 p-6 transition-all duration-300 hover:border-secondary/40 hover:bg-navy-light clip-card">
+                            <div className="relative bg-navy-light/80 border border-secondary/20 p-6 transition-all duration-300 hover:border-secondary/40 hover:bg-navy-light clip-card flex flex-col h-full">
                                 {/* Number Badge */}
                                 <div className="absolute -top-0.5 right-0 z-20">
                                     <div className="w-10 h-10 bg-yellow-400 flex items-center justify-center clip-hexagon">

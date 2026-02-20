@@ -9,7 +9,7 @@ import { HowYZoneWorks } from '@/components/sections/yzone/HowYZoneWorks';
 import { WhatMakesYZoneDifferent } from '@/components/sections/yzone/WhatMakesYZoneDifferent';
 import { WhoYZoneIsFor } from '@/components/sections/yzone/WhoYZoneIsFor';
 import { YZoneOutcomes } from '@/components/sections/yzone/YZoneOutcomes';
-import { YZoneToTYN } from '@/components/sections/yzone/YZoneToTYN';
+// import { YZoneToTYN } from '@/components/sections/yzone/YZoneToTYN';
 import { YZoneCTA } from '@/components/sections/yzone/YZoneCTA';
 
 export default function YZonePage() {
@@ -24,7 +24,7 @@ export default function YZonePage() {
                 <WhatMakesYZoneDifferent />
                 <WhoYZoneIsFor />
                 <YZoneOutcomes />
-                <YZoneToTYN />
+                {/* <YZoneToTYN /> */}
                 <YZoneCTA />
             </main>
             <Footer />

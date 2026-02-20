@@ -9,7 +9,7 @@ import { ResourceCard } from "./ResourceCard";
 /** Whitepaper from Sanity or local data (old website content). */
 export type WhitepaperOrLocal = Whitepaper | { _id: string; title: string; description: string; fileUrl: string };
 
-const TAB_VALUES = ["blogs", "use-cases", "whitepapers"] as const;
+const TAB_VALUES = ["blogs", "whitepapers"] as const;
 type TabValue = (typeof TAB_VALUES)[number];
 
 function isValidTab(tab: string | null): tab is TabValue {
@@ -37,7 +37,7 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
     return (
         <section className="section-padding container-main min-h-screen">
             <div className="mb-12 text-center">
-                <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">Resources</h1>
+                <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">Ynsights</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                     Explore our latest thinking, in-depth research, and use cases.
                 </p>
@@ -45,9 +45,8 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
 
             <Tabs value={activeTab} onValueChange={onTabChange} defaultValue="blogs" className="w-full">
                 <div className="flex justify-center mb-12">
-                    <TabsList className="grid w-full max-w-md grid-cols-3">
+                    <TabsList className="grid w-full max-w-sm grid-cols-2">
                         <TabsTrigger value="blogs">Blogs</TabsTrigger>
-                        <TabsTrigger value="use-cases">Use Cases</TabsTrigger>
                         <TabsTrigger value="whitepapers">Whitepapers</TabsTrigger>
                     </TabsList>
                 </div>
@@ -64,22 +63,6 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
                     ) : (
                         <div className="text-center py-20 text-muted-foreground">
                             No blogs found. Check back soon.
-                        </div>
-                    )}
-                </TabsContent>
-
-                <TabsContent value="use-cases" className="animate-fade-in">
-                    {ynsights.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {ynsights.map((ynsight) => (
-                                <div key={ynsight._id} className="h-full">
-                                    <ResourceCard type="use-case" data={ynsight} />
-                                </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="text-center py-20 text-muted-foreground">
-                            No use cases found. Check back soon.
                         </div>
                     )}
                 </TabsContent>

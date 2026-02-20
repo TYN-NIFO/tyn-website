@@ -66,7 +66,7 @@ const services = [
             'Production-ready AI in weeks — not endless pilots — with clear ROI ownership.',
     },
     {
-        id: 'coe',
+        id: 'ai-coe',
         number: '03',
         title: 'AI COE',
         subtitle: 'Build the Enterprise Muscle',

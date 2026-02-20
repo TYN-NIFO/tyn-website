@@ -38,7 +38,7 @@ export default async function UseCasePage({ params }: PageProps) {
                     <div className="text-center">
                         <h1 className="text-2xl font-bold text-foreground mb-4">Use Case Not Found</h1>
                         <Link href="/resources?tab=use-cases" className="text-tyn-blue hover:underline">
-                            Back to Resources
+                            Back to Ynsights
                         </Link>
                     </div>
                 </main>
@@ -217,7 +217,7 @@ export default async function UseCasePage({ params }: PageProps) {
 
                         <div className="pt-8">
                             <Link href="/resources?tab=use-cases" className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
-                                <ArrowLeft className="mr-2 w-4 h-4" /> Back to Resources
+                                <ArrowLeft className="mr-2 w-4 h-4" /> Back to Ynsights
                             </Link>
                         </div>
                     </div>

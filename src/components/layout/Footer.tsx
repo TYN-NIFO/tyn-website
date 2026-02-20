@@ -6,7 +6,7 @@ const footerLinks = {
   services: [
     { label: 'BUY', href: '/services?tab=buy' },
     { label: 'BUILD', href: '/services?tab=build' },
-    { label: 'AI COE', href: '/services/ai-coe' },
+    { label: 'AI COE', href: '/services?tab=ai-coe' },
   ],
   accelerators: [
     { label: 'Nifo', href: '/accelerators/nifo' },
@@ -14,9 +14,8 @@ const footerLinks = {
     { label: 'Ynfinity', href: '/accelerators/ynfinity' },
   ],
   resources: [
-    { label: 'Whitepapers', href: '#' },
-    { label: 'Blogs', href: '#' },
-    { label: 'Use Cases', href: '#' },
+    { label: 'Whitepapers', href: '/resources?tab=whitepapers' },
+    { label: 'Blogs', href: '/resources?tab=blogs' },
   ],
   company: [
     { label: 'About Us', href: '/about' },
@@ -93,7 +92,7 @@ export const Footer = () => {
           </div>
 
           <div className="mt-2">
-            <h4 className="font-display font-semibold mb-4"><b>Resources</b></h4>
+            <h4 className="font-display font-semibold mb-4"><b>Ynsights</b></h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>

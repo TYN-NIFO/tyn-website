@@ -25,13 +25,14 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     label: 'Services',
+    href: '/services?tab=buy',
     megaMenu: [
       {
         title: 'Our Services',
         items: [
-          { title: 'BUILD', description: 'Production-Grade AI Systems — Speed, control, and differentiation', href: '/services?tab=build' },
           { title: 'BUY', description: 'Ecosystem-Led Solution Selection — Speed-to-value with right-fit solutions', href: '/services?tab=buy' },
-          { title: 'AI COE', description: 'Build the Enterprise Muscle — Scale AI beyond one team', href: '/services/ai-coe' },
+          { title: 'BUILD', description: 'Production-Grade AI Systems — Speed, control, and differentiation', href: '/services?tab=build' },
+          { title: 'AI COE', description: 'Build the Enterprise Muscle — Scale AI beyond one team', href: '/services?tab=ai-coe' },
         ],
       },
     ],
@@ -59,14 +60,13 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: 'Resources',
+    label: 'Ynsights',
     megaMenu: [
       {
         title: 'Learn',
         items: [
           { title: 'Whitepapers', description: 'In-depth research and insights', href: '/resources?tab=whitepapers' },
           { title: 'Blog', description: 'Latest thoughts on enterprise AI', href: '/resources?tab=blogs' },
-          { title: 'Use Cases', description: 'Industry use cases and insights', href: '/resources?tab=use-cases' },
         ],
       },
     ],
@@ -74,6 +74,7 @@ const navItems: NavItem[] = [
 
   {
     label: 'Company',
+    href: '/about',
     megaMenu: [
       {
         title: 'Company',
@@ -145,7 +146,7 @@ export const Header = () => {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className={`text-sm rounded-lg transition-all duration-200 ${isSolid
+                      className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
                         ? (isActive || activeMenu === item.label)
                           ? 'text-tyn-blue font-bold bg-background shadow-sm ring-1 ring-border/50 px-5 py-2.5 -mx-1 -my-0.5'
                           : 'text-foreground font-medium hover:text-tyn-blue hover:bg-muted px-4 py-2'
@@ -155,6 +156,9 @@ export const Header = () => {
                         }`}
                     >
                       {item.label}
+                      {item.megaMenu && (
+                        <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
+                      )}
                     </a>
                   ) : (
                     <button
@@ -245,8 +249,9 @@ export const Header = () => {
             {navItems.map((item) => (
               <div key={item.label} className="px-4 py-2">
                 {item.href ? (
-                  <a href={item.href} className="block py-2 font-medium">
+                  <a href={item.href} className="flex items-center justify-between py-2 font-medium">
                     {item.label}
+                    {item.megaMenu && <ChevronDown className="w-4 h-4" />}
                   </a>
                 ) : (
                   <div>

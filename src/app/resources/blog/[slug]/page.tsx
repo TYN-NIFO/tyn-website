@@ -44,7 +44,7 @@ export default async function BlogPage({ params }: PageProps) {
                     <div className="text-center">
                         <h1 className="text-2xl font-bold text-foreground mb-4">Blog Post Not Found</h1>
                         <Link href="/resources" className="text-tyn-blue hover:underline">
-                            Back to Resources
+                            Back to Ynsights
                         </Link>
                     </div>
                 </main>
@@ -56,9 +56,9 @@ export default async function BlogPage({ params }: PageProps) {
     const relatedBlogs = blog._id.startsWith("sample-blog-") || blog._id.startsWith("gears-gpt-")
         ? localBlogs.filter((b) => b._id !== blog!._id).slice(0, 3)
         : await client.fetch<Blog[]>(GET_RELATED_BLOGS, {
-              currentId: blog._id,
-              currentTags: blog.tags || [],
-          });
+            currentId: blog._id,
+            currentTags: blog.tags || [],
+        });
 
     return (
         <div className="min-h-screen bg-background flex flex-col">
@@ -68,7 +68,7 @@ export default async function BlogPage({ params }: PageProps) {
                     {/* Breadcrumb / Back */}
                     <div className="mb-6">
                         <Link href="/resources?tab=blogs" className="inline-flex items-center text-tyn-blue hover:text-tyn-blue/90 transition-colors font-medium">
-                            <ArrowLeft className="mr-2 w-4 h-4" /> Back to Resources
+                            <ArrowLeft className="mr-2 w-4 h-4" /> Back to Ynsights
                         </Link>
                     </div>
 

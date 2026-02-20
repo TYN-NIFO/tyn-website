@@ -89,8 +89,8 @@ export const NifoHero = () => {
 
           <div className="animate-fade-up delay-400">
             <Button className="btn-hero group" onClick={scrollToContent}>
-              Explore <NifoInlineLogo className="h-4 mx-1" />
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Explore <NifoInlineLogo className="h-4 brightness-0 invert mb-1" />
+              <ArrowRight className="ml-2 w-5 h-5 -ml-1 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>

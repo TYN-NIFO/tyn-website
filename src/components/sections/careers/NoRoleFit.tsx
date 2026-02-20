@@ -23,11 +23,9 @@ export const NoRoleFit = () => {
               Submit Your Profile:
             </h3>
             <p className="text-foreground/70 mb-6">
-              You can share your resume and details directly through our candidate form:
+              You can send your resume and details directly to <a href="mailto:innovation@theyellow.network" className="text-accent"><b>innovation@theyellow.network</b></a>
             </p>
-            <a href="#" className="btn-hero inline-block">
-              Submit your resume
-            </a>
+
           </div>
         </div>
       </div>

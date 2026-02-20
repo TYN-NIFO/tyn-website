@@ -60,7 +60,7 @@ export const EngagementModel = () => {
                     {engagements.map((eng) => (
                         <div
                             key={eng.title}
-                            className="card-elevated rounded-2xl p-8 clip-angled hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+                            className="bg-card shadow-lg border-none rounded-none p-8 clip-angled hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group flex flex-col"
                         >
                             <div className="icon-tyn w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
                                 <eng.icon className="w-7 h-7 transition-colors" />
