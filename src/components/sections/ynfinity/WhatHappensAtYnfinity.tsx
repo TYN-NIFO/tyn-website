@@ -17,11 +17,11 @@ export const WhatHappensAtYnfinity = () => {
           </h2>
         </div>
 
-        <div className="space-y-4 mb-12 max-w-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {capabilities.map((item, idx) => (
             <div
               key={idx}
-              className="border-l-4 border-accent bg-accent/5 rounded-r-xl pl-6 pr-8 py-5"
+              className="border-l-4 border-accent bg-accent/5 rounded-r-xl p-6 h-full flex items-center"
             >
               <p className="text-base font-display font-bold text-foreground">{item}</p>
             </div>

@@ -16,7 +16,7 @@ const industries: Industry[] = [
   {
     id: 'insurance',
     title: 'Insurance',
-    shortLine: 'AI-driven underwriting and document intelligence for high-volume risk environments.',
+    shortLine: 'AI driven underwriting and document intelligence for high volume risk environments.',
     icon: Shield,
     context: 'Large insurers process high volumes of documents and risk data. Manual workflows create delays and compliance friction.',
     exampleWork: 'AI-led underwriting automation across risk assessment, document validation, and policy issuance.',
@@ -26,7 +26,7 @@ const industries: Industry[] = [
   {
     id: 'supply-chain',
     title: 'Supply Chain & Logistics',
-    shortLine: 'Optimization, visibility, and intelligence for large-scale logistics networks.',
+    shortLine: 'Route Optimization, visibility, and intelligence for large scale logistics networks.',
     icon: Truck,
     context: 'High-volume logistics operations run thousands of trips daily. Minor inefficiencies scale into major cost exposure.',
     exampleWork: 'AI-driven route and load optimisation integrated with fleet, orders, and telematics systems.',
@@ -36,7 +36,7 @@ const industries: Industry[] = [
   {
     id: 'financial-services',
     title: 'Financial Services',
-    shortLine: 'Enterprise AI embedded within regulated financial workflows.',
+    shortLine: 'Enterprise AI embedded within marketing workflows.',
     icon: Landmark,
     context: 'Financial institutions balance governance with speed and customer engagement.',
     exampleWork: 'AI integrated into marketing and approval workflows for automated content generation and governance controls.',
@@ -46,7 +46,7 @@ const industries: Industry[] = [
   {
     id: 'manufacturing',
     title: 'Manufacturing & Industrial',
-    shortLine: 'Real-time monitoring and operational intelligence for industrial ecosystems.',
+    shortLine: 'Real time monitoring and operational intelligence for industrial ecosystems.',
     icon: Factory,
     context: 'Industrial environments require compliance, safety visibility, and operational stability.',
     exampleWork: 'AI-enabled environmental and operational monitoring through ecosystem collaboration.',
@@ -56,7 +56,7 @@ const industries: Industry[] = [
   {
     id: 'energy-mining',
     title: 'Energy & Mining',
-    shortLine: 'AI-enabled environmental intelligence and stakeholder alignment.',
+    shortLine: 'ESG compliance, pollution deterrence, and stakeholder alignment.',
     icon: Pickaxe,
     context: 'Large industrial sites require coordination across regulators, partners, and operations teams.',
     exampleWork: 'Environmental monitoring and control solutions deployed through multi-stakeholder ecosystems.',
@@ -67,6 +67,9 @@ const industries: Industry[] = [
 
 export const IndustryGrid = () => {
   const [activeIndustry, setActiveIndustry] = useState<number | null>(null);
+
+  // FEATURE FLAG: Controls whether clicking an industry card opens the detail view
+  const IS_MODAL_ENABLED = false;
 
   const activeData = activeIndustry !== null ? industries[activeIndustry] : null;
 
@@ -81,7 +84,8 @@ export const IndustryGrid = () => {
             Complex industries. Structured delivery.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We design AI for production — not experimentation — in environments where regulatory depth and operational scale define every decision.
+            We design and orchestrate solutions for production - not experimentation - in environments where regulatory depth and operational scale define every decision.
+
           </p>
         </div>
 
@@ -95,7 +99,11 @@ export const IndustryGrid = () => {
                   <div
                     key={industry.id}
                     className="card-elevated rounded-2xl cursor-pointer group p-6 md:p-8 transition-all duration-300 hover:ring-2 hover:ring-accent/40"
-                    onClick={() => setActiveIndustry(index)}
+                    onClick={() => {
+                      if (IS_MODAL_ENABLED) {
+                        setActiveIndustry(index);
+                      }
+                    }}
                   >
                     <div className="flex items-start gap-4">
                       <div className="icon-tyn flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-colors duration-300">

@@ -142,26 +142,26 @@ export const Header = () => {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
-                        ? isActive
-                          ? 'text-tyn-blue font-bold hover:bg-muted'
-                          : 'text-foreground hover:text-tyn-blue hover:bg-muted'
+                      className={`text-sm rounded-lg transition-all duration-200 ${isSolid
+                        ? (isActive || activeMenu === item.label)
+                          ? 'text-tyn-blue font-bold bg-background shadow-sm ring-1 ring-border/50 px-5 py-2.5 -mx-1 -my-0.5'
+                          : 'text-foreground font-medium hover:text-tyn-blue hover:bg-muted px-4 py-2'
                         : isActive
-                          ? 'text-accent font-bold'
-                          : 'text-primary-foreground/90 hover:text-accent'
+                          ? 'text-accent font-bold px-4 py-2'
+                          : 'text-primary-foreground/90 font-medium hover:text-accent px-4 py-2'
                         }`}
                     >
                       {item.label}
                     </a>
                   ) : (
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isSolid
-                        ? isActive
-                          ? 'text-tyn-blue font-bold hover:bg-muted'
-                          : 'text-foreground hover:text-tyn-blue hover:bg-muted'
+                      className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
+                        ? (isActive || activeMenu === item.label)
+                          ? 'text-tyn-blue font-bold bg-background shadow-sm ring-1 ring-border/50 px-5 py-2.5 -mx-1 -my-0.5'
+                          : 'text-foreground font-medium hover:text-tyn-blue hover:bg-muted px-4 py-2'
                         : isActive
-                          ? 'text-accent font-bold'
-                          : 'text-primary-foreground/90 hover:text-accent'
+                          ? 'text-accent font-bold px-4 py-2'
+                          : 'text-primary-foreground/90 font-medium hover:text-accent px-4 py-2'
                         }`}
                     >
                       {item.label}
@@ -179,9 +179,6 @@ export const Header = () => {
                         <div className="grid gap-6">
                           {item.megaMenu.map((section) => (
                             <div key={section.title}>
-                              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                                {section.title}
-                              </h3>
                               <div className="space-y-1">
                                 {section.items.map((menuItem) => (
                                   <a

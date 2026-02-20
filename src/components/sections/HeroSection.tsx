@@ -26,11 +26,12 @@ export const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100">
-          Turn AI ambition into </h1>
-        <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-6 animate-fade-up delay-100 whitespace-nowrap"> production grade outcomes{' '}
-          <span className="text-gradient"></span>
+          Turn AI ambition into{" "}
+          <span className="whitespace-nowrap">
+            production grade outcomes
+          </span>
         </h1>
-
+        <br />
         {/* Supporting Line */}
         <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/80 mb-10 max-w-3xl mx-auto animate-fade-up delay-200">
           We help leaders cut through the AI noise, choose what actually matters, and implement systems that intelligently create real business lift.

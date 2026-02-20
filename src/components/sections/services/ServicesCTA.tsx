@@ -26,7 +26,7 @@ export const ServicesCTA = () => {
                 </Button>
               </a>
               <a href="/contact?source_page=Services&cta=Share-priorities">
-                <Button className="btn-outline-hero">Share priorities</Button>
+                <Button className="btn-outline-hero">Explore Engagement Models</Button>
               </a>
             </div>
           </div>

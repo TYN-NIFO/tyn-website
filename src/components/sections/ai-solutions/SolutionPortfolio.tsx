@@ -157,7 +157,7 @@ export const SolutionPortfolio = () => {
                         </h3>
                         <div className="flex flex-wrap gap-1.5 mb-2">
                           {solution.categories.map((cat) => (
-                            <span key={cat} className="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                            <span key={cat} className="px-2.5 py-0.5 rounded-full bg-tyn-blue/10 text-tyn-blue text-xs font-medium">
                               {cat}
                             </span>
                           ))}
@@ -167,7 +167,7 @@ export const SolutionPortfolio = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       {solution.shortLine}
                     </p>
-                    <div className="flex items-center gap-1.5 text-xs text-accent font-medium">
+                    <div className="flex items-center gap-1.5 text-xs text-tyn-blue font-medium">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       Production-ready
                     </div>
@@ -183,17 +183,17 @@ export const SolutionPortfolio = () => {
               return (
                 <div className="w-full rounded-2xl bg-card border border-border shadow-xl p-6 md:p-10 lg:p-14 animate-fade-in transition-all duration-500 ease-in-out">
                   <div className="relative flex items-start gap-5 mb-8">
-                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent flex items-center justify-center">
-                      <Icon className="w-7 h-7 text-accent-foreground" />
+                    <div className="icon-tyn flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-300">
+                      <Icon className="w-7 h-7 transition-colors duration-300" />
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap gap-1.5 mb-2">
                         {solution.categories.map((cat) => (
-                          <span key={cat} className="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                          <span key={cat} className="px-2.5 py-0.5 rounded-full bg-tyn-blue/10 text-tyn-blue text-xs font-medium">
                             {cat}
                           </span>
                         ))}
-                        <span className="px-2.5 py-0.5 rounded-full bg-accent/20 text-accent text-xs font-medium flex items-center gap-1">
+                        <span className="px-2.5 py-0.5 rounded-full bg-tyn-blue/20 text-tyn-blue text-xs font-medium flex items-center gap-1">
                           <CheckCircle2 className="w-3 h-3" />
                           Production-ready
                         </span>
@@ -215,20 +215,20 @@ export const SolutionPortfolio = () => {
 
                   <div className="border-t border-border pt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-accent mb-4">
                         Key Capabilities
                       </h4>
                       <ul className="space-y-2.5">
                         {solution.capabilities.map((cap) => (
                           <li key={cap} className="flex items-start gap-2 text-sm text-foreground/80">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-1.5" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-tyn-blue flex-shrink-0 mt-1.5" />
                             {cap}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-accent mb-4">
                         Typical Impact
                       </h4>
                       <p className="text-sm text-foreground/80 leading-relaxed">

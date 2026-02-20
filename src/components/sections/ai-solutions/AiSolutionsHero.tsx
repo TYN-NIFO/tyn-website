@@ -60,7 +60,7 @@ export const AiSolutionsHero = () => {
 
 
           <h1 className="text-fluid-h1 font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
-            AI Solution{' '}
+            Solutions{' '}
             <span className="text-gradient">Portfolio</span>
           </h1>
 
@@ -75,7 +75,7 @@ export const AiSolutionsHero = () => {
           <div className="animate-fade-up delay-400 flex items-center gap-2 text-sm text-primary-foreground/60">
             Looking for a custom build?{' '}
             <a href="/services?tab=build" className="text-accent hover:text-accent/80 font-medium inline-flex items-center gap-1 transition-colors">
-              Our Services → Build
+              Services → Build
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>

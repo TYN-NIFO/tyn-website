@@ -1,30 +1,20 @@
-import { Clock, Building2, Brain, Cog, Sparkles } from 'lucide-react';
+import { Clock, Building2, Brain, TrendingUp, Rocket } from 'lucide-react';
 
 const outcomes = [
   {
-    icon: Clock,
-    title: 'Faster time-to-ROI',
-    description: 'Accelerate value realization from AI investments.',
+    icon: TrendingUp,
+    title: 'Quantifiable ROI',
+    description: 'Clear financial impact tied to measurable KPIs. Every initiative is designed with defined return metrics from day one.',
+  },
+  {
+    icon: Rocket,
+    title: 'Faster Time to Production',
+    description: 'Move from pilot to live deployment within structured timelines. Execution pathways designed for speed without compromising governance.',
   },
   {
     icon: Building2,
-    title: 'Enterprise-grade adoption, not isolated pilots',
-    description: 'Scale AI across the organization with governance.',
-  },
-  {
-    icon: Brain,
-    title: 'Better decision intelligence & reduced leakage',
-    description: 'Improve decision-making with AI-powered insights.',
-  },
-  {
-    icon: Cog,
-    title: 'Productivity & workflow automation',
-    description: 'Automate repetitive tasks and streamline processes.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Experience innovation for customers & employees',
-    description: 'Transform experiences with intelligent automation.',
+    title: 'Enterprise-Grade Adoption',
+    description: 'AI embedded into real workflows — not isolated experiments. Governed, scalable systems aligned with enterprise architecture.',
   },
 ];
 

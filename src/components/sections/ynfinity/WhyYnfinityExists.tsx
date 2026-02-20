@@ -39,12 +39,20 @@ export const WhyYnfinityExists = () => {
               Innovation often slows down because the right stakeholders rarely meet in the same room.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Enterprises explore transformation internally. Startups build breakthrough solutions. Policymakers shape regulatory landscapes. Academia advances research. Yet these conversations remain fragmented.
+              Ynfinity exists to create the convergence point for
             </p>
-            <p className="text-xl font-display font-bold text-foreground">
-              Ynfinity exists to create the{' '}
-              <span className="bg-accent/30 px-1">convergence point.</span>
-            </p>
+
+            <div className="flex flex-wrap gap-3 mt-8">
+              {['Policymakers', 'Academia', 'Enterprise Leaders', 'Startup Founders', 'Ecosystem Enablers'].map((role) => (
+                <div
+                  key={role}
+                  className="card-elevated px-4 py-2.5 rounded-xl border border-border flex items-center gap-2 text-sm font-semibold text-foreground bg-card"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  {role}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right: Abstract convergence visual */}

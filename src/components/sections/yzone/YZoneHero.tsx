@@ -60,8 +60,12 @@ export const YZoneHero = () => {
         <div className="max-w-3xl">
 
 
+          <div className="mb-6 animate-fade-up delay-100">
+            <img src="/assets/yzone-logo.png" alt="yZone" className="h-16 md:h-24 lg:h-32" />
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
-            yZone: Where AI talent turns into{' '}
+            Where AI talent turns into{' '}
             <span className="text-gradient">execution-ready teams</span>
           </h1>
 
