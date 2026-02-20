@@ -1,9 +1,0 @@
-{
-  "/accelerators/yzone/page": "app/accelerators/yzone/page.js",
-  "/accelerators/ynfinity/page": "app/accelerators/ynfinity/page.js",
-  "/accelerators/nifo/page": "app/accelerators/nifo/page.js",
-  "/services/page": "app/services/page.js",
-  "/services/ai-coe/page": "app/services/ai-coe/page.js",
-  "/about/page": "app/about/page.js",
-  "/careers/page": "app/careers/page.js"
-}
