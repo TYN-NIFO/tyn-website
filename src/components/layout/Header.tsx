@@ -160,14 +160,10 @@ export const Header = () => {
                         }`}
                     >
                       {item.label}
-<<<<<<< HEAD
                       {item.megaMenu && (
                         <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
                       )}
-                    </a>
-=======
                     </Link>
->>>>>>> da0a7ff4313254f589c6505ef3c9914340dcf017
                   ) : (
                     <button
                       className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
@@ -259,16 +255,10 @@ export const Header = () => {
             {navItems.map((item) => (
               <div key={item.label} className="px-4 py-2">
                 {item.href ? (
-<<<<<<< HEAD
-                  <a href={item.href} className="flex items-center justify-between py-2 font-medium">
+                  <Link href={item.href} className="flex items-center justify-between py-2 font-medium">
                     {item.label}
                     {item.megaMenu && <ChevronDown className="w-4 h-4" />}
-                  </a>
-=======
-                  <Link href={item.href} className="block py-2 font-medium">
-                    {item.label}
                   </Link>
->>>>>>> da0a7ff4313254f589c6505ef3c9914340dcf017
                 ) : (
                   <div>
                     <div className="py-2 font-medium flex items-center justify-between">

@@ -57,11 +57,7 @@ export const YZoneHero = () => {
 
 
           <div className="mb-6 animate-fade-up delay-100">
-<<<<<<< HEAD
-            {/* <img src="/assets/Yzone Logo White.png" alt="yZone" className="h-16 md:h-24 lg:h-36" /> */}
-=======
             <Image src="/assets/yzone-logo.png" alt="yZone" width={200} height={128} className="h-16 md:h-24 lg:h-32" />
->>>>>>> da0a7ff4313254f589c6505ef3c9914340dcf017
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
