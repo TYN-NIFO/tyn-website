@@ -94,7 +94,7 @@ export const Header = () => {
   const pathname = usePathname();
 
   // Force solid navbar on specific pages
-  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact';
+  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname?.startsWith('/resources');
   const isSolid = isScrolled || forceSolidNav;
 
   useEffect(() => {

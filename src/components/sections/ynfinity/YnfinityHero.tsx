@@ -57,13 +57,13 @@ export const YnfinityHero = () => {
       <div className="relative z-10 container-main py-24 md:py-32">
         <div className="max-w-3xl">
 
-
+          {/* 
           <div className="mb-6 animate-fade-up delay-100">
             <img src="/assets/ynfinity-logo.png" alt="Ynfinity" className="h-16 md:h-20 lg:h-24 brightness-0 invert" />
-          </div>
+          </div> */}
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
-            Powering innovation through{' '}
+            <img src="/assets/ynfinity-logo.png" alt="Ynfinity" className=" inline-flex h-16 md:h-22 lg:h-24 brightness-0 invert" />: Powering innovation through{' '}
             <span className="text-gradient">convergence of minds</span>
           </h1>
 

@@ -92,12 +92,12 @@ const WhatPowersDelivery = () => {
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <span className="inline-block px-4 py-1.5 bg-secondary/10 border border-secondary/30 text-secondary text-xs font-semibold uppercase tracking-wider rounded-sm mb-4">
+                    <span className="inline-block px-4 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-semibold uppercase tracking-wider rounded-sm mb-4">
                         Our Capabilities
                     </span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground">
                         What powers our{" "}
-                        <span className="text-secondary">delivery</span>
+                        <span className="text-yellow-400">delivery</span>
                     </h2>
                 </div>
 
@@ -112,16 +112,16 @@ const WhatPowersDelivery = () => {
                             {/* Card with subtle angular corners */}
                             <div className="relative bg-navy-light/80 border border-secondary/20 p-6 transition-all duration-300 hover:border-secondary/40 hover:bg-navy-light clip-card">
                                 {/* Number Badge */}
-                                <div className="absolute -top-3 -right-1 z-20">
-                                    <div className="w-10 h-10 bg-secondary flex items-center justify-center clip-hexagon">
-                                        <span className="text-secondary-foreground font-bold text-sm">{pillar.number}</span>
+                                <div className="absolute -top-0.5 right-0 z-20">
+                                    <div className="w-10 h-10 bg-yellow-400 flex items-center justify-center clip-hexagon">
+                                        <span className="text-black font-bold text-sm">{pillar.number}</span>
                                     </div>
                                 </div>
 
                                 {/* Icon & Title */}
                                 <div className="flex items-start gap-3 mb-6">
-                                    <div className="w-12 h-12 bg-secondary/10 border border-secondary/20 flex items-center justify-center clip-hexagon-sm flex-shrink-0">
-                                        <pillar.icon className="w-6 h-6 text-secondary" />
+                                    <div className="w-12 h-12 bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center clip-hexagon-sm flex-shrink-0">
+                                        <pillar.icon className="w-6 h-6 text-yellow-400" />
                                     </div>
                                     <div className="flex-1 pt-1">
                                         <h3 className="text-lg font-semibold text-primary-foreground leading-tight">{pillar.title}</h3>
