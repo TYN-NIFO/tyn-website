@@ -4537,6 +4537,10 @@ h1,
     height: 24rem;
   }
 
+  .md\:h-24{
+    height: 6rem;
+  }
+
   .md\:w-14{
     width: 3.5rem;
   }
@@ -4747,6 +4751,10 @@ h1,
 
   .lg\:h-24{
     height: 6rem;
+  }
+
+  .lg\:h-32{
+    height: 8rem;
   }
 
   .lg\:w-48{

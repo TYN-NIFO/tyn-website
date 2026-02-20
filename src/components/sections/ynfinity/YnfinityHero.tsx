@@ -58,9 +58,11 @@ export const YnfinityHero = () => {
         <div className="max-w-3xl">
 
 
+          <div className="mb-6 animate-fade-up delay-100">
+            <img src="/assets/ynfinity-logo.png" alt="Ynfinity" className="h-16 md:h-20 lg:h-24 brightness-0 invert" />
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground mb-8 leading-[1.1] animate-fade-up delay-100">
-            Ynfinity
-            <br />
             Powering innovation through{' '}
             <span className="text-gradient">convergence of minds</span>
           </h1>
@@ -69,7 +71,7 @@ export const YnfinityHero = () => {
             Many of the hardest enterprise challenges sit at the intersection of technology, regulation, operations, and ecosystem readiness. No single organization solves these in isolation.
           </p>
 
-          <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed">
             Ynfinity is TYN's accelerator designed to bring together the people shaping the future of enterprise innovation — in a trusted, curated environment where meaningful conversations and long-term collaborations can begin.
           </p>
 
