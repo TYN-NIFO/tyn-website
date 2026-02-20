@@ -54,7 +54,7 @@ export const OurSolution = () => {
           <br /><br />
 
           {/* Connection Line - Desktop */}
-          <div className="hidden lg:block absolute top-[55%] left-12 right-12 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2" />
+          {/* <div className="hidden lg:block absolute top-[55%] left-12 right-12 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2" /> */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {steps.map((step, index) => {
@@ -79,7 +79,7 @@ export const OurSolution = () => {
 
                   {/* Arrow connector - Desktop */}
                   {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-7 -translate-y-1/2 z-10">
+                    <div className="hidden lg:block absolute top-1/2 -right-5 -translate-y-1/2 z-10">
                       <ArrowRight className="w-5 h-5 text-accent/50" />
                     </div>
                   )}

@@ -80,7 +80,7 @@ export const Footer = () => {
           </div>
 
           <div className="mt-2">
-            <h4 className="font-display font-semibold mb-4"><b>Industries</b></h4>
+            <h4 className="font-display font-semibold mb-4"><b>Accelerators</b></h4>
             <ul className="space-y-3">
               {footerLinks.accelerators.map((link) => (
                 <li key={link.label}>
