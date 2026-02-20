@@ -14,29 +14,19 @@ export const CareersIntro = () => {
   return (
     <section className="bg-background min-h-screen flex items-center pt-32 md:pt-40 pb-20 md:pb-28">
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="max-w-xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
-              Careers
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Build Meaningful Enterprise Solutions
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
+            Careers
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            Build Meaningful Enterprise Solutions
+          </p>
+
+          <div className="text-lg md:text-xl leading-relaxed text-foreground/80">
+            <p>
+              At TYN, we work on real enterprise challenges that matter.
+              Our teams bring together elements of consulting, product thinking, deep engineering, and stakeholder orchestration — creating a space where diverse skills come together to create measurable enterprise impact.
             </p>
-
-            <div className="text-lg md:text-xl leading-relaxed text-foreground/80">
-              <p>
-                At TYN, we work on real enterprise challenges that matter.
-                Our teams bring together elements of consulting, product thinking, deep engineering, and stakeholder orchestration — creating a space where diverse skills come together to create measurable enterprise impact.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src={careersCollabImg}
-              alt="Enterprise collaboration illustration"
-              className="w-full max-w-md lg:max-w-lg"
-            />
           </div>
         </div>
 

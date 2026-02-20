@@ -12,21 +12,13 @@ export const OpenPositions = ({ positions }: OpenPositionsProps) => {
   return (
     <section className="bg-background pattern-grid section-padding">
       <div className="container-main">
-        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Open Positions
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              This section is designed to dynamically list current openings.
-            </p>
-          </div>
-          <img
-            src={careersTeamImg}
-            alt="Team collaboration illustration"
-            className="hidden md:block w-40 lg:w-48 opacity-90"
-          />
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Open Positions
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            This section is designed to dynamically list current openings.
+          </p>
         </div>
 
         {positions.length > 0 ? (

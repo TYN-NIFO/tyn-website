@@ -7,8 +7,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ServicesHero } from '@/components/sections/services/ServicesHero';
 import { ServiceContent, ServiceTabPills } from '@/components/sections/services/ServiceDeepDive';
-import { EngagementModels } from '@/components/sections/services/EngagementModels';
-import { WhyThisWorks } from '@/components/sections/services/WhyThisWorks';
+// import { EngagementModels } from '@/components/sections/services/EngagementModels';
+// import { WhyThisWorks } from '@/components/sections/services/WhyThisWorks';
 import { ServicesCTA } from '@/components/sections/services/ServicesCTA';
 
 const services = [
@@ -37,7 +37,7 @@ const services = [
             'Clear rationale for buy vs build',
         ],
         outcome:
-            'Messy costs, workflow friction, unclear decision rights, and human-only processes block real adoption. Faster time-to-impact without tech debt or vendor regret.',
+            'Faster time-to-impact without tech debt or vendor regret. Messy costs, workflow friction, unclear decision rights, and human-only processes block real adoption.',
     },
     {
         id: 'build',
@@ -101,8 +101,8 @@ export default function ServicesPage() {
                 <Suspense fallback={null}>
                     <ServicesContent />
                 </Suspense>
-                <EngagementModels />
-                <WhyThisWorks />
+                {/* <EngagementModels />
+                <WhyThisWorks /> */}
                 <ServicesCTA />
             </main>
             <Footer />

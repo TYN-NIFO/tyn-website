@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const ServicesCTA = () => {
@@ -25,8 +25,11 @@ export const ServicesCTA = () => {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="/contact?source_page=Services&cta=Share-priorities">
-                <Button className="btn-outline-hero">Explore Engagement Models</Button>
+              <a href="/#engagement-models">
+                <Button className="btn-outline-hero group">
+                  <Search className="mr-2 w-5 h-5 text-accent group-hover:text-primary transition-colors" />
+                  Explore Engagement Models
+                </Button>
               </a>
             </div>
           </div>

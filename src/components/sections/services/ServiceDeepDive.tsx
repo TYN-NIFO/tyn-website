@@ -28,7 +28,7 @@ export const ServiceTabPills = ({
   activeId: string;
   onTabChange: (id: string) => void;
 }) => (
-  <div className="sticky top-0 z-30 bg-background/95 backdrop-blur-md border-b border-border/50">
+  <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border/50">
     <div className="container-main py-4 flex flex-wrap gap-3 justify-center md:justify-start">
       {services.map((service) => {
         const isActive = activeId === service.id;
@@ -36,11 +36,10 @@ export const ServiceTabPills = ({
           <button
             key={service.id}
             onClick={() => onTabChange(service.id)}
-            className={`px-8 py-3 rounded-lg text-base font-display font-semibold tracking-wide border-2 transition-all duration-300 ${
-              isActive
+            className={`px-8 py-3 rounded-lg text-base font-display font-semibold tracking-wide border-2 transition-all duration-300 ${isActive
                 ? 'bg-accent text-accent-foreground border-accent shadow-glow'
                 : 'bg-transparent text-foreground border-border hover:border-accent/50 hover:text-accent'
-            }`}
+              }`}
           >
             {service.title}
           </button>

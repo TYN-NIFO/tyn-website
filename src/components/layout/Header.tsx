@@ -130,7 +130,10 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = item.href === pathname || item.megaMenu?.some(section => section.items.some(child => child.href === pathname));
+              const isActive = item.href === pathname || item.megaMenu?.some(section => section.items.some(child => {
+                const childPath = child.href.split('?')[0].split('#')[0];
+                return (childPath === pathname && childPath !== '/') || child.href === pathname;
+              }));
 
               return (
                 <div
