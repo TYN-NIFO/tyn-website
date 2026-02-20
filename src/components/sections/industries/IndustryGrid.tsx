@@ -68,6 +68,9 @@ const industries: Industry[] = [
 export const IndustryGrid = () => {
   const [activeIndustry, setActiveIndustry] = useState<number | null>(null);
 
+  // FEATURE FLAG: Controls whether clicking an industry card opens the detail view
+  const IS_MODAL_ENABLED = false;
+
   const activeData = activeIndustry !== null ? industries[activeIndustry] : null;
 
   return (
@@ -96,7 +99,11 @@ export const IndustryGrid = () => {
                   <div
                     key={industry.id}
                     className="card-elevated rounded-2xl cursor-pointer group p-6 md:p-8 transition-all duration-300 hover:ring-2 hover:ring-accent/40"
-                    onClick={() => setActiveIndustry(index)}
+                    onClick={() => {
+                      if (IS_MODAL_ENABLED) {
+                        setActiveIndustry(index);
+                      }
+                    }}
                   >
                     <div className="flex items-start gap-4">
                       <div className="icon-tyn flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-colors duration-300">

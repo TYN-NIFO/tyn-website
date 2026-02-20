@@ -2226,6 +2226,9 @@ h1,
   --tw-bg-opacity: 1;
   background-color: rgb(7 55 99 / var(--tw-bg-opacity, 1));
 }
+.bg-tyn-blue\/10{
+  background-color: rgb(7 55 99 / 0.1);
+}
 .bg-tyn-yellow{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
@@ -2245,9 +2248,6 @@ h1,
 }
 .bg-yellow-dark\/5{
   background-color: hsl(var(--yellow-dark) / 0.05);
-}
-.bg-tyn-blue\/10{
-  background-color: rgb(7 55 99 / 0.1);
 }
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -3632,10 +3632,6 @@ h1,
   background-color: hsl(var(--accent) / 0.4);
 }
 
-.group:hover .group-hover\:bg-accent{
-  background-color: hsl(var(--accent));
-}
-
 .group:hover .group-hover\:text-accent{
   color: hsl(var(--accent));
 }
@@ -4470,10 +4466,6 @@ h1,
     margin-bottom: 0px;
   }
 
-  .md\:mb-16{
-    margin-bottom: 4rem;
-  }
-
   .md\:mb-4{
     margin-bottom: 1rem;
   }
@@ -4656,6 +4648,11 @@ h1,
     line-height: 1;
   }
 
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .md\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -4669,11 +4666,6 @@ h1,
   .md\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .md\:opacity-0{
