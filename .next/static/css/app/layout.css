@@ -2229,6 +2229,9 @@ h1,
 .bg-tyn-blue\/10{
   background-color: rgb(7 55 99 / 0.1);
 }
+.bg-tyn-blue\/20{
+  background-color: rgb(7 55 99 / 0.2);
+}
 .bg-tyn-yellow{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
