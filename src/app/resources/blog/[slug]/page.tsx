@@ -8,6 +8,7 @@ import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { ResourceCard } from "@/components/sections/resources/ResourceCard";
+import { getLocalBlogBySlug, localBlogs } from "@/data/localBlogs";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -15,7 +16,8 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params;
-    const blog = await client.fetch<Blog>(GET_BLOG_BY_SLUG, { slug });
+    let blog = await client.fetch<Blog | null>(GET_BLOG_BY_SLUG, { slug });
+    if (!blog) blog = getLocalBlogBySlug(slug) ?? null;
     if (!blog) return { title: "Blog Not Found" };
 
     return {
@@ -29,7 +31,10 @@ export const revalidate = 60;
 
 export default async function BlogPage({ params }: PageProps) {
     const { slug } = await params;
-    const blog = await client.fetch<Blog>(GET_BLOG_BY_SLUG, { slug });
+    let blog = await client.fetch<Blog | null>(GET_BLOG_BY_SLUG, { slug });
+    if (!blog) {
+        blog = getLocalBlogBySlug(slug) ?? null;
+    }
 
     if (!blog) {
         return (
@@ -37,8 +42,8 @@ export default async function BlogPage({ params }: PageProps) {
                 <HeaderWrapper />
                 <main className="flex-grow flex items-center justify-center">
                     <div className="text-center">
-                        <h1 className="text-2xl font-bold mb-4">Blog Post Not Found</h1>
-                        <Link href="/resources" className="text-blue-600 hover:underline">
+                        <h1 className="text-2xl font-bold text-foreground mb-4">Blog Post Not Found</h1>
+                        <Link href="/resources" className="text-tyn-blue hover:underline">
                             Back to Resources
                         </Link>
                     </div>
@@ -48,10 +53,12 @@ export default async function BlogPage({ params }: PageProps) {
         );
     }
 
-    const relatedBlogs = await client.fetch<Blog[]>(GET_RELATED_BLOGS, {
-        currentId: blog._id,
-        currentTags: blog.tags || []
-    });
+    const relatedBlogs = blog._id.startsWith("sample-blog-") || blog._id.startsWith("gears-gpt-")
+        ? localBlogs.filter((b) => b._id !== blog!._id).slice(0, 3)
+        : await client.fetch<Blog[]>(GET_RELATED_BLOGS, {
+              currentId: blog._id,
+              currentTags: blog.tags || [],
+          });
 
     return (
         <div className="min-h-screen bg-background flex flex-col">
@@ -60,7 +67,7 @@ export default async function BlogPage({ params }: PageProps) {
                 <article className="container-main max-w-4xl mx-auto">
                     {/* Breadcrumb / Back */}
                     <div className="mb-6">
-                        <Link href="/resources?tab=blogs" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium">
+                        <Link href="/resources?tab=blogs" className="inline-flex items-center text-tyn-blue hover:text-tyn-blue/90 transition-colors font-medium">
                             <ArrowLeft className="mr-2 w-4 h-4" /> Back to Resources
                         </Link>
                     </div>
@@ -69,17 +76,17 @@ export default async function BlogPage({ params }: PageProps) {
                     <div className="mb-8">
                         <div className="flex flex-wrap gap-2 mb-4">
                             {blog.tags?.map(tag => (
-                                <span key={tag} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold uppercase tracking-wide">
+                                <span key={tag} className="px-3 py-1 bg-muted text-tyn-blue rounded-full text-xs font-semibold uppercase tracking-wide">
                                     {tag}
                                 </span>
                             ))}
                         </div>
 
-                        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
                             {blog.title}
                         </h1>
 
-                        <div className="flex flex-wrap items-center gap-6 text-gray-500 border-b border-gray-200 pb-8 mb-8">
+                        <div className="flex flex-wrap items-center gap-6 text-muted-foreground border-b border-border pb-8 mb-8">
                             <div className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4" />
                                 <span>{new Date(blog.publishedAt).toLocaleDateString()}</span>
@@ -96,7 +103,7 @@ export default async function BlogPage({ params }: PageProps) {
                                         <Image src={blog.authorImageUrl} alt={blog.author} fill className="object-cover" />
                                     </div>
                                 )}
-                                <span className="font-medium text-gray-700">By {blog.author}</span>
+                                <span className="font-medium text-foreground">By {blog.author}</span>
                             </div>
                         </div>
                     </div>
@@ -115,15 +122,15 @@ export default async function BlogPage({ params }: PageProps) {
                     )}
 
                     {/* Content */}
-                    <div className="prose prose-lg max-w-none text-gray-700">
+                    <div className="prose prose-lg max-w-none text-foreground prose-headings:text-foreground prose-p:text-muted-foreground">
                         <PortableText value={blog.content} />
                     </div>
                 </article>
 
                 {/* Related Blogs */}
                 {relatedBlogs.length > 0 && (
-                    <section className="container-main mt-24 pt-12 border-t border-gray-200">
-                        <h2 className="text-3xl font-bold mb-8 text-gray-900">Related Articles</h2>
+                    <section className="container-main mt-24 pt-12 border-t border-border">
+                        <h2 className="text-3xl font-display font-bold mb-8 text-foreground">Related Articles</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {relatedBlogs.map(post => (
                                 <div key={post._id} className="h-full">
