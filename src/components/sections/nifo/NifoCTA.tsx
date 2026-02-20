@@ -24,7 +24,7 @@ export const NifoCTA = () => {
                 </Button>
               </a>
               <a href="/ai-solutions">
-                <Button className="btn-outline-hero">Explore our AI Solutions</Button>
+                <Button className="btn-outline-hero">Explore our Solutions</Button>
               </a>
             </div>
           </div>

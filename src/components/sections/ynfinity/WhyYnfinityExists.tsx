@@ -39,11 +39,7 @@ export const WhyYnfinityExists = () => {
               Innovation often slows down because the right stakeholders rarely meet in the same room.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Enterprises explore transformation internally. Startups build breakthrough solutions. Policymakers shape regulatory landscapes. Academia advances research. Yet these conversations remain fragmented.
-            </p>
-            <p className="text-xl font-display font-bold text-foreground">
-              Ynfinity exists to create the{' '}
-              <span className="bg-accent/30 px-1">convergence point.</span>
+              Ynfinity exists to create the convergence point for policymakers, academia, enterprise leaders, startup founders, and ecosystem enablers.
             </p>
           </div>
 

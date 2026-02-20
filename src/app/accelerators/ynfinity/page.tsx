@@ -18,11 +18,11 @@ export default function YnfinityPage() {
             <main>
                 <YnfinityHero />
                 <WhyYnfinityExists />
-                <WhoComesToYnfinity />
+                {/* <WhoComesToYnfinity /> */}
                 <WhatHappensAtYnfinity />
                 <YnfinityEventHighlight />
-                <WhyThisMatters />
-                <HowYnfinityFits />
+                {/* <WhyThisMatters />
+                <HowYnfinityFits /> */}
                 <YnfinityCTA />
             </main>
             <Footer />

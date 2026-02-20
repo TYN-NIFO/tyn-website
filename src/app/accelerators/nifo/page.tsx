@@ -20,9 +20,9 @@ export default function NifoPage() {
                 <NifoProblem />
                 <WhatNifoEnables />
                 <HowNifoWorks />
-                <WhyItMatters />
+                {/* <WhyItMatters />
                 <TheResult />
-                <HowNifoFits />
+                <HowNifoFits /> */}
                 <NifoCTA />
             </main>
             <Footer />

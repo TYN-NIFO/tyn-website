@@ -20,6 +20,21 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/ai-solutions/page.js"
+    ],
+    "/accelerators/nifo/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/accelerators/nifo/page.js"
+    ],
+    "/accelerators/ynfinity/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/accelerators/ynfinity/page.js"
+    ],
+    "/accelerators/yzone/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/accelerators/yzone/page.js"
     ]
   }
 }
