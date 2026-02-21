@@ -47,8 +47,8 @@ export const localWhitepapers: LocalWhitepaper[] = [
     slug: "choosing-the-right-partner-for-channel-led-growth",
     image: "https://res.cloudinary.com/dv0eaik7h/image/upload/v1749708844/bgwhitepaper_fhv4be.jpg",
     authors: [
-      { name: "Ganapathy Gangadharan", role: "Founder", image: "/gg.jpeg" },
-      { name: "Kaushik Venkatesan", role: "Alliance Director", image: "/kaushik.jpg" },
+      { name: "Ganapathy Gangadharan", role: "Founder", image: "/assets/Profile pics/Ganapathy Gangadharan.png" },
+      { name: "Kaushik Venkatesan", role: "Alliance Director", image: "/assets/Profile pics/kaushik.png" },
     ],
     content: [
       {
@@ -95,8 +95,8 @@ export const localWhitepapers: LocalWhitepaper[] = [
     slug: "unlocking-industrial-transformation-through-market-innovation-adoption",
     image: "https://res.cloudinary.com/dv0eaik7h/image/upload/v1749708621/global-business_bxe79k.webp",
     authors: [
-      { name: "Senthilvelan Natarajan", role: "Co-Founder & CTO", image: "/velan.png" },
-      { name: "Sourish Ghosh", role: "Growth Manager", image: "/sourish.jpeg" },
+      { name: "Senthilvelan Natarajan", role: "Co-Founder & CTO", image: "/assets/Profile pics/velan.png" },
+      { name: "Sourish Ghosh", role: "Growth Manager", image: "/assets/Profile pics/Sourish_Ghosh.png" },
     ],
     content: [
       {

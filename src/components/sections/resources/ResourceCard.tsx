@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Blog, Whitepaper, Ynsight } from "@/lib/sanity/types";
 
 /** Whitepaper from Sanity or local (has title, description, fileUrl; optional slug for detail page link). */
-type WhitepaperLike = Whitepaper | { _id: string; title: string; description: string; fileUrl: string; slug?: string; image?: string };
+type WhitepaperLike = Whitepaper | { _id: string; title: string; description: string; fileUrl: string; slug?: string; image?: string; authors?: { name: string; image: string; role?: string }[] };
 
 interface ResourceCardProps {
     type: "blog" | "whitepaper" | "use-case";
@@ -19,9 +19,9 @@ export const ResourceCard = ({ type, data }: ResourceCardProps) => {
             <Link href={`/resources/blog/${blog.slug.current}`} className="group block h-full">
                 <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                     <div className="relative h-48 w-full overflow-hidden">
-                        {blog.authorImageUrl || blog.featuredImageUrl ? (
+                        {blog.featuredImageUrl ? (
                             <Image
-                                src={(blog.authorImageUrl || blog.featuredImageUrl)!}
+                                src={blog.featuredImageUrl}
                                 alt={blog.title}
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -56,8 +56,18 @@ export const ResourceCard = ({ type, data }: ResourceCardProps) => {
                         <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-1">
                             {blog.excerpt}
                         </p>
-                        <div className="flex items-center text-tyn-blue text-sm font-semibold mt-auto">
-                            Read Article <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
+                            <div className="flex items-center gap-2">
+                                {blog.authorImageUrl && (
+                                    <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                                        <Image src={blog.authorImageUrl} alt={blog.author} fill className="object-cover" />
+                                    </div>
+                                )}
+                                <span className="text-xs font-medium text-foreground">{blog.author}</span>
+                            </div>
+                            <div className="flex items-center text-tyn-blue text-xs font-semibold">
+                                Read Article <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -97,8 +107,26 @@ export const ResourceCard = ({ type, data }: ResourceCardProps) => {
                     <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-1">
                         {whitepaper.description}
                     </p>
-                    <div className="flex items-center text-tyn-blue text-sm font-semibold mt-auto">
-                        Download PDF <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
+                        <div className="flex items-center gap-2">
+                            {"authors" in whitepaper && whitepaper.authors && whitepaper.authors.length > 0 ? (
+                                <>
+                                    <div className="flex -space-x-2">
+                                        {whitepaper.authors.map((author, i) => (
+                                            <div key={i} className="relative w-6 h-6 rounded-full overflow-hidden border border-background shadow-sm" style={{ zIndex: whitepaper.authors!.length - i }}>
+                                                <Image src={author.image} alt={author.name} fill className="object-cover" />
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <span className="text-xs font-medium text-foreground line-clamp-1 ml-1">
+                                        {whitepaper.authors[0].name} {whitepaper.authors.length > 1 && "& more"}
+                                    </span>
+                                </>
+                            ) : null}
+                        </div>
+                        <div className="flex items-center text-tyn-blue text-xs font-semibold whitespace-nowrap">
+                            Read Article <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
+                        </div>
                     </div>
                 </div>
             </div>

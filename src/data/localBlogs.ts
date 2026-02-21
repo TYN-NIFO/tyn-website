@@ -387,7 +387,7 @@ export const localBlogs: Blog[] = [
     author: "Senthilvelan Natarajan",
     authorTitle:
       "AI Products | Start-ups | Co-Innovation | Academia | Career Coach. Team Builder. Story Maker. || Ex-TCS ||",
-    authorImageUrl: "/velan.png",
+    authorImageUrl: "/assets/Profile pics/velan.png",
     publishedAt: "2025-08-05T00:00:00.000Z",
     excerpt:
       "Back in the early 2000s I found myself inside UPS's Louisville hub, marveling at how a wall of clipboards kept global commerce humming. Fast-forward a few decades, a million air miles, long corporate life and one startup later, and those clipboards have evolved into tireless digital \"sheepdogs\" nudging every pallet toward its destination.",
@@ -405,8 +405,7 @@ export const localBlogs: Blog[] = [
       "TheYellowNetwork",
       "HIRING",
     ],
-    featuredImageUrl:
-      "https://media.licdn.com/dms/image/v2/D5612AQEgQEMiUvrtWQ/article-cover_image-shrink_600_2000/B56Zh5rwUEHcAY-/0/1754388178219?e=1759968000&v=beta&t=IGJdTkegfXA1NRkYLoT-FOKJd1Q0w4aHDkCWq0cme_I",
+    featuredImageUrl: "/assets/digital sheep dog blogs.png",
     content: sampleBlogContent as Blog["content"],
     _createdAt: "",
     _rev: "",
@@ -420,7 +419,7 @@ export const localBlogs: Blog[] = [
     author: "Senthilvelan Natarajan",
     authorTitle:
       "AI Products | Start-ups | Co-Innovation | Academia | Career Coach. Team Builder. Story Maker. || Ex-TCS ||",
-    authorImageUrl: "/velan.png",
+    authorImageUrl: "/assets/Profile pics/velan.png",
     publishedAt: "2025-08-11T00:00:00.000Z",
     excerpt:
       "A walk down the memory lane from the late '90s precision of Shanthi Gears to today's AI-powered vision systems at Mahindra. How digital twins, agentic AI, and vision models are transforming auto component manufacturing.",
@@ -437,8 +436,7 @@ export const localBlogs: Blog[] = [
       "TheYellowNetwork",
       "CoInnovation",
     ],
-    featuredImageUrl:
-      "https://media.licdn.com/dms/image/v2/D5612AQHpKUvN2VKi4w/article-cover_image-shrink_720_1280/B56ZiXQMWaHMAI-/0/1754884262383?e=1760572800&v=beta&t=OGckrpTFSgfeZPi7KeL1j4PhGQcpre-oFnxSm77Hu0c",
+    featuredImageUrl: "/assets/gears and gpt blog.jpg",
     content: gearsGptContent as Blog["content"],
     _createdAt: "",
     _rev: "",
