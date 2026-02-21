@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -97,7 +98,7 @@ export const Header = () => {
   const pathname = usePathname();
 
   // Force solid navbar on specific pages
-  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname?.startsWith('/resources');
+  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname === '/ynfinity-events' || pathname?.startsWith('/resources');
   const isSolid = isScrolled || forceSolidNav;
 
   useEffect(() => {

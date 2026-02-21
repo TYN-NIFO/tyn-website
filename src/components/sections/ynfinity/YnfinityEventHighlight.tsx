@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const YnfinityEventHighlight = () => {
   return (
@@ -21,9 +22,11 @@ export const YnfinityEventHighlight = () => {
           <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8">
             A curated gathering of enterprise leaders, innovators, and ecosystem stakeholders shaping the next wave of transformation.
           </p>
-          <Button className="btn-hero group">
-            Explore the event
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <Button asChild className="btn-hero group">
+            <Link href="/ynfinity-events">
+              Explore the event
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>
