@@ -3,7 +3,7 @@ import { FooterWrapper } from "@/components/layout/FooterWrapper";
 import { localWhitepapers } from "@/data/localWhitepapers";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Download, Share2 } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import { WhitepaperActions } from "@/app/resources/whitepaper/[slug]/WhitepaperActions";
 
 interface PageProps {
@@ -162,15 +162,20 @@ export default async function WhitepaperPage({ params }: PageProps) {
                             </div>
                         )}
 
-                        <div className="flex justify-center mt-12">
-                            <a
-                                href={`${whitepaper.fileUrl}?dl=`}
-                                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors font-medium shadow-md"
-                            >
-                                <Download className="w-4 h-4" />
-                                Download the full whitepaper
-                            </a>
-                        </div>
+                        {whitepaper.fileUrl && (
+                            <div className="flex justify-center mt-12">
+                                <a
+                                    href={encodeURI(whitepaper.fileUrl)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    download
+                                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors font-medium shadow-md"
+                                >
+                                    <Download className="w-4 h-4" />
+                                    Download the full whitepaper
+                                </a>
+                            </div>
+                        )}
                     </article>
                 </div>
             </main>

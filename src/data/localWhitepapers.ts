@@ -43,7 +43,7 @@ export const localWhitepapers: LocalWhitepaper[] = [
     _id: "local-wp-1",
     title: "Choosing the Right Partner for Channel - Led Growth",
     description: "Choosing the Right Partner for Channel - Led Growth",
-    fileUrl: "/whitepapers/Unlocking Non Linear Growth through Strategic Alliances.pdf",
+    fileUrl: "/assets/whitepapers/Unlocking Non Linear Growth through Strategic Alliances.pdf",
     slug: "choosing-the-right-partner-for-channel-led-growth",
     image: "https://res.cloudinary.com/dv0eaik7h/image/upload/v1749708844/bgwhitepaper_fhv4be.jpg",
     authors: [
@@ -91,7 +91,7 @@ export const localWhitepapers: LocalWhitepaper[] = [
     _id: "local-wp-2",
     title: "Unlocking Industrial Transformation through Market Innovation Adoption",
     description: "Unlocking Industrial Transformation through Market Innovation Adoption",
-    fileUrl: "/whitepapers/Unlocking Enterprise Transformation through Market Innovation Adoption.pdf",
+    fileUrl: "/assets/whitepapers/Unlocking Enterprise Transformation through Market Innovation Adoption.pdf",
     slug: "unlocking-industrial-transformation-through-market-innovation-adoption",
     image: "https://res.cloudinary.com/dv0eaik7h/image/upload/v1749708621/global-business_bxe79k.webp",
     authors: [

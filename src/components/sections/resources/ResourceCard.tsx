@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Calendar, Clock, Download } from "lucide-react";
+import { ArrowRight, Calendar, Clock, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Blog, Whitepaper, Ynsight } from "@/lib/sanity/types";
 
@@ -90,7 +90,7 @@ export const ResourceCard = ({ type, data }: ResourceCardProps) => {
                         />
                     ) : (
                         <div className="w-full h-full bg-muted flex flex-col items-center justify-center text-muted-foreground/30">
-                            <Download className="w-12 h-12 mb-2" />
+                            <FileText className="w-12 h-12 mb-2" />
                             <span className="text-sm font-medium">Whitepaper</span>
                         </div>
                     )}
@@ -140,14 +140,21 @@ export const ResourceCard = ({ type, data }: ResourceCardProps) => {
             );
         }
 
-        return (
-            <a
-                href={`${whitepaper.fileUrl}?dl=`}
-                className="group block h-full"
-            >
-                {cardContent}
-            </a>
-        );
+        if (whitepaper.fileUrl) {
+            return (
+                <a
+                    href={encodeURI(whitepaper.fileUrl)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="group block h-full"
+                >
+                    {cardContent}
+                </a>
+            );
+        }
+
+        return <div className="block h-full">{cardContent}</div>;
     }
 
     if (type === "use-case") {

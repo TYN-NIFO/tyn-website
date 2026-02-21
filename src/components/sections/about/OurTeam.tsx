@@ -20,7 +20,7 @@ const teamMembers = [
         name: 'Rathnasundaradevi', role: 'Legal & Finance Manager',
         image: '/assets/Profile pics/rathna-removebg-preview.png'
     },
-    { name: 'Varshiga Mohankumar', role: 'Intern - Full Stack Developer', image: '/assets/Profile pics/varshiga.jpg' },
+    { name: 'Varshiga Mohankumar', role: 'Intern - Full Stack Developer', image: '/assets/Profile pics/Varshiga.jpg' },
 ];
 
 export const OurTeam = () => {
