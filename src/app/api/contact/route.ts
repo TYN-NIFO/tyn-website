@@ -59,18 +59,37 @@ export async function POST(request: Request) {
             const sheets = google.sheets({ version: 'v4', auth });
             const spreadsheetId = '1wIgYjTjPblQorE9FsMunP4FPAOlMf6itY-eOkyVVyhA';
 
-            console.log('Sending request to append row to Google Sheet (1wIgYjTj...)...');
-            const sheetRequest = {
+            console.log('Sending request to insert row at top of Google Sheet (1wIgYjTj...)...');
+
+            // Step 1: Insert a blank row at position 1 (row 2, right below the header)
+            await sheets.spreadsheets.batchUpdate({
                 spreadsheetId,
-                range: 'Sheet1!A:I', // Append anywhere in columns A to I
+                requestBody: {
+                    requests: [
+                        {
+                            insertDimension: {
+                                range: {
+                                    sheetId: 0, // First sheet
+                                    dimension: 'ROWS',
+                                    startIndex: 1, // 0-indexed: row index 1 = spreadsheet row 2
+                                    endIndex: 2,
+                                },
+                                inheritFromBefore: false,
+                            },
+                        },
+                    ],
+                },
+            });
+
+            // Step 2: Write the data into the newly inserted row 2
+            const sheetResponse = await sheets.spreadsheets.values.update({
+                spreadsheetId,
+                range: 'Sheet1!A2:I2',
                 valueInputOption: 'USER_ENTERED',
                 requestBody: {
                     values: [rowData],
                 },
-            };
-            console.log('Google Sheets API Request Body:', JSON.stringify(sheetRequest, null, 2));
-
-            const sheetResponse = await sheets.spreadsheets.values.append(sheetRequest);
+            });
             console.log('Google Sheets API Response:', JSON.stringify(sheetResponse.data, null, 2));
 
         } catch (sheetError: any) {

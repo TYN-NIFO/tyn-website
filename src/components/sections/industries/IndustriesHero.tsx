@@ -33,7 +33,7 @@ export const IndustriesHero = () => {
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px]" />
       <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/3 rounded-full blur-[80px]" />
 
-      <div className="relative z-10 container-main py-24 md:py-32">
+      <div className="relative z-10 container-main py-24 md:py-32 mt-10">
         <div className="max-w-3xl">
 
 

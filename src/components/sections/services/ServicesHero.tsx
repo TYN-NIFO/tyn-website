@@ -1,20 +1,31 @@
 'use client';
 
-import { useState } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface Dot { top: string; left: string; animationDelay: string; animation: string; }
 
+// Simple seeded PRNG (mulberry32) — deterministic across server & client
+function seededRandom(seed: number) {
+  return () => {
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+const dots: Dot[] = (() => {
+  const rand = seededRandom(42);
+  return [...Array(40)].map(() => ({
+    top: `${rand() * 100}%`,
+    left: `${rand() * 100}%`,
+    animationDelay: `${rand() * 3}s`,
+    animation: `fadeIn 2s ease-in-out ${rand() * 2}s infinite alternate`,
+  }));
+})();
+
 export const ServicesHero = () => {
-  const [dots] = useState<Dot[]>(() =>
-    [...Array(40)].map(() => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 3}s`,
-      animation: `fadeIn 2s ease-in-out ${Math.random() * 2}s infinite alternate`,
-    })),
-  );
 
   const scrollToServices = () => {
     document.getElementById('services-tabs')?.scrollIntoView({ behavior: 'smooth' });
