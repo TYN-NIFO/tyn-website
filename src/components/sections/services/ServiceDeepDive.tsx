@@ -28,8 +28,8 @@ export const ServiceTabPills = ({
   activeId: string;
   onTabChange: (id: string) => void;
 }) => (
-  <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border/50">
-    <div className="container-main py-3 flex flex-nowrap gap-2 overflow-x-auto scrollbar-none justify-center md:justify-start">
+  <div className="sticky top-16 sm:top-20 z-40 bg-background/95 backdrop-blur-md border-b border-border/50">
+    <div className="container-main py-3 flex flex-nowrap gap-2 overflow-x-auto scrollbar-none whitespace-nowrap justify-center md:justify-start">
       {services.map((service) => {
         const isActive = activeId === service.id;
         return (
