@@ -29,18 +29,21 @@ export const OurPartners = () => {
 
                 <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
                     <div className="flex animate-logo-scroll gap-24 items-center">
-                        {[...partnerLogos, ...partnerLogos].map((logo, idx) => (
-                            <div
-                                key={idx}
-                                className="flex-shrink-0 flex items-center justify-center h-48"
-                            >
-                                <img
-                                    src={logo}
-                                    alt={`Partner Logo ${idx}`}
-                                    className="h-48 w-auto max-w-[400px] object-contain transition-transform duration-300 hover:scale-105"
-                                />
-                            </div>
-                        ))}
+                        {[...partnerLogos, ...partnerLogos].map((logo, idx) => {
+                            const isOversized = logo.includes('/14.png') || logo.includes('/15.png');
+                            return (
+                                <div
+                                    key={idx}
+                                    className="flex-shrink-0 flex items-center justify-center h-48"
+                                >
+                                    <img
+                                        src={logo}
+                                        alt={`Partner Logo ${idx}`}
+                                        className={`w-auto max-w-[400px] object-contain transition-transform duration-300 hover:scale-105 ${isOversized ? 'h-64' : 'h-48'}`}
+                                    />
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

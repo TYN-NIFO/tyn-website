@@ -164,26 +164,59 @@ const ContentCard = ({ icon: CardIcon, title, items, listStyle }: ContentCardPro
 
 /* ---- Process Timeline ---- */
 
-const ProcessTimeline = ({ steps }: { steps: string[] }) => (
-  <div className="relative">
-    {/* Connecting line */}
-    <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/40 via-accent/20 to-accent/40 z-0" />
+// Split an array into chunks of `size`
+function chunkArray<T>(arr: T[], size: number): T[][] {
+  const result: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) result.push(arr.slice(i, i + size));
+  return result;
+}
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-      {steps.map((step, idx) => (
-        <div key={idx} className="flex flex-col items-center text-center group">
-          {/* Node */}
-          <div className="w-16 h-16 rounded-xl bg-primary border-2 border-accent/30 flex items-center justify-center mb-4 group-hover:border-accent group-hover:shadow-glow transition-all duration-300">
-            <span className="text-lg font-display font-bold text-accent">
-              {String(idx + 1).padStart(2, '0')}
-            </span>
-          </div>
-          {/* Step card */}
-          <div className="card-elevated rounded-xl p-5 w-full hover:-translate-y-1 transition-transform duration-300">
-            <p className="text-sm text-muted-foreground leading-relaxed">{step}</p>
-          </div>
+const ProcessTimeline = ({ steps }: { steps: string[] }) => {
+  const mdRows = chunkArray(steps, 2); // rows of 2 for the md (tablet) 2×2 grid
+
+  return (
+    <div>
+      {/* ── Desktop lg: all items in one flat row with one connector line ── */}
+      <div className="relative hidden lg:block">
+        <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/40 via-accent/20 to-accent/40 z-0 pointer-events-none" />
+        <div className="grid grid-cols-4 gap-6 relative z-10">
+          {steps.map((step, idx) => (
+            <TimelineCard key={idx} step={step} idx={idx} />
+          ))}
         </div>
-      ))}
+      </div>
+
+      {/* ── Tablet md / mobile: chunked rows, each row gets its own line ── */}
+      <div className="lg:hidden space-y-6">
+        {mdRows.map((rowSteps, rowIdx) => (
+          <div key={rowIdx} className="relative">
+            {/* Per-row connector line — only on md, hidden on mobile */}
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/40 via-accent/20 to-accent/40 z-0 pointer-events-none" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+              {rowSteps.map((step, idx) => {
+                const globalIdx = rowIdx * 2 + idx;
+                return <TimelineCard key={globalIdx} step={step} idx={globalIdx} />;
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const TimelineCard = ({ step, idx }: { step: string; idx: number }) => (
+  <div className="flex flex-col items-center text-center group">
+    {/* Node */}
+    <div className="w-16 h-16 rounded-xl bg-primary border-2 border-accent/30 flex items-center justify-center mb-4 group-hover:border-accent group-hover:shadow-glow transition-all duration-300">
+      <span className="text-lg font-display font-bold text-accent">
+        {String(idx + 1).padStart(2, '0')}
+      </span>
+    </div>
+    {/* Step card */}
+    <div className="card-elevated rounded-xl p-5 w-full hover:-translate-y-1 transition-transform duration-300">
+      <p className="text-sm text-muted-foreground leading-relaxed">{step}</p>
     </div>
   </div>
 );
