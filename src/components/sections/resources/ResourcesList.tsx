@@ -35,9 +35,9 @@ export const ResourcesList = ({ blogs, whitepapers, ynsights }: ResourcesListPro
     };
 
     return (
-        <section className="section-padding container-main min-h-screen">
+        <section className="section-padding container-main min-h-screen -mt-20">
             <div className="mb-12 text-center">
-                <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">Ynsights</h1>
+                <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground"><span className="text-accent">Y</span>nsights</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                     Explore our latest thinking, in-depth research, and use cases.
                 </p>

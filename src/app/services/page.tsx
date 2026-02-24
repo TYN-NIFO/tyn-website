@@ -95,7 +95,7 @@ const services = [
 function ServicesContentFallback() {
     return (
         <>
-            <ServiceTabPills services={services} activeId={services[0].id} onTabChange={() => {}} />
+            <ServiceTabPills services={services} activeId={services[0].id} onTabChange={() => { }} />
             <ServiceContent services={services} activeId={services[0].id} />
         </>
     );
@@ -135,10 +135,10 @@ function ServicesContent() {
     };
 
     return (
-        <>
-            {/* Sticky pills span across services + engagement models */}
+        <div className="relative">
+            {/* Sticky pills scoped to this wrapper — unstick when section ends */}
             <ServiceTabPills services={services} activeId={activeId} onTabChange={handleTabChange} />
             <ServiceContent services={services} activeId={activeId} />
-        </>
+        </div>
     );
 }

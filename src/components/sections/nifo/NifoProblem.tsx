@@ -24,7 +24,7 @@ export const NifoProblem = () => {
               The challenge isn't AI capability — it's execution.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              <NifoInlineLogo className="h-5 mr-1" /> 2.0 brings structure, governance, and orchestration to AI initiatives so that
+              <NifoInlineLogo className="h-6 w-auto mr-1" /> 2.0 brings structure, governance, and orchestration to AI initiatives so that
               value compounds instead of diffuses.
             </p>
           </div>
@@ -32,17 +32,17 @@ export const NifoProblem = () => {
           {/* Visual: scattered → aligned */}
           <div className="rounded-2xl border border-border/50 bg-accent/5 overflow-hidden relative h-72 md:h-80">
             <div className="absolute top-[10%] bottom-[10%] left-1/2 w-px bg-border/30" />
-            <span className="absolute top-3 left-4 text-[10px] uppercase tracking-widest text-muted-foreground/40">
+            <span className="absolute top-3 left-4 text-[10px] uppercase tracking-widest text-muted-foreground/90">
               Fragmented
             </span>
-            <span className="absolute top-3 right-4 text-[10px] uppercase tracking-widest text-accent/50">
+            <span className="absolute top-3 right-4 text-[10px] uppercase tracking-widest text-accent/90">
               Orchestrated
             </span>
 
             {scatteredNodes.map((n, i) => (
               <div
                 key={`s-${i}`}
-                className="absolute w-2 h-2 rounded-full bg-muted-foreground/25"
+                className="absolute w-2 h-2 rounded-full bg-muted-foreground/90"
                 style={{ top: `${n.top}%`, left: `${n.left}%` }}
               />
             ))}
@@ -69,7 +69,7 @@ export const NifoProblem = () => {
             {[60, 75, 90].map((left) => (
               <div
                 key={`v-${left}`}
-                className="absolute w-px bg-accent/40"
+                className="absolute w-px bg-accent/90"
                 style={{ left: `${left}%`, top: '20%', height: '60%' }}
               />
             ))}

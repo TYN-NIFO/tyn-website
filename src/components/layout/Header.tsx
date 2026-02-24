@@ -122,14 +122,14 @@ export const Header = () => {
     >
       <nav className="container-main">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo — identical layout in all states; only src changes */}
           <Link href="/" className="flex items-center">
             <Image
               src={isSolid ? logoDark : logoLight}
               alt="The Yellow Network"
               width={180}
               height={56}
-              className={isSolid ? 'h-12 md:h-14 w-auto transition-all' : 'h-12 md:h-12 w-auto mt-3 transition-all'}
+              className="h-12 md:h-14 w-auto transition-all"
             />
           </Link>
 
@@ -141,6 +141,19 @@ export const Header = () => {
                 return (childPath === pathname && childPath !== '/') || child.href === pathname;
               }));
 
+              // Shared base: identical padding/size in every state — no negative margins
+              // Active highlight is done via ring/shadow which doesn't affect layout
+              const linkBase = 'flex items-center gap-1 text-sm font-medium rounded-lg transition-all duration-200 px-4 py-2';
+              const solidDefault = 'text-foreground hover:text-tyn-blue hover:bg-muted';
+              const solidActive = 'text-tyn-blue font-bold bg-background shadow-sm ring-1 ring-border/50';
+              const heroDefault = 'text-primary-foreground/90 hover:text-accent';
+              const heroActive = 'text-accent font-bold';
+
+              const linkClass = `${linkBase} ${isSolid
+                ? (isActive || activeMenu === item.label) ? solidActive : solidDefault
+                : isActive ? heroActive : heroDefault
+                }`;
+
               return (
                 <div
                   key={item.label}
@@ -149,33 +162,14 @@ export const Header = () => {
                   onMouseLeave={() => setActiveMenu(null)}
                 >
                   {item.href ? (
-                    <Link
-                      href={item.href}
-                      className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
-                        ? (isActive || activeMenu === item.label)
-                          ? 'text-tyn-blue font-bold bg-background shadow-sm ring-1 ring-border/50 px-5 py-2.5 -mx-1 -my-0.5'
-                          : 'text-foreground font-medium hover:text-tyn-blue hover:bg-muted px-4 py-2'
-                        : isActive
-                          ? 'text-accent font-bold px-4 py-2'
-                          : 'text-primary-foreground/90 font-medium hover:text-accent px-4 py-2'
-                        }`}
-                    >
+                    <Link href={item.href} className={linkClass}>
                       {item.label}
                       {item.megaMenu && (
                         <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
                       )}
                     </Link>
                   ) : (
-                    <button
-                      className={`flex items-center gap-1 text-sm rounded-lg transition-all duration-200 ${isSolid
-                        ? (isActive || activeMenu === item.label)
-                          ? 'text-tyn-blue font-bold bg-background shadow-sm ring-1 ring-border/50 px-5 py-2.5 -mx-1 -my-0.5'
-                          : 'text-foreground font-medium hover:text-tyn-blue hover:bg-muted px-4 py-2'
-                        : isActive
-                          ? 'text-accent font-bold px-4 py-2'
-                          : 'text-primary-foreground/90 font-medium hover:text-accent px-4 py-2'
-                        }`}
-                    >
+                    <button className={linkClass}>
                       {item.label}
                       <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
                     </button>

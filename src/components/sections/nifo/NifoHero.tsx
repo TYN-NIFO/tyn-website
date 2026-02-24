@@ -82,15 +82,15 @@ export const NifoHero = () => {
           </p>
 
           <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">
-            <NifoInlineLogo className="h-5 md:h-6 mr-1" invert /> 2.0 is TYN's execution accelerator. It is not a product we sell. It is the
+            <NifoInlineLogo className="h-5 md:h-6 w-auto mr-1" invert /> 2.0 is TYN's execution accelerator. It is not a product we sell. It is the
             framework and engineering backbone we use to move enterprises from intent to
             production — without noise.
           </p>
 
           <div className="animate-fade-up delay-400">
             <Button className="btn-hero group" onClick={scrollToContent}>
-              Explore <NifoInlineLogo className="h-4 brightness-0 invert mb-1" />
-              <ArrowRight className="ml-2 w-5 h-5 -ml-1   group-hover:translate-x-1 transition-transform" />
+              Explore <NifoInlineLogo className="h-4 w-auto brightness-0 invert mb-1" />
+              <ArrowRight className="ml-2 w-5 h-5 -ml-1.5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>

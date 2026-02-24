@@ -29,7 +29,7 @@ export const ServiceTabPills = ({
   onTabChange: (id: string) => void;
 }) => (
   <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border/50">
-    <div className="container-main py-4 flex flex-wrap gap-3 justify-center md:justify-start">
+    <div className="container-main py-3 flex flex-nowrap gap-2 overflow-x-auto scrollbar-none justify-center md:justify-start">
       {services.map((service) => {
         const isActive = activeId === service.id;
         return (
@@ -39,7 +39,7 @@ export const ServiceTabPills = ({
               onTabChange(service.id);
               document.getElementById('services-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
-            className={`px-8 py-3 rounded-lg text-base font-display font-semibold tracking-wide border-2 transition-all duration-300 ${isActive
+            className={`flex-shrink-0 px-5 py-2.5 text-sm md:px-8 md:py-3 md:text-base rounded-lg font-display font-semibold tracking-wide border-2 transition-all duration-300 ${isActive
               ? 'bg-accent text-accent-foreground border-accent shadow-glow'
               : 'bg-transparent text-foreground border-border hover:border-accent/50 hover:text-accent'
               }`}
@@ -75,7 +75,7 @@ export const ServiceContent = ({ services, activeId }: Omit<ServiceTabsProps, 'o
               </h2>
               <p className="text-lg text-muted-foreground italic">{active.tagline}</p>
             </div>
-            <div className="lg:col-span-2 flex items-center justify-center">
+            <div className="lg:col-span-2 hidden lg:flex items-center justify-center">
               <div className="relative">
                 <div className="w-32 h-32 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center">
                   <Icon className="w-16 h-16 text-accent" />
