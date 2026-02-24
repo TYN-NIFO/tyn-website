@@ -76,6 +76,7 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "autoprefixer": "^10.4.21",
+    "caniuse-lite": "^1.0.30001770",
     "eslint": "^10.0.0",
     "eslint-config-next": "^16.1.6",
     "eslint-plugin-react-hooks": "^7.0.1",

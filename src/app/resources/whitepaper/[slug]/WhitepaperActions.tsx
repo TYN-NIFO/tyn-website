@@ -32,13 +32,18 @@ export function WhitepaperActions({ title, fileUrl }: WhitepaperActionsProps) {
             >
                 <Share2 className="w-4 h-4" />
             </button>
-            <a
-                href={`${fileUrl}?dl=`}
-                className="text-muted-foreground hover:text-tyn-blue transition-colors p-2 rounded-lg hover:bg-muted"
-                aria-label="Download this whitepaper as PDF"
-            >
-                <Download className="w-4 h-4" />
-            </a>
+            {fileUrl && (
+                <a
+                    href={encodeURI(fileUrl)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="text-muted-foreground hover:text-tyn-blue transition-colors p-2 rounded-lg hover:bg-muted"
+                    aria-label="Download this whitepaper as PDF"
+                >
+                    <Download className="w-4 h-4" />
+                </a>
+            )}
         </div>
     );
 }

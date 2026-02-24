@@ -95,7 +95,13 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
   const pathname = usePathname();
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setExpandedMobileMenu(null);
+  };
 
   // Force solid navbar on specific pages
   const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname === '/ynfinity-events' || pathname?.startsWith('/resources');
@@ -121,8 +127,8 @@ export const Header = () => {
         }`}
     >
       <nav className="container-main">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo — identical layout in all states; only src changes */}
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src={isSolid ? logoDark : logoLight}
@@ -249,36 +255,48 @@ export const Header = () => {
           <div className="lg:hidden bg-card border-t border-border py-4 animate-fade-in max-h-[85vh] overflow-y-auto">
             {navItems.map((item) => (
               <div key={item.label} className="px-4 py-2">
-                {item.href ? (
-                  <Link href={item.href} className="flex items-center justify-between py-2 font-medium">
-                    {item.label}
-                    {item.megaMenu && <ChevronDown className="w-4 h-4" />}
-                  </Link>
-                ) : (
+                {item.megaMenu ? (
                   <div>
-                    <div className="py-2 font-medium flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => setExpandedMobileMenu((prev) => (prev === item.label ? null : item.label))}
+                      className="flex items-center justify-between w-full py-2 font-medium text-left"
+                    >
                       {item.label}
-                      <ChevronDown className="w-4 h-4" />
-                    </div>
-                    <div className="pl-4 space-y-1">
-                      {item.megaMenu?.map((section) =>
-                        section.items.map((menuItem) => (
-                          <Link
-                            key={menuItem.title}
-                            href={menuItem.href}
-                            className="block py-2 text-sm text-muted-foreground hover:text-foreground"
-                          >
-                            {menuItem.title}
-                          </Link>
-                        ))
-                      )}
-                    </div>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${expandedMobileMenu === item.label ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {expandedMobileMenu === item.label && (
+                      <div className="pl-4 space-y-1 border-l-2 border-muted ml-1 mt-1">
+                        {item.megaMenu.map((section) =>
+                          section.items.map((menuItem) => (
+                            <Link
+                              key={menuItem.title}
+                              href={menuItem.href}
+                              onClick={closeMobileMenu}
+                              className="block py-2.5 text-sm text-muted-foreground hover:text-foreground"
+                            >
+                              {menuItem.title}
+                            </Link>
+                          ))
+                        )}
+                      </div>
+                    )}
                   </div>
-                )}
+                ) : item.href ? (
+                  <Link
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className="flex items-center justify-between py-2 font-medium"
+                  >
+                    {item.label}
+                  </Link>
+                ) : null}
               </div>
             ))}
             <div className="px-4 pt-4">
-              <Link href="/contact?source_page=Header&cta=Contact-Us">
+              <Link href="/contact?source_page=Header&cta=Contact-Us" onClick={closeMobileMenu}>
                 <Button className="btn-hero w-full">Contact Us</Button>
               </Link>
             </div>

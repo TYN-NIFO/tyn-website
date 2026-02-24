@@ -74,54 +74,81 @@ export const SuccessStories = () => {
 
       <div className="container-main relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6 lg:gap-8 mb-8 md:mb-12">
           <div className="max-w-2xl">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6">
-              Success Stories
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-2 sm:mb-4">
               Success Stories
             </h2>
-            <p className="text-lg text-primary-foreground/70">
+            <p className="text-base sm:text-lg text-primary-foreground/70">
               Real AI impact across industries.
             </p>
           </div>
 
           {/* Navigation Arrows */}
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <button
+              type="button"
               onClick={prevSlide}
-              className="w-12 h-12 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors group"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors group touch-manipulation"
+              aria-label="Previous story"
             >
-              <ChevronLeft className="w-5 h-5 text-primary-foreground group-hover:text-accent-foreground transition-colors" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground group-hover:text-accent-foreground transition-colors" />
             </button>
             <button
+              type="button"
               onClick={nextSlide}
-              className="w-12 h-12 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors group"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors group touch-manipulation"
+              aria-label="Next story"
             >
-              <ChevronRight className="w-5 h-5 text-primary-foreground group-hover:text-accent-foreground transition-colors" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground group-hover:text-accent-foreground transition-colors" />
             </button>
           </div>
         </div>
 
-        {/* Stories Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {stories.map((story, index) => (
+        {/* Stories Cards - slider on mobile, grid on md+ */}
+        <div className="md:hidden relative overflow-hidden">
+          <div
+            className="flex transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {stories.map((story) => (
+              <div
+                key={story.title}
+                className="w-full flex-shrink-0 px-1"
+              >
+                <div className="story-card bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-primary-foreground/10">
+                  <div className="p-6 sm:p-8">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4 sm:mb-6">
+                      <story.icon className="w-4 h-4" />
+                      {story.industry}
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-display font-semibold text-tyn-blue mb-3">
+                      {story.title}
+                    </h3>
+                    <p className="text-black/90 text-sm sm:text-base">
+                      {story.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
+          {stories.map((story) => (
             <div
               key={story.title}
               className="story-card bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-primary-foreground/10"
             >
               <div className="p-8">
-                {/* Industry Badge */}
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
                   <story.icon className="w-4 h-4" />
                   {story.industry}
                 </span>
-
                 <h3 className="text-xl font-display font-semibold text-tyn-blue mb-3">
                   {story.title}
                 </h3>
-
                 <p className="text-black/90">
                   {story.description}
                 </p>
@@ -130,14 +157,14 @@ export const SuccessStories = () => {
           ))}
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
+        {/* Dots Indicator - visible on mobile only (arrows used on both) */}
+        <div className="flex justify-center gap-2 mt-6 md:mt-8">
           {stories.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-8 bg-accent' : 'bg-primary-foreground/30 hover:bg-primary-foreground/50'
-                }`}
+              className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-8 bg-accent' : 'w-2 bg-primary-foreground/30 hover:bg-primary-foreground/50'}`}
+              aria-label={`Go to story ${index + 1}`}
             />
           ))}
         </div>

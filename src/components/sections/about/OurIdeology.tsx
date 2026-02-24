@@ -10,7 +10,7 @@ export const OurIdeology = () => {
 
                 <div className="max-w-4xl mx-auto">
                     <img
-                        src="/assets/ideology.svg"
+                        src="/assets/Ideology.svg"
                         alt="TYN Ideology"
                         className="w-full h-auto"
                     />
