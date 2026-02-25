@@ -56,7 +56,7 @@ export const OurSolution = () => {
           {/* Connection Line - Desktop */}
           {/* <div className="hidden lg:block absolute top-[55%] left-12 right-12 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2" /> */}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto_auto] gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-6">
             {steps.map((step, index) => {
               const StepIcon = step.icon;
               return (
@@ -93,46 +93,85 @@ export const OurSolution = () => {
               );
             })}
 
-            {/* Execute — Narrow transition card */}
-            {/* Desktop: narrow vertical card with rotated text */}
-            <div className="hidden lg:flex items-stretch">
-              <div className="card-elevated clip-card-differentiator w-16 flex items-center justify-center hover:-translate-y-2 transition-all duration-300">
-                <div className="flex flex-col items-center gap-1 select-none">
-                  {'EXECUTE'.split('').map((letter, i) => (
-                    <span key={i} className="font-display font-bold text-foreground text-sm leading-none">
-                      {letter}
-                    </span>
-                  ))}
+            {/* ═══ Execution Block: bracket wrapping BUY & BUILD ═══ */}
+
+            {/* DESKTOP: Execute C-bracket + BUY/BUILD */}
+            <div className="hidden lg:flex items-stretch ml-2">
+              <div className="flex flex-col">
+                {/* ═ Top arm ═ */}
+                <div className="bg-white h-6 w-24 border-t-[3px] border-l-[3px] border-r-[3px] border-[var(--tyn-blue)] rounded-tl-lg" />
+
+                {/* ═ Middle row: spine + cards ═ */}
+                <div className="flex flex-1">
+                  <div className="bg-white border-l-[3px] border-[var(--tyn-blue)] w-10 flex-shrink-0 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-1.5 select-none">
+                      {'EXECUTE'.split('').map((letter, i) => (
+                        <span key={i} className="font-display font-bold text-[var(--tyn-blue)] text-xs leading-none">
+                          {letter}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4 justify-center py-2 ml-4">
+                    <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <ShoppingBag className="w-5 h-5 text-accent" />
+                        <h4 className="font-display font-bold text-foreground text-sm">BUY</h4>
+                      </div>
+                      <p className="text-xs text-tyn-blue font-medium">Scout → Evaluate → Deploy</p>
+                    </div>
+                    <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Hammer className="w-5 h-5 text-accent" />
+                        <h4 className="font-display font-bold text-foreground text-sm">BUILD</h4>
+                      </div>
+                      <p className="text-xs text-tyn-blue font-medium">Design → Build → Hypercare</p>
+                    </div>
+                  </div>
                 </div>
+
+                {/* ═ Bottom arm ═ */}
+                <div className="bg-white h-6 w-24 border-b-[3px] border-l-[3px] border-r-[3px] border-[var(--tyn-blue)] rounded-bl-lg" />
               </div>
             </div>
-            {/* Mobile: narrow horizontal card */}
+
+            {/* MOBILE: Same C-bracket but horizontal EXECUTE text */}
             <div className="lg:hidden md:col-span-2">
-              <div className="card-elevated clip-card-differentiator py-3 px-6 text-center hover:-translate-y-1 transition-all duration-300">
-                <span className="font-display font-bold text-foreground text-sm tracking-widest">
-                  EXECUTE
-                </span>
-              </div>
-            </div>
+              <div className="flex flex-col">
+                {/* ═ Top arm ═ */}
+                <div className="bg-white h-6 w-1/2 border-t-[3px] border-l-[3px] border-r-[3px] border-[var(--tyn-blue)] rounded-t-lg" />
 
-            {/* Added Stacked Action Cards (BUY / BUILD) */}
-            <div className="flex flex-col gap-4 justify-center relative z-10">
-              {/* BUY Card */}
-              <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-                <div className="flex items-center gap-2 mb-2">
-                  <ShoppingBag className="w-5 h-5 text-accent" />
-                  <h4 className="font-display font-bold text-foreground text-sm">BUY</h4>
+                {/* ═ Middle row: spine + cards ═ */}
+                <div className="flex flex-1">
+                  <div className="bg-white border-l-[3px] border-[var(--tyn-blue)] w-12 flex-shrink-0 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-1 select-none">
+                      {'EXECUTE'.split('').map((letter, i) => (
+                        <span key={i} className="font-display font-bold text-[var(--tyn-blue)] text-[10px] leading-none">
+                          {letter}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3 justify-center py-2 ml-3 flex-1">
+                    <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <ShoppingBag className="w-5 h-5 text-accent" />
+                        <h4 className="font-display font-bold text-foreground text-sm">BUY</h4>
+                      </div>
+                      <p className="text-xs text-tyn-blue font-medium">Scout → Evaluate → Deploy</p>
+                    </div>
+                    <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Hammer className="w-5 h-5 text-accent" />
+                        <h4 className="font-display font-bold text-foreground text-sm">BUILD</h4>
+                      </div>
+                      <p className="text-xs text-tyn-blue font-medium">Design → Build → Hypercare</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-xs text-tyn-blue font-medium">Scout → Evaluate → Deploy</p>
-              </div>
 
-              {/* BUILD Card */}
-              <div className="bg-white border border-accent/20 border-l-4 border-l-accent rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
-                <div className="flex items-center gap-2 mb-2">
-                  <Hammer className="w-5 h-5 text-accent" />
-                  <h4 className="font-display font-bold text-foreground text-sm">BUILD</h4>
-                </div>
-                <p className="text-xs text-tyn-blue font-medium">Design → Build → Hypercare</p>
+                {/* ═ Bottom arm ═ */}
+                <div className="bg-white h-6 w-1/2 border-b-[3px] border-l-[3px] border-r-[3px] border-[var(--tyn-blue)] rounded-b-lg" />
               </div>
             </div>
           </div>
