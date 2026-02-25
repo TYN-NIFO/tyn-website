@@ -56,7 +56,7 @@ export const OurSolution = () => {
           {/* Connection Line - Desktop */}
           {/* <div className="hidden lg:block absolute top-[55%] left-12 right-12 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2" /> */}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto_auto] gap-6">
             {steps.map((step, index) => {
               const StepIcon = step.icon;
               return (
@@ -92,6 +92,28 @@ export const OurSolution = () => {
                 </div>
               );
             })}
+
+            {/* Execute — Narrow transition card */}
+            {/* Desktop: narrow vertical card with rotated text */}
+            <div className="hidden lg:flex items-stretch">
+              <div className="card-elevated clip-card-differentiator w-16 flex items-center justify-center hover:-translate-y-2 transition-all duration-300">
+                <div className="flex flex-col items-center gap-1 select-none">
+                  {'EXECUTE'.split('').map((letter, i) => (
+                    <span key={i} className="font-display font-bold text-foreground text-sm leading-none">
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Mobile: narrow horizontal card */}
+            <div className="lg:hidden md:col-span-2">
+              <div className="card-elevated clip-card-differentiator py-3 px-6 text-center hover:-translate-y-1 transition-all duration-300">
+                <span className="font-display font-bold text-foreground text-sm tracking-widest">
+                  EXECUTE
+                </span>
+              </div>
+            </div>
 
             {/* Added Stacked Action Cards (BUY / BUILD) */}
             <div className="flex flex-col gap-4 justify-center relative z-10">
