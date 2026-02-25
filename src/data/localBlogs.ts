@@ -181,7 +181,7 @@ const sampleBlogContent: PortableTextBlock[] = [
     children: [
       {
         _type: "span",
-        text: "The road may be mapped by algorithms, but the journey still moves one mindful axle rotation at a time. If you are Curious how your fleet could trade chaos for calm? Let's swap stories—drop a comment or DM. After all, a good filter coffee tastes better when shared.",
+        text: "The road may be mapped by algorithms, but the journey still moves one mindful axle rotation at a time. If you are Curious how your fleet could trade chaos for calm? Let's swap stories. Drop a comment or DM. After all, a good filter coffee tastes better when shared.",
       },
     ],
   },

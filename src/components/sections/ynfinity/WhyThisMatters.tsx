@@ -40,7 +40,7 @@ export const WhyThisMatters = () => {
         </div>
 
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-          Ynfinity helps leaders stay ahead of the curve — together.
+          Ynfinity helps leaders stay ahead of the curve together.
         </p>
       </div>
     </section>

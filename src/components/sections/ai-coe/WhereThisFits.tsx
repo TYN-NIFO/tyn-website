@@ -65,7 +65,7 @@ export const WhereThisFits = () => {
               Explore AI CoE enablement
             </h2>
             <p className="text-lg text-primary-foreground/60 mb-10">
-              Build a sustainable operating model for AI — not just another pilot.
+              Build a sustainable operating model for AI. Not just another pilot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact?source_page=AI-CoE&cta=Explore-AI-CoE">

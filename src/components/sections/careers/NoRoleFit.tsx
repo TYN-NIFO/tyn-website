@@ -14,7 +14,7 @@ export const NoRoleFit = () => {
               We're always looking for exceptional talent in AI, engineering, product, transformation, and orchestration.
             </p>
             <p>
-              If you believe you can contribute to enterprise-scale AI execution, we'd love to hear from you.
+              If you believe you can contribute to enterprise scale AI execution, we'd love to hear from you.
             </p>
           </div>
 

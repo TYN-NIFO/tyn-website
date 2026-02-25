@@ -84,7 +84,7 @@ export const NifoHero = () => {
           <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">
             <NifoInlineLogo className="h-5 md:h-6 w-auto mr-1" invert /> 2.0 is TYN's execution accelerator. It is not a product we sell. It is the
             framework and engineering backbone we use to move enterprises from intent to
-            production — without noise.
+            production without noise.
           </p>
 
           <div className="animate-fade-up delay-400">

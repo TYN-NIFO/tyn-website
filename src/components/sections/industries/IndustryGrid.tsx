@@ -84,7 +84,7 @@ export const IndustryGrid = () => {
             Complex industries. Structured delivery.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We design and orchestrate solutions for production - not experimentation - in environments where regulatory depth and operational scale define every decision.
+            We design and orchestrate solutions for production, not experimentation in environments where regulatory depth and operational scale define every decision.
 
           </p>
         </div>

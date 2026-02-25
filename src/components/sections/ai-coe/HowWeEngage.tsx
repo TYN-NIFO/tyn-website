@@ -38,7 +38,7 @@ export const HowWeEngage = () => {
             Fractional, flexible, and execution-led
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            We provide a curated mix of leadership, engineering, and governance capability—aligned to enterprise demand—without forcing a fixed org design.
+            We provide a curated mix of leadership, engineering, and governance capability aligned to enterprise demand without forcing a fixed org design.
           </p>
           <p className="text-base text-muted-foreground mt-4">
             Typical enablement covers:

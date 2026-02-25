@@ -9,7 +9,7 @@ const challenges = [
   {
     icon: Layers,
     title: 'AI pilots seldom scale, impact remains fragmented, and outcomes lack governance.',
-    description: 'Organizations struggle to move from experimentation to enterprise-wide transformation.',
+    description: 'Organizations struggle to move from experimentation to enterprise wide transformation.',
   },
   {
     icon: Volume2,
@@ -19,7 +19,7 @@ const challenges = [
   {
     icon: Lock,
     title: 'Blockers to real adoption',
-    description: 'Messy data, workflow friction, unclear decision rights, and human-only processes block real adoption.',
+    description: 'Messy data, workflow friction, unclear decision rights, and human only processes block real adoption.',
   },
 ];
 

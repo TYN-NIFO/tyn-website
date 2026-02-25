@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Shield, Truck, FileText } from 'lucide-react
 const stories = [
   {
     industry: 'Insurance',
-    title: 'AI-Powered Underwriting',
+    title: 'AI Powered Underwriting',
     description: (
       <>
         <strong>Program Mandate:</strong>
@@ -22,7 +22,7 @@ const stories = [
 
   {
     industry: 'Supply Chain',
-    title: 'AI-Powered Route Optimization',
+    title: 'AI Powered Route Optimization',
     description: (
       <>
         <strong>Program Mandate:</strong>
@@ -32,24 +32,24 @@ const stories = [
         <br />
         <strong>Solution Approach:</strong>
         <br />
-        AI-enabled TMS integrated with orders, fleet, and telematics to optimize loads and routes, re-optimize in real time, and provide a control-tower view. A vendor was shortlisted within budget, offering an AI-powered TMS tool already proven in the industry.
+        AI enabled TMS integrated with orders, fleet, and telematics to optimize loads and routes, re optimize in real time, and provide a control tower view. A vendor was shortlisted within budget, offering an AI powered TMS tool already proven in the industry.
       </>
     ),
     icon: Truck,
   },
   {
     industry: 'Finance',
-    title: 'AI-Powered Marketing',
+    title: 'AI Powered Marketing',
     description: (
       <>
         <strong>Program Mandate:</strong>
         <br />
-        Address inefficiencies in agency-led creative production by enabling faster, scalable, and brand-compliant marketing content creation.
+        Address inefficiencies in agency led creative production by enabling faster, scalable, and brand compliant marketing content creation.
         <br />
         <br />
         <strong>Solution Approach:</strong>
         <br />
-        Enterprise AI solution integrated with existing MarTech to automate content generation and approvals. Projected outcomes: significantly reduced turnaround times, lower dependency on agencies, and the ability to scale personalised, multi-channel marketing content efficiently.
+        Enterprise AI solution integrated with existing MarTech to automate content generation and approvals. Projected outcomes: significantly reduced turnaround times, lower dependency on agencies, and the ability to scale personalised, multi channel marketing content efficiently.
       </>
     ),
     icon: FileText,

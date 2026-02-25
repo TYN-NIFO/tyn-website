@@ -3,17 +3,17 @@ import { Target, BarChart3, GitBranch, Cog, ArrowRight, ShoppingBag, Hammer } fr
 const steps = [
   {
     icon: Target,
-    title: 'Identify high-impact AI use cases',
+    title: 'Identify high impact AI use cases',
     description: 'Discover opportunities that truly move the needle for your business.',
   },
   {
     icon: BarChart3,
-    title: 'Prioritize by ROI vs cost-to-realize',
+    title: 'Prioritize by ROI vs cost to realize',
     description: 'Focus resources on initiatives with the best return potential.',
   },
   {
     icon: GitBranch,
-    title: 'Choose build-vs-buy routes',
+    title: 'Choose build vs buy routes',
     description: 'Optimal path selection for each use case in your portfolio.',
   },
   {

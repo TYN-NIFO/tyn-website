@@ -16,7 +16,7 @@ export const ServicesCTA = () => {
               Ready to move from AI intent to impact?
             </h2>
             <p className="text-lg text-primary-foreground/70 mb-10">
-              Choose the service that matches your priority — or let us help you decide.
+              Choose the service that matches your priority, or let us help you decide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact?source_page=Services&cta=Discuss-with-portfolio">

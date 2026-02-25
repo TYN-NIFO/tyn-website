@@ -43,7 +43,7 @@ export const WhatMakesYZoneDifferent = () => {
           <p className="text-lg text-primary-foreground/70 leading-relaxed">
             yZone acts as an{' '}
             <span className="text-primary-foreground font-semibold">extended innovation bench</span>{' '}
-            — allowing enterprises to experiment, validate, and build faster.
+            allowing enterprises to experiment, validate, and build faster.
           </p>
         </div>
       </div>

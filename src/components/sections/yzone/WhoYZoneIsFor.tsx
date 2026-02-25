@@ -9,7 +9,7 @@ const audiences = [
   {
     icon: GraduationCap,
     title: 'Institutions & Partners',
-    description: 'Building industry-ready AI talent with real-world applicability.',
+    description: 'Building industry ready AI talent with real world applicability.',
   },
   {
     icon: FlaskConical,

@@ -34,7 +34,7 @@ export const EngagementModels = () => {
             Engagement models
           </h2>
           <p className="text-lg text-muted-foreground">
-            Flexible approaches designed to meet you where you are — from quick wins to institutional
+            Flexible approaches designed to meet you where you are, from quick wins to institutional
             transformation.
           </p>
         </div>

@@ -7,12 +7,12 @@ const engagements = [
         subtitle: 'Design, Build, Deploy',
         bestFor: 'When you want defined scope, clear timelines, and accountable execution.',
         items: [
-            'Agent build — Design, Build & Deploy',
+            'Agent build: Design, Build & Deploy',
             'Integration & Security',
             'Test & Hyper care (2 weeks)',
             'Change enablement',
         ],
-        outcome: 'Production-ready implementation with measurable KPIs and knowledge transfer to your team.',
+        outcome: 'Production ready implementation with measurable KPIs and knowledge transfer to your team.',
     },
     {
         icon: ShoppingCart,
@@ -21,11 +21,11 @@ const engagements = [
         bestFor: 'When you want the right solution from the ecosystem without vendor noise.',
         items: [
             'Scout & shortlist (startup) solution providers',
-            'Create ROI modeling and board-ready business cases',
+            'Create ROI modeling and board ready business cases',
             'PoC/Pilot orchestration',
             'Pricing negotiation & closure',
         ],
-        outcome: 'Right-fit solution deployed with governance, avoiding lock-in and tool sprawl.',
+        outcome: 'Right fit solution deployed with governance, avoiding lock in and tool sprawl.',
     },
     {
         icon: Brain,
@@ -33,12 +33,12 @@ const engagements = [
         subtitle: 'Build the muscle + governance',
         bestFor: 'When you want a repeatable AI engine across functions.',
         items: [
-            'Use-case pipeline governance',
+            'Use case pipeline governance',
             'ROI tracking and prioritization',
             'Standards and architecture guardrails',
             'Build/Buy orchestration framework',
         ],
-        outcome: 'Sustained AI adoption at scale — not isolated pilots.',
+        outcome: 'Sustained AI adoption at scale. Not isolated pilots.',
     },
 ];
 

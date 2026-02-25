@@ -14,7 +14,7 @@ export const NifoCTA = () => {
               Bring structure to your AI execution.
             </h2>
             <p className="text-lg text-primary-foreground/70 mb-10">
-              Move from intent to production — without noise.
+              Move from intent to production without noise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact?source_page=NiFo&cta=Discuss-execution-priorities">

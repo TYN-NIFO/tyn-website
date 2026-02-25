@@ -8,7 +8,7 @@ export const AboutIntro = () => {
           </p>
 
           <p className="text-xl md:text-2xl text-muted-foreground leading-loose">
-            Leaders were investing in platforms, pilots, and partners — yet programs stalled between strategy decks and production systems. The problem wasn't a lack of tools or talent. It was the absence of ecosystem orchestration — the ability to align strategy, technology, partners, and execution into one operating rhythm.
+            Leaders were investing in platforms, pilots, and partners, yet programs stalled between strategy decks and production systems. The problem wasn't a lack of tools or talent. It was the absence of ecosystem orchestration, the ability to align strategy, technology, partners, and execution into one operating rhythm.
           </p>
 
           <p className="text-xl md:text-2xl text-foreground leading-loose font-bold">

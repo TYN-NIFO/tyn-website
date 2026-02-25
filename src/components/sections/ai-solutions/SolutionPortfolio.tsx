@@ -85,7 +85,7 @@ const solutions: Solution[] = [
   },
   {
     id: 'response-rally',
-    name: 'ResponseRally — AI Model Benchmarking Suite',
+    name: 'ResponseRally: AI Model Benchmarking Suite',
     categories: ['AI Infrastructure'],
     shortLine: 'Side-by-side AI model benchmarking from a single unified interface.',
     icon: Cpu,

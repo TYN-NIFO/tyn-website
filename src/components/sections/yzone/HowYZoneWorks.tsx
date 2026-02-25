@@ -6,21 +6,21 @@ const steps = [
     number: '01',
     title: 'Training in Digital Technologies',
     description:
-      "Participants are trained by TYN's core team across GenAI, automation, UI/UX, data, cloud and full-stack engineering — with strong emphasis on enterprise-grade thinking.",
+      "Participants are trained by TYN's core team across GenAI, automation, UI/UX, data, cloud and full-stack engineering with strong emphasis on enterprise grade thinking.",
   },
   {
     icon: UserCheck,
     number: '02',
     title: 'Curated Talent Pool',
     description:
-      'Participants are handpicked and grouped into balanced teams based on skills, problem-solving ability, and execution readiness.',
+      'Participants are handpicked and grouped into balanced teams based on skills, problem solving ability, and execution readiness.',
   },
   {
     icon: Timer,
     number: '03',
     title: 'Sprint-Based Projects',
     description:
-      'Teams work on clearly scoped, time-bound sprints aligned to real enterprise problem statements — not hypothetical case studies.',
+      'Teams work on clearly scoped, time bound sprints aligned to real enterprise problem statements. Not hypothetical case studies.',
   },
   {
     icon: Building,
@@ -32,9 +32,9 @@ const steps = [
   {
     icon: Rocket,
     number: '05',
-    title: 'Impactful Real-World Solutions',
+    title: 'Impactful Real World Solutions',
     description:
-      'Outcomes are working prototypes, PoCs, or deployable components — not slideware.',
+      'Outcomes are working prototypes, PoCs, or deployable components. Not slideware.',
   },
 ];
 

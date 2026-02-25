@@ -5,7 +5,7 @@ const differentiators = [
     icon: Settings,
     title: 'Tech-first, business owned',
     description:
-      'AI solutions are engineered to be owned by business units — not IT projects disputed in innovation.',
+      'AI solutions are engineered to be owned by business units. Not IT projects disputed in innovation.',
   },
   {
     icon: Shield,
@@ -17,13 +17,13 @@ const differentiators = [
     icon: Rocket,
     title: 'Governance built in, not bolted on',
     description:
-      'Risk, compliance, and ethical AI frameworks are embedded from day one — not afterthoughts that delay deployments.',
+      'Risk, compliance, and ethical AI frameworks are embedded from day one. Not afterthoughts that delay deployments.',
   },
   {
     icon: TrendingUp,
     title: 'Designed for scale, not demos',
     description:
-      'We focus on production-grade, enterprise-ready architectures and workflows — not prototypes that never make it live.',
+      'We focus on production-grade, enterprise-ready architectures and workflows. Not prototypes that never go live.',
   },
 ];
 

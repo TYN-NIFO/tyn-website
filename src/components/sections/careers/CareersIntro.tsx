@@ -3,11 +3,11 @@ import { Target, Globe, Users, Shield, TrendingUp } from 'lucide-react';
 const careersCollabImg = '/assets/careers-collab.png';
 
 const valueProps = [
-  { icon: Target, label: 'Outcome-oriented culture', description: 'We care about delivering value, not just activity.' },
+  { icon: Target, label: 'Outcome oriented culture', description: 'We care about delivering value, not just activity.' },
   { icon: Globe, label: 'Enterprise exposure', description: 'Work on AI transformation programs across industries.' },
   { icon: Users, label: 'Collaborative ecosystem mindset', description: 'Engage with startups, platforms, and enterprise teams.' },
   { icon: Shield, label: 'Ownership with support', description: 'Small teams, meaningful responsibility, strong mentorship.' },
-  { icon: TrendingUp, label: 'Continuous learning', description: 'Exposure to strategy, AI engineering, governance, and deployment within real-world contexts.' },
+  { icon: TrendingUp, label: 'Continuous learning', description: 'Exposure to strategy, AI engineering, governance, and deployment within real world contexts.' },
 ];
 
 export const CareersIntro = () => {
@@ -25,7 +25,7 @@ export const CareersIntro = () => {
           <div className="text-lg md:text-xl leading-relaxed text-foreground/80">
             <p>
               At TYN, we work on real enterprise challenges that matter.
-              Our teams bring together elements of consulting, product thinking, deep engineering, and stakeholder orchestration — creating a space where diverse skills come together to create measurable enterprise impact.
+              Our teams bring together elements of consulting, product thinking, deep engineering, and stakeholder orchestration that creates a space where diverse skills come together to create measurable enterprise impact.
             </p>
           </div>
         </div>

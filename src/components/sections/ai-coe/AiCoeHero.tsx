@@ -62,7 +62,7 @@ export const AiCoeHero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/70 mb-4 animate-fade-up delay-200 leading-relaxed">
-            Many enterprises start AI initiatives with energy—but struggle to scale them. The challenge is rarely the model or the technology. It's the absence of a clear operating rhythm, ownership model, and execution governance.
+            Many enterprises start AI initiatives with energy but struggle to scale them. The challenge is rarely the model or the technology. It's the absence of a clear operating rhythm, ownership model, and execution governance.
           </p>
 
           <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">

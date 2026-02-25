@@ -17,7 +17,7 @@ export const CTASection = () => {
             </h2>
 
             <p className="text-lg text-primary-foreground/70 mb-10">
-              Let's discuss your priorities—not just use cases.
+              Let's discuss your priorities, not just use cases.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

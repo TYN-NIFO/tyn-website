@@ -18,7 +18,7 @@ export const WhyItMatters = () => {
         </h2>
 
         <p className="text-lg text-primary-foreground/70 mb-10 max-w-2xl leading-relaxed">
-          <NifoInlineLogo className="h-5 mr-1" invert /> institutionalizes AI as an operating capability — not a consulting dependency.
+          <NifoInlineLogo className="h-5 mr-1" invert /> institutionalizes AI as an operating capability. Not a consulting dependency.
         </p>
 
         <p className="text-base text-primary-foreground/60 mb-8">It allows enterprises to:</p>

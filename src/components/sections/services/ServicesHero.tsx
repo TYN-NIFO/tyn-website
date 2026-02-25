@@ -58,8 +58,8 @@ export const ServicesHero = () => {
           </p>
 
           <p className="text-base md:text-lg text-primary-foreground/50 mb-10 max-w-3xl animate-fade-up delay-300 leading-relaxed text-left">
-            Our services remove these blockers — turning strategic intent into production
-            systems, governed workflows, and board-level ROI.
+            Our services remove these blockers, turning strategic intent into production
+            systems, governed workflows, and board level ROI.
           </p>
 
           <div className="animate-fade-up delay-400">

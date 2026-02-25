@@ -67,7 +67,7 @@ export const YnfinityHero = () => {
           </p>
 
           <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">
-            Ynfinity is TYN's accelerator designed to bring together the people shaping the future of enterprise innovation — in a trusted, curated environment where meaningful conversations and long-term collaborations can begin.
+            Ynfinity is TYN's accelerator designed to bring together the people shaping the future of enterprise innovation in a trusted, curated environment where meaningful conversations and long-term collaborations can begin.
           </p>
 
           <div className="animate-fade-up delay-400">

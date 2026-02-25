@@ -1,11 +1,11 @@
 const differentiators = [
   {
     title: 'Ecosystem-first',
-    description: 'We don\'t just advise — we orchestrate across partners, platforms, and teams to create a unified operating system for AI.',
+    description: 'We don\'t just advise. We orchestrate across partners, platforms, and teams to create a unified operating system for AI.',
   },
   {
     title: 'Execution-led',
-    description: 'Strategy without execution is noise. We are built for delivery — every engagement moves from intent to production.',
+    description: 'Strategy without execution is noise. We are built for delivery. Every engagement moves from intent to production.',
   },
   {
     title: 'Tech-first, business-owned',
@@ -72,7 +72,7 @@ export const WhatMakesDifferent = () => {
           </div>
 
           <p className="text-xl md:text-2xl font-display font-bold text-foreground leading-relaxed">
-            We don't replace internal teams —{' '}
+            We do not replace internal teams.{' '}
             <span className="text-gradient">we enable them.</span>
           </p>
         </div>

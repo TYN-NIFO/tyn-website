@@ -19,7 +19,7 @@ export const Experience = () => {
             Experience That Shapes TYN
           </h2>
           <p className="text-lg text-primary-foreground/70 leading-relaxed">
-            TYN's leadership brings decades of hands-on experience across enterprise transformation, technology delivery, and ecosystem building. This isn't theory — it's pattern recognition earned through execution.
+            TYN's leadership brings decades of hands-on experience across enterprise transformation, technology delivery, and ecosystem building. This is not theory. It is pattern recognition earned through execution.
           </p>
         </div>
 

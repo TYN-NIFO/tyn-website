@@ -14,7 +14,7 @@ const capabilities = [
   {
     icon: FlaskConical,
     title: 'Structured Experimentation',
-    description: 'Structured experimentation on real enterprise problems — not classroom exercises.',
+    description: 'Structured experimentation on real enterprise problems. Not classroom exercises.',
   },
   {
     icon: Gauge,

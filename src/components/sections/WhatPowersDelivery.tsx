@@ -22,19 +22,19 @@ const WhatPowersDelivery = () => {
                 },
                 {
                     highlight: "Delivery engineers:",
-                    text: "data engineering + app engineering + DevOps for production-grade rollout"
+                    text: "data engineering + app engineering + DevOps for production grade rollout"
                 }
             ]
         },
         {
             number: "02",
             title: "Strong Ecosystem",
-            subtitle: "(best-fit solutions, faster)",
+            subtitle: "(best fit solutions, faster)",
             icon: Users,
             items: [
                 {
                     highlight: "Google Cloud (Gemini/Vertex) partnership:",
-                    text: "enterprise-grade AI foundation (certified associates)"
+                    text: "enterprise grade AI foundation (certified associates)"
                 },
                 {
                     highlight: "Kissflow partnership:",
@@ -63,7 +63,7 @@ const WhatPowersDelivery = () => {
                 },
                 {
                     highlight: "TYN prioritization map",
-                    text: "(ROI vs Total Cost-to-Realize/readiness)"
+                    text: "(ROI vs Total Cost to Realize/readiness)"
                 },
                 {
                     highlight: "Built-in assets:",
@@ -75,7 +75,7 @@ const WhatPowersDelivery = () => {
                 },
                 {
                     highlight: "Program management:",
-                    text: "governance cadence, stage-gates, pilot-to-scale playbooks"
+                    text: "governance cadence, stage-gates, pilot to scale playbooks"
                 }
             ]
         }

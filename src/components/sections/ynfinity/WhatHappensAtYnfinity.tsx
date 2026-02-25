@@ -1,6 +1,6 @@
 const capabilities = [
-  'Peer-level conversations among senior leaders',
-  'Cross-industry knowledge exchange',
+  'Peer level conversations among senior leaders',
+  'Cross industry knowledge exchange',
   'Exposure to emerging technologies and real use cases',
   'Relationship building across the innovation ecosystem',
   'Dialogue that moves ideas toward real adoption',

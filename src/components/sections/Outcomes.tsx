@@ -13,8 +13,8 @@ const outcomes = [
   },
   {
     icon: Building2,
-    title: 'Enterprise-Grade Adoption',
-    description: 'AI embedded into real workflows — not isolated experiments. Governed, scalable systems aligned with enterprise architecture.',
+    title: 'Enterprise Grade Adoption',
+    description: 'AI embedded into real workflows. Not isolated experiments. Governed, scalable systems aligned with enterprise architecture.',
   },
 ];
 

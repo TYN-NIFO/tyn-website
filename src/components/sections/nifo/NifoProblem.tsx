@@ -21,7 +21,7 @@ export const NifoProblem = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
-              The challenge isn't AI capability — it's execution.
+              The challenge isn't AI capability. It's execution.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               <NifoInlineLogo className="h-6 w-auto mr-1" /> 2.0 brings structure, governance, and orchestration to AI initiatives so that

@@ -44,8 +44,8 @@ export const WhyYZone = () => {
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent/10 to-transparent" />
           <div className="relative z-10 max-w-3xl">
             <p className="text-xl md:text-2xl font-display font-bold text-primary-foreground leading-relaxed">
-              yZone bridges both. We don't train in isolation —{' '}
-              <span className="text-accent">we train through execution.</span>
+              yZone bridges both. We do not train in isolation.{' '}
+              <span className="text-accent">We train through execution.</span>
             </p>
           </div>
         </div>

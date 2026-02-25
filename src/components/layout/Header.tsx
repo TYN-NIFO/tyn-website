@@ -33,9 +33,9 @@ const navItems: NavItem[] = [
       {
         title: 'Our Services',
         items: [
-          { title: 'BUY', description: 'Ecosystem-Led Solution Selection — Speed-to-value with right-fit solutions', href: '/services?tab=buy' },
-          { title: 'BUILD', description: 'Production-Grade AI Systems — Speed, control, and differentiation', href: '/services?tab=build' },
-          { title: 'AI COE', description: 'Build the Enterprise Muscle — Scale AI beyond one team', href: '/services?tab=ai-coe' },
+          { title: 'BUY', description: 'Ecosystem Led Solution Selection: Speed to value with right fit solutions', href: '/services?tab=buy' },
+          { title: 'BUILD', description: 'Production Grade AI Systems: Speed, control, and differentiation', href: '/services?tab=build' },
+          { title: 'AI COE', description: 'Build the Enterprise Muscle: Scale AI beyond one team', href: '/services?tab=ai-coe' },
         ],
       },
     ],

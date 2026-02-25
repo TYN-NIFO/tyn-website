@@ -33,7 +33,7 @@ const services = [
         ],
         howItShowsUp: [
             'Faster adoption with lower risk',
-            'Right-fit solutions instead of shelfware',
+            'Right fit solutions instead of shelfware',
             'Clear rationale for buy vs build',
         ],
         outcome:
@@ -47,7 +47,7 @@ const services = [
         tagline: 'When you need speed, control, and differentiation',
         icon: Hammer,
         triggers: [
-            'A high-impact use case that needs to ship fast',
+            'A high impact use case that needs to ship fast',
             "Existing tools which can't fully solve the problem",
             'You need control over data, models, and IP',
         ],
@@ -55,7 +55,7 @@ const services = [
             'Translate business problems into deployable AI architectures',
             'Design and build agents, copilots, and decision systems',
             'Integrate with enterprise data, apps, and security',
-            'Establish guardrails, human-in-the-loop, and monitoring',
+            'Establish guardrails, human in the loop, and monitoring',
         ],
         howItShowsUp: [
             'Intelligent copilots embedded in workflows',
@@ -63,7 +63,7 @@ const services = [
             'Automation that actually sticks',
         ],
         outcome:
-            'Production-ready AI in weeks — not endless pilots — with clear ROI ownership.',
+            'Production ready AI in weeks. No endless pilots. Clear ROI ownership.',
     },
     {
         id: 'ai-coe',
@@ -85,10 +85,10 @@ const services = [
         ],
         howItShowsUp: [
             'Predictable pipeline of use cases',
-            'Clear ROI tracking and stage-gates',
+            'Clear ROI tracking and stage gates',
             'Faster scaling with lower chaos',
         ],
-        outcome: 'A repeatable AI transformation engine — not one-off wins.',
+        outcome: 'A repeatable AI transformation engine. Not one-off wins.',
     },
 ];
 

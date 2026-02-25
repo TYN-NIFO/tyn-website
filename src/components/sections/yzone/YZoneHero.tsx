@@ -70,9 +70,9 @@ export const YZoneHero = () => {
           </p>
 
           <p className="text-base md:text-lg text-primary-foreground/50 mb-10 animate-fade-up delay-300 leading-relaxed max-w-2xl">
-            yZone is TYN's accelerator for creating execution-ready AI teams by combining real
+            yZone is TYN's accelerator for creating execution ready AI teams by combining real
             enterprise problems, modern digital technologies, and a tightly governed delivery
-            model. It is how we convert raw talent into teams that can contribute to real-world
+            model. It is how we convert raw talent into teams that can contribute to real world
             AI programs.
           </p>
 

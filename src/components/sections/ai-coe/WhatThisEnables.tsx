@@ -48,7 +48,7 @@ export const WhatThisEnables = () => {
 
         <div className="max-w-3xl">
           <p className="text-lg text-primary-foreground/70 leading-relaxed font-semibold">
-            This is not a slideware CoE—it is designed to support real programs already in motion.
+            This is not a slideware CoE. It is designed to support real programs already in motion.
           </p>
         </div>
       </div>

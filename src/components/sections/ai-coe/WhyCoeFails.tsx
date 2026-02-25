@@ -44,7 +44,7 @@ export const WhyCoeFails = () => {
         <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 p-10">
           <p className="text-lg text-foreground leading-relaxed">
             <span className="font-display font-bold text-accent">Our approach:</span>{' '}
-            We enable a fractional, outcome-focused AI CoE that brings clarity, cadence, and execution discipline—without adding organizational overhead.
+            We enable a fractional, outcome-focused AI CoE that brings clarity, cadence, and execution discipline without adding organizational overhead.
           </p>
         </div>
       </div>

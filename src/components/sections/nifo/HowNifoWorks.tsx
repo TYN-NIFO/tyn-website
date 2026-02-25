@@ -8,7 +8,7 @@ const stages = [
   {
     num: '02',
     title: 'Analysis',
-    body: 'We evaluate options — internal build, ecosystem buy, or hybrid — against your architecture, data constraints, and risk posture.',
+    body: 'We evaluate options including internal build, ecosystem buy, and hybrid against your architecture, data constraints, and risk posture.',
     highlight: 'Scorecards over sales pitches. Governance before velocity.',
   },
   {

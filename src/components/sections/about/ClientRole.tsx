@@ -37,7 +37,7 @@ export const ClientRole = () => {
 
         <div className="max-w-3xl">
           <p className="text-xl md:text-2xl font-display font-bold text-primary-foreground leading-relaxed">
-            We don't replace internal teams —{' '}
+            We do not replace internal teams.{' '}
             <span className="text-accent">we enable them.</span>
           </p>
         </div>
