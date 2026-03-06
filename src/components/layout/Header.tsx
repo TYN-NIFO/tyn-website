@@ -109,7 +109,8 @@ export const Header = () => {
 
     // If the path matches the current path and there is no specific element hashtag
     if (targetPath === pathname && !href.includes('#')) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      e.preventDefault(); // Prevent default link behavior if needed
+      window.location.reload();
     }
   };
 
