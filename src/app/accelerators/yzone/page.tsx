@@ -9,9 +9,9 @@ import { HowYZoneWorks } from '@/components/sections/yzone/HowYZoneWorks';
 import { WhatMakesYZoneDifferent } from '@/components/sections/yzone/WhatMakesYZoneDifferent';
 import { WhoYZoneIsFor } from '@/components/sections/yzone/WhoYZoneIsFor';
 import { YZoneOutcomes } from '@/components/sections/yzone/YZoneOutcomes';
+import { YZoneGallery } from '@/components/sections/yzone/YZoneGallery';
 // import { YZoneToTYN } from '@/components/sections/yzone/YZoneToTYN';
 import { YZoneCTA } from '@/components/sections/yzone/YZoneCTA';
-
 export default function YZonePage() {
     return (
         <div className="min-h-screen bg-background">
@@ -24,6 +24,7 @@ export default function YZonePage() {
                 <WhatMakesYZoneDifferent />
                 <WhoYZoneIsFor />
                 <YZoneOutcomes />
+                <YZoneGallery />
                 {/* <YZoneToTYN /> */}
                 <YZoneCTA />
             </main>
