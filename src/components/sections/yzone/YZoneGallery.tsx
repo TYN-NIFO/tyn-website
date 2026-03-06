@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
     { src: '/assets/Yzone%20gallery/1.png', alt: 'yZone Environment' },
@@ -20,6 +21,14 @@ export const YZoneGallery = () => {
         if (!emblaApi) return;
         setSelectedIndex(emblaApi.selectedScrollSnap());
     }, [emblaApi, setSelectedIndex]);
+
+    const scrollPrev = useCallback(() => {
+        if (emblaApi) emblaApi.scrollPrev();
+    }, [emblaApi]);
+
+    const scrollNext = useCallback(() => {
+        if (emblaApi) emblaApi.scrollNext();
+    }, [emblaApi]);
 
     useEffect(() => {
         if (!emblaApi) return;
@@ -48,22 +57,40 @@ export const YZoneGallery = () => {
                     </p>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl shadow-xl border border-border/50" ref={emblaRef}>
-                    <div className="flex">
-                        {images.map((image, index) => (
-                            <div className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 relative aspect-[16/9] px-2 md:px-4" key={index}>
-                                <div className="relative w-full h-full rounded-xl overflow-hidden shadow-md">
-                                    <Image
-                                        src={image.src.replace('%20', ' ')}
-                                        alt={image.alt}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 70vw"
-                                    />
+                <div className="relative group px-12 md:px-16 lg:px-20">
+                    <div className="overflow-hidden rounded-2xl shadow-xl border border-border/50" ref={emblaRef}>
+                        <div className="flex">
+                            {images.map((image, index) => (
+                                <div className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 relative aspect-[16/9] px-2 md:px-4" key={index}>
+                                    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-md">
+                                        <Image
+                                            src={image.src.replace('%20', ' ')}
+                                            alt={image.alt}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 70vw"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
+
+                    {/* Navigation Buttons */}
+                    <button
+                        className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-background hover:bg-muted border border-border flex items-center justify-center shadow-lg transition-colors z-10"
+                        onClick={scrollPrev}
+                        aria-label="Previous slide"
+                    >
+                        <ChevronLeft className="w-6 h-6 text-foreground" />
+                    </button>
+                    <button
+                        className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-background hover:bg-muted border border-border flex items-center justify-center shadow-lg transition-colors z-10"
+                        onClick={scrollNext}
+                        aria-label="Next slide"
+                    >
+                        <ChevronRight className="w-6 h-6 text-foreground" />
+                    </button>
                 </div>
 
                 {/* Dots */}
