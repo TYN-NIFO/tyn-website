@@ -103,6 +103,16 @@ export const Header = () => {
     setExpandedMobileMenu(null);
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Determine the base path of the clicked link (ignoring query params and hashes)
+    const targetPath = href.split('?')[0].split('#')[0];
+
+    // If the path matches the current path and there is no specific element hashtag
+    if (targetPath === pathname && !href.includes('#')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   // Force solid navbar on specific pages
   const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname === '/ynfinity-events' || pathname?.startsWith('/resources');
   const isSolid = isScrolled || forceSolidNav;
@@ -129,7 +139,7 @@ export const Header = () => {
       <nav className="container-main">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onClick={(e) => handleLinkClick(e, '/')}>
             <Image
               src={isSolid ? logoDark : logoLight}
               alt="The Yellow Network"
@@ -168,7 +178,7 @@ export const Header = () => {
                   onMouseLeave={() => setActiveMenu(null)}
                 >
                   {item.href ? (
-                    <Link href={item.href} className={linkClass}>
+                    <Link href={item.href} className={linkClass} onClick={(e) => handleLinkClick(e, item.href!)}>
                       {item.label}
                       {item.megaMenu && (
                         <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.label ? 'rotate-180' : ''}`} />
@@ -197,6 +207,7 @@ export const Header = () => {
                                     key={menuItem.title}
                                     href={menuItem.href}
                                     className="block p-3 rounded-lg hover:bg-muted transition-colors group"
+                                    onClick={(e) => handleLinkClick(e, menuItem.href)}
                                   >
                                     <div className="font-medium text-foreground group-hover:text-accent transition-colors flex items-center gap-2">
                                       {menuItem.logo ? (
@@ -274,7 +285,10 @@ export const Header = () => {
                             <Link
                               key={menuItem.title}
                               href={menuItem.href}
-                              onClick={closeMobileMenu}
+                              onClick={(e) => {
+                                closeMobileMenu();
+                                handleLinkClick(e, menuItem.href);
+                              }}
                               className="block py-2.5 text-sm text-muted-foreground hover:text-foreground"
                             >
                               {menuItem.title}
@@ -287,7 +301,10 @@ export const Header = () => {
                 ) : item.href ? (
                   <Link
                     href={item.href}
-                    onClick={closeMobileMenu}
+                    onClick={(e) => {
+                      closeMobileMenu();
+                      handleLinkClick(e, item.href!);
+                    }}
                     className="flex items-center justify-between py-2 font-medium"
                   >
                     {item.label}

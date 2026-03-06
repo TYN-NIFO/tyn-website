@@ -1,5 +1,7 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
 const logoLight = '/assets/logo-light.png';
@@ -27,6 +29,18 @@ const footerLinks = {
 };
 
 export const Footer = () => {
+  const pathname = usePathname();
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Determine the base path of the clicked link (ignoring query params and hashes)
+    const targetPath = href.split('?')[0].split('#')[0];
+
+    // If the path matches the current path and there is no specific element hashtag
+    if (targetPath === pathname && !href.includes('#')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="hero-gradient text-primary-foreground">
       <div className="container-main section-padding">
@@ -34,7 +48,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-block mb-6" onClick={(e) => handleLinkClick(e, '/')}>
               <Image
                 src={logoLight}
                 alt="The Yellow Network"
@@ -68,12 +82,13 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -84,12 +99,13 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.accelerators.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,12 +116,13 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -116,12 +133,13 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -155,9 +173,9 @@ export const Footer = () => {
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
           <p>© {new Date().getFullYear()} The Yellow Network. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">Cookie Policy</a>
+            <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+            <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
+            <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-primary-foreground transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

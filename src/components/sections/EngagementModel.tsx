@@ -44,7 +44,7 @@ const engagements = [
 
 export const EngagementModel = () => {
     return (
-        <section id="engagement-models" className="section-padding bg-background pattern-grid">
+        <section id="engagement-models" className="scroll-mt-24 md:scroll-mt-28 section-padding bg-background pattern-grid">
             <div className="container-main">
                 <div className="text-center max-w-4xl mx-auto mb-16">
 
