@@ -15,7 +15,7 @@ const outcomes = [
   },
   {
     icon: Search,
-    title: 'Practical validation before enterprise scale-up',
+    title: 'Practical validation before enterprise scale up',
   },
 ];
 
