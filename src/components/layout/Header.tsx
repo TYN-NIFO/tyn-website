@@ -152,10 +152,24 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = item.href === pathname || item.megaMenu?.some(section => section.items.some(child => {
-                const childPath = child.href.split('?')[0].split('#')[0];
-                return (childPath === pathname && childPath !== '/') || child.href === pathname;
-              }));
+              const isActive = (() => {
+                if (pathname === '/') return false;
+                if (item.href) {
+                  const itemBase = item.href.split('?')[0].split('#')[0];
+                  if (pathname === itemBase || (itemBase !== '/' && pathname.startsWith(itemBase))) {
+                    return true;
+                  }
+                }
+                if (item.megaMenu) {
+                  return item.megaMenu.some(section =>
+                    section.items.some(child => {
+                      const childBase = child.href.split('?')[0].split('#')[0];
+                      return childBase === pathname || (childBase !== '/' && pathname.startsWith(childBase));
+                    })
+                  );
+                }
+                return false;
+              })();
 
               // Shared base: identical padding/size in every state — no negative margins
               // Active highlight is done via ring/shadow which doesn't affect layout
@@ -264,54 +278,81 @@ export const Header = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-card border-t border-border py-4 animate-fade-in max-h-[85vh] overflow-y-auto">
-            {navItems.map((item) => (
-              <div key={item.label} className="px-4 py-2">
-                {item.megaMenu ? (
-                  <div>
-                    <button
-                      type="button"
-                      onClick={() => setExpandedMobileMenu((prev) => (prev === item.label ? null : item.label))}
-                      className="flex items-center justify-between w-full py-2 font-medium text-left"
+            {navItems.map((item) => {
+              const isItemActive = (() => {
+                if (pathname === '/') return false;
+                if (item.href) {
+                  const itemBase = item.href.split('?')[0].split('#')[0];
+                  return pathname === itemBase || (itemBase !== '/' && pathname.startsWith(itemBase));
+                }
+                if (item.megaMenu) {
+                  return item.megaMenu.some(section =>
+                    section.items.some(child => {
+                      const childBase = child.href.split('?')[0].split('#')[0];
+                      return childBase === pathname || (childBase !== '/' && pathname.startsWith(childBase));
+                    })
+                  );
+                }
+                return false;
+              })();
+
+              return (
+                <div key={item.label} className="px-4 py-2">
+                  {item.megaMenu ? (
+                    <div>
+                      <button
+                        type="button"
+                        onClick={() => setExpandedMobileMenu((prev) => (prev === item.label ? null : item.label))}
+                        className={`flex items-center justify-between w-full py-2 font-medium text-left ${isItemActive ? 'text-tyn-blue font-bold' : ''
+                          }`}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${expandedMobileMenu === item.label ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                      {expandedMobileMenu === item.label && (
+                        <div className="pl-4 space-y-1 border-l-2 border-muted ml-1 mt-1">
+                          {item.megaMenu.map((section) =>
+                            section.items.map((menuItem) => {
+                              const childBase = menuItem.href.split('?')[0].split('#')[0];
+                              const isChildActive = pathname !== '/' && (childBase === pathname || (childBase !== '/' && pathname.startsWith(childBase)));
+
+                              return (
+                                <Link
+                                  key={menuItem.title}
+                                  href={menuItem.href}
+                                  onClick={(e) => {
+                                    closeMobileMenu();
+                                    handleLinkClick(e, menuItem.href);
+                                  }}
+                                  className={`block py-2.5 text-sm hover:text-foreground ${isChildActive ? 'text-tyn-blue font-bold' : 'text-muted-foreground'
+                                    }`}
+                                >
+                                  {menuItem.title}
+                                </Link>
+                              )
+                            })
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ) : item.href ? (
+                    <Link
+                      href={item.href}
+                      onClick={(e) => {
+                        closeMobileMenu();
+                        handleLinkClick(e, item.href!);
+                      }}
+                      className={`flex items-center justify-between py-2 font-medium ${isItemActive ? 'text-tyn-blue font-bold' : ''
+                        }`}
                     >
                       {item.label}
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${expandedMobileMenu === item.label ? 'rotate-180' : ''}`}
-                      />
-                    </button>
-                    {expandedMobileMenu === item.label && (
-                      <div className="pl-4 space-y-1 border-l-2 border-muted ml-1 mt-1">
-                        {item.megaMenu.map((section) =>
-                          section.items.map((menuItem) => (
-                            <Link
-                              key={menuItem.title}
-                              href={menuItem.href}
-                              onClick={(e) => {
-                                closeMobileMenu();
-                                handleLinkClick(e, menuItem.href);
-                              }}
-                              className="block py-2.5 text-sm text-muted-foreground hover:text-foreground"
-                            >
-                              {menuItem.title}
-                            </Link>
-                          ))
-                        )}
-                      </div>
-                    )}
-                  </div>
-                ) : item.href ? (
-                  <Link
-                    href={item.href}
-                    onClick={(e) => {
-                      closeMobileMenu();
-                      handleLinkClick(e, item.href!);
-                    }}
-                    className="flex items-center justify-between py-2 font-medium"
-                  >
-                    {item.label}
-                  </Link>
-                ) : null}
-              </div>
-            ))}
+                    </Link>
+                  ) : null}
+                </div>
+              )
+            })}
             <div className="px-4 pt-4">
               <Link href="/contact?source_page=Header&cta=Contact-Us" onClick={closeMobileMenu}>
                 <Button className="btn-hero w-full">Contact Us</Button>
