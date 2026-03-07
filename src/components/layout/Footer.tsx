@@ -160,13 +160,6 @@ export const Footer = () => {
                 innovation@theyellow.network
               </a>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-accent" />
-              <a href="tel:+917358295305" className="hover:text-accent transition-colors">
-                <span className="hidden lg:inline">+91 73582 95305</span>
-                <span className="lg:hidden">Call us</span>
-              </a>
-            </div>
           </div>
         </div>
 

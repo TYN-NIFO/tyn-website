@@ -57,11 +57,11 @@ export const YZoneGallery = () => {
                     </p>
                 </div>
 
-                <div className="relative group px-12 md:px-16 lg:px-20">
+                <div className="relative group px-4 md:px-16 lg:px-20">
                     <div className="overflow-hidden rounded-2xl shadow-xl border border-border/50" ref={emblaRef}>
                         <div className="flex">
                             {images.map((image, index) => (
-                                <div className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 relative aspect-[16/9] px-2 md:px-4" key={index}>
+                                <div className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 relative aspect-[4/3] md:aspect-[16/9] px-1 md:px-4" key={index}>
                                     <div className="relative w-full h-full rounded-xl overflow-hidden shadow-md">
                                         <Image
                                             src={image.src.replace('%20', ' ')}
