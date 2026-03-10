@@ -64,6 +64,8 @@ export const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="https://www.linkedin.com/company/the-yellow-network/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
