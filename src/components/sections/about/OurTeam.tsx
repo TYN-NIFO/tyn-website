@@ -14,13 +14,16 @@ const teamMembers = [
     { name: 'Sourish Ghosh', role: 'Partner Success Manager', image: '/assets/Profile pics/Sourish_Ghosh.png' },
     { name: 'Anandapadmanaban K (AK)', role: 'Innovation Evangelist', image: '/assets/Profile pics/Anand.png' },
     { name: 'Maharshi Vidhyarthi', role: 'Innovation Consultant', image: '/assets/Profile pics/maharishi.jpg' },
-    { name: 'Kaushik Venkatesan', role: 'Alliance Director', image: '/assets/Profile pics/kaushik.png' },
     { name: 'Rakesh Mahendran', role: 'Software Developer', image: '/assets/Profile pics/Rakesh.jpeg' },
     {
         name: 'Rathnasundaradevi', role: 'Legal & Finance Manager',
         image: '/assets/Profile pics/rathna-removebg-preview.png'
     },
+    { name: 'Ravin', role: 'AI Engineer', image: '/assets/Profile pics/Ravin.png' },
+    { name: 'Pravinkumar Raja', role: 'Tech Lead - Workflow Automation', image: '/assets/Profile pics/Pravin.jpeg' },
     { name: 'Varshiga Mohankumar', role: 'Intern - Full Stack Developer', image: '/assets/Profile pics/Varshiga.jpg' },
+    { name: 'Lakshmi Prabha', role: 'Intern - Software Developer', image: '/assets/Profile pics/Laxmi Prabha.png' },
+
 ];
 
 export const OurTeam = () => {
