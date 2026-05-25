@@ -22,6 +22,7 @@ interface Solution {
   description: string;
   capabilities: string[];
   impact: string;
+  status?: "production" | "pre-production";
 }
 
 const solutions: Solution[] = [
@@ -44,6 +45,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "40–60% reduction in manual processing effort with improved audit readiness.",
+    status: "production",
   },
   {
     id: "contract-review",
@@ -64,6 +66,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "30–50% reduction in first-level legal review effort with improved contract governance.",
+    status: "production",
   },
   {
     id: "hr-operations",
@@ -84,6 +87,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "40–60% reduction in repetitive HR support interactions with faster employee resolution.",
+    status: "production",
   },
   {
     id: "sales-deal-coach",
@@ -104,6 +108,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "50–60% reduction in account research effort with improved opportunity qualification quality.",
+    status: "pre-production",
   },
   {
     id: "invoice-risk-intelligence",
@@ -124,6 +129,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "40–60% reduction in manual invoice review effort with fewer downstream compliance incidents.",
+    status: "production",
   },
   {
     id: "supplier-risk-intelligence",
@@ -144,6 +150,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Earlier operational risk identification and significant reduction in reactive escalation management.",
+    status: "pre-production",
   },
   {
     id: "vendor-evaluation",
@@ -164,6 +171,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Faster vendor evaluation cycles with consistent, bias-reduced decision documentation.",
+    status: "pre-production",
   },
   {
     id: "strategic-sourcing",
@@ -184,6 +192,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Improved negotiation preparedness and earlier identification of pricing risks and sourcing vulnerabilities.",
+    status: "pre-production",
   },
   {
     id: "customer-service-intelligence",
@@ -204,6 +213,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Earlier escalation risk identification and measurable reduction in recurring operational service failures.",
+    status: "pre-production",
   },
 ];
 
@@ -293,7 +303,9 @@ export const SolutionPortfolio = () => {
                     </p>
                     <div className="flex items-center gap-1.5 text-xs text-tyn-blue font-medium">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      Production-ready
+                      {solution.status === "pre-production"
+                        ? "Pre-production"
+                        : "Production-ready"}
                     </div>
                   </div>
                 );
@@ -322,7 +334,9 @@ export const SolutionPortfolio = () => {
                         ))}
                         <span className="px-2.5 py-0.5 rounded-full bg-tyn-blue/20 text-tyn-blue text-xs font-medium flex items-center gap-1">
                           <CheckCircle2 className="w-3 h-3" />
-                          Production-ready
+                          {solution.status === "pre-production"
+                            ? "Pre-production"
+                            : "Production-ready"}
                         </span>
                       </div>
                       <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">
