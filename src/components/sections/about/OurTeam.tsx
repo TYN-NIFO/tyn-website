@@ -19,9 +19,9 @@ const teamMembers = [
     image: "/assets/Profile pics/velan.png",
   },
   {
-    name: "Rathna sundaradevi",
+    name: "Rathnasundara Devi",
     role: "Head-Administration",
-    image: "/assets/Profile pics/rathna.jpg",
+    image: "/assets/Profile pics/rathna.png",
   },
   {
     name: "Parthiban",
@@ -56,7 +56,7 @@ const teamMembers = [
   {
     name: "Rakesh Mahendran",
     role: "Tech Lead - AI solutions (FDE)",
-    image: "/assets/Profile pics/Rakesh.jpeg",
+    image: "/assets/Profile pics/Rakesh.png",
   },
   {
     name: "Pravinkumar Raja",

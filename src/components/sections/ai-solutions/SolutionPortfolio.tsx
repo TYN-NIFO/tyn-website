@@ -1,5 +1,17 @@
-import { useState } from 'react';
-import { X, FileText, Users, Scale, GraduationCap, Cpu, CheckCircle2 } from 'lucide-react';
+import { useState } from "react";
+import {
+  X,
+  CheckCircle2,
+  Receipt,
+  Scale,
+  Users,
+  TrendingUp,
+  ShieldAlert,
+  Network,
+  ClipboardList,
+  Handshake,
+  Headphones as HeadphonesIcon,
+} from "lucide-react";
 
 interface Solution {
   id: string;
@@ -14,121 +26,230 @@ interface Solution {
 
 const solutions: Solution[] = [
   {
-    id: 'invoice',
-    name: 'AI Invoice Processing & Analyzer',
-    categories: ['Finance'],
-    shortLine: 'End-to-end automation of invoice intake, validation, and ERP posting.',
-    icon: FileText,
-    description: 'A production-grade finance automation solution designed to eliminate manual invoice workflows while strengthening compliance.',
+    id: "invoice-processing",
+    name: "AI Invoice Processing & Analyzer",
+    categories: ["Finance"],
+    shortLine:
+      "End-to-end automation of invoice intake, validation, and ERP-ready output with audit traceability.",
+    icon: Receipt,
+    description:
+      "An intelligent invoice processing system that extracts, validates, and flags anomalies across high-volume, multi-format invoice traffic.",
     capabilities: [
-      'Shared mailbox ingestion and attachment detection',
-      'OCR extraction of structured invoice data',
-      'Vendor and PO validation',
-      'Multi-factor duplicate detection',
-      'Human-in-the-loop exception routing',
-      'Automatic ERP/CRM posting',
-      'Full audit trails',
+      "Email and PDF invoice ingestion",
+      "OCR-based field extraction",
+      "Duplicate invoice detection",
+      "Confidence scoring and flagging",
+      "ERP-ready structured output",
+      "Audit trail generation",
     ],
-    impact: 'Faster processing cycles, reduced manual effort, stronger compliance controls.',
+    impact:
+      "40–60% reduction in manual processing effort with improved audit readiness.",
   },
   {
-    id: 'hr-assistant',
-    name: 'HR Policy Conversational Assistant',
-    categories: ['HR'],
-    shortLine: 'Multilingual voice and chat assistant for policy queries and guided claims intake.',
-    icon: Users,
-    description: 'An enterprise HR assistant delivering structured policy guidance and claims processing with secure escalation.',
-    capabilities: [
-      'Voice + chat GenAI interface',
-      'Source-backed responses',
-      'Guided intake workflows',
-      'HRMS/CRM ticket creation',
-      'Smart escalation summaries',
-      'Secure sensitive data handling',
-      'Usage and engagement analytics',
-    ],
-    impact: '24/7 support, faster employee service, reduced HR workload.',
-  },
-  {
-    id: 'contract-review',
-    name: 'AI Contract Review & Clause Risk Analyzer',
-    categories: ['Legal'],
-    shortLine: 'Automated contract intelligence for faster legal review and risk visibility.',
+    id: "contract-review",
+    name: "AI Contract Review & Clause Risk Analyzer",
+    categories: ["Legal"],
+    shortLine:
+      "Automated contract intelligence for faster legal review and risk visibility.",
     icon: Scale,
-    description: 'A legal document intelligence system identifying risk, deviations, and non-standard clauses.',
+    description:
+      "A legal document intelligence system identifying risk, deviations, and non-standard clauses.",
     capabilities: [
-      'PDF/DOCX ingestion',
-      'Clause extraction and classification',
-      'Template comparison',
-      'Risk flagging',
-      'Text highlighting and summaries',
-      'Exportable review reports',
+      "PDF/DOCX ingestion",
+      "Clause extraction and classification",
+      "Template comparison",
+      "Risk flagging",
+      "Text highlighting and summaries",
+      "Exportable review reports",
     ],
-    impact: 'Shorter review cycles and improved contract governance.',
+    impact:
+      "30–50% reduction in first-level legal review effort with improved contract governance.",
   },
   {
-    id: 'campus-placement',
-    name: 'Campus Placement Platform',
-    categories: ['Education'],
-    shortLine: 'End-to-end digital placement lifecycle for institutions and recruiters.',
-    icon: GraduationCap,
-    description: 'A structured platform managing student, recruiter, and placement workflows with analytics visibility.',
+    id: "hr-operations",
+    name: "HR Policy Conversational Assistant",
+    categories: ["HR"],
+    shortLine:
+      "Personalized employee self-service for policy queries, guided workflows, and HR ticket management.",
+    icon: Users,
+    description:
+      "An AI-powered HR operations assistant that retrieves contextual policies, guides employees through workflows, and reduces repetitive HR support effort.",
     capabilities: [
-      'Student profiles and resume builder',
-      'Recruiter portal and job posting',
-      'Application workflows',
-      'Interview scheduling',
-      'Placement dashboards',
-      'Role-based access control',
+      "Personalized policy retrieval via RAG",
+      "Profile-based contextual responses",
+      "Guided claims and request workflows",
+      "HR ticket creation and tracking",
+      "Manager summary generation",
+      "Onboarding completion tracking",
     ],
-    impact: 'Streamlined operations and improved stakeholder visibility.',
+    impact:
+      "40–60% reduction in repetitive HR support interactions with faster employee resolution.",
   },
   {
-    id: 'response-rally',
-    name: 'ResponseRally: AI Model Benchmarking Suite',
-    categories: ['AI Infrastructure'],
-    shortLine: 'Side-by-side AI model benchmarking from a single unified interface.',
-    icon: Cpu,
-    description: 'A controlled evaluation environment for comparing model responses, latency, and performance metrics.',
+    id: "sales-deal-coach",
+    name: "Enterprise Sales & Deal Coach Agent",
+    categories: ["Sales"],
+    shortLine:
+      "Convert market signals and internal knowledge into account strategy and next-best sales actions.",
+    icon: TrendingUp,
+    description:
+      "A sales intelligence assistant that combines external account signals with internal knowledge to generate opportunity recommendations and meeting preparation.",
     capabilities: [
-      'Multi-provider prompt execution',
-      'Side-by-side response comparison',
-      'Latency and token tracking',
-      'Streaming + failover handling',
-      'Secure credential storage',
-      'Evaluation tagging',
+      "Account intelligence generation",
+      "Internal knowledge and case study retrieval",
+      "Opportunity recommendation with confidence scoring",
+      "Meeting preparation and suggested questions",
+      "Objection handling guidance",
+      "Proposal outline generation",
     ],
-    impact: 'Faster provider evaluation and confident AI stack decisions.',
+    impact:
+      "50–60% reduction in account research effort with improved opportunity qualification quality.",
+  },
+  {
+    id: "invoice-risk-intelligence",
+    name: "Invoice Risk & GST Compliance Intelligence Agent",
+    categories: ["Finance"],
+    shortLine:
+      "Detect invoice anomalies and GST compliance risks before financial leakage occurs.",
+    icon: ShieldAlert,
+    description:
+      "An invoice risk detection system that identifies operational anomalies, duplicate submissions, and GST compliance issues before ERP posting.",
+    capabilities: [
+      "Invoice batch ingestion and extraction",
+      "Duplicate and anomaly detection",
+      "GST number and tax field validation",
+      "Anomaly scoring with risk explanations",
+      "Vendor behavior pattern analysis",
+      "Pre-posting risk flagging dashboard",
+    ],
+    impact:
+      "40–60% reduction in manual invoice review effort with fewer downstream compliance incidents.",
+  },
+  {
+    id: "supplier-risk-intelligence",
+    name: "Supplier Risk & Performance Intelligence Agent",
+    categories: ["Operations"],
+    shortLine:
+      "Convert fragmented supplier signals into proactive operational and procurement risk visibility.",
+    icon: Network,
+    description:
+      "An AI-assisted supplier monitoring system that detects performance drift, SLA deviations, and dependency concentration risks across supplier networks.",
+    capabilities: [
+      "Supplier data and SLA report ingestion",
+      "Delivery performance trend analysis",
+      "Issue frequency and escalation tracking",
+      "Supplier dependency risk detection",
+      "SLA breach and penalty-trigger identification",
+      "Leadership risk summary generation",
+    ],
+    impact:
+      "Earlier operational risk identification and significant reduction in reactive escalation management.",
+  },
+  {
+    id: "vendor-evaluation",
+    name: "Vendor Evaluation & Decision Intelligence Agent",
+    categories: ["Procurement"],
+    shortLine:
+      "Structure multi-vendor comparisons and accelerate procurement decision-making.",
+    icon: ClipboardList,
+    description:
+      "An AI-assisted vendor evaluation system that ingests proposals, extracts capabilities, and generates structured comparisons with weighted scoring and recommendation rationale.",
+    capabilities: [
+      "Multi-format proposal ingestion (PDF, PPT, Excel)",
+      "Capability and pricing extraction",
+      "Side-by-side vendor comparison",
+      "Weighted scoring and ranking",
+      "Strengths and risk summarization",
+      "Leadership recommendation report generation",
+    ],
+    impact:
+      "Faster vendor evaluation cycles with consistent, bias-reduced decision documentation.",
+  },
+  {
+    id: "strategic-sourcing",
+    name: "Strategic Sourcing & Negotiation Intelligence Agent",
+    categories: ["Procurement"],
+    shortLine:
+      "Convert procurement history and supplier signals into sourcing and negotiation intelligence.",
+    icon: Handshake,
+    description:
+      "A procurement intelligence assistant that analyzes historical transactions, quotations, and negotiation records to surface pricing insights, benchmarks, and negotiation preparation.",
+    capabilities: [
+      "Procurement transaction and quotation ingestion",
+      "Supplier pricing trend analysis",
+      "Historical negotiation summarization",
+      "Price anomaly and benchmark detection",
+      "Sourcing dependency risk identification",
+      "Negotiation preparation sheet generation",
+    ],
+    impact:
+      "Improved negotiation preparedness and earlier identification of pricing risks and sourcing vulnerabilities.",
+  },
+  {
+    id: "customer-service-intelligence",
+    name: "Customer Service Intelligence & Escalation Analytics Agent",
+    categories: ["Operations"],
+    shortLine:
+      "Convert fragmented customer interactions into proactive escalation and operational service intelligence.",
+    icon: HeadphonesIcon,
+    description:
+      "An AI-assisted customer interaction analysis system that identifies escalation risks, recurring issue patterns, and operational bottlenecks across multi-channel support data.",
+    capabilities: [
+      "Multi-channel interaction ingestion (calls, email, WhatsApp, tickets)",
+      "Interaction summarization and sentiment tagging",
+      "Escalation risk detection and scoring",
+      "Recurring issue clustering",
+      "Resolution inefficiency identification",
+      "Leadership intervention summary generation",
+    ],
+    impact:
+      "Earlier escalation risk identification and measurable reduction in recurring operational service failures.",
   },
 ];
 
-const categories = ['All', 'Finance', 'HR', 'Legal', 'Education', 'AI Infrastructure'];
+const categories = [
+  "All",
+  "Finance",
+  "Legal",
+  "HR",
+  "Sales",
+  "Operations",
+  "Procurement",
+];
 
 export const SolutionPortfolio = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState("All");
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  const filtered = activeCategory === 'All'
-    ? solutions
-    : solutions.filter((s) => s.categories.includes(activeCategory));
+  const filtered =
+    activeCategory === "All"
+      ? solutions
+      : solutions.filter((s) => s.categories.includes(activeCategory));
 
   const handleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
   };
 
   return (
-    <section id="solutions-grid" className="section-padding bg-background pattern-grid">
+    <section
+      id="solutions-grid"
+      className="section-padding bg-background pattern-grid"
+    >
       <div className="container-main">
         {/* Filter Bar */}
         <div className="flex flex-wrap gap-2 mb-14 justify-center">
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${activeCategory === cat
-                ? 'bg-primary text-primary-foreground border-primary'
-                : 'bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground'
-                }`}
+              onClick={() => {
+                setActiveCategory(cat);
+                setExpandedId(null);
+              }}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+                activeCategory === cat
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-accent/40 hover:text-foreground"
+              }`}
             >
               {cat}
             </button>
@@ -157,7 +278,10 @@ export const SolutionPortfolio = () => {
                         </h3>
                         <div className="flex flex-wrap gap-1.5 mb-2">
                           {solution.categories.map((cat) => (
-                            <span key={cat} className="px-2.5 py-0.5 rounded-full bg-tyn-blue/10 text-tyn-blue text-xs font-medium">
+                            <span
+                              key={cat}
+                              className="px-2.5 py-0.5 rounded-full bg-tyn-blue/10 text-tyn-blue text-xs font-medium"
+                            >
                               {cat}
                             </span>
                           ))}
@@ -189,7 +313,10 @@ export const SolutionPortfolio = () => {
                     <div className="flex-1">
                       <div className="flex flex-wrap gap-1.5 mb-2">
                         {solution.categories.map((cat) => (
-                          <span key={cat} className="px-2.5 py-0.5 rounded-full bg-tyn-blue/10 text-tyn-blue text-xs font-medium">
+                          <span
+                            key={cat}
+                            className="px-2.5 py-0.5 rounded-full bg-tyn-blue/10 text-tyn-blue text-xs font-medium"
+                          >
                             {cat}
                           </span>
                         ))}
@@ -220,7 +347,10 @@ export const SolutionPortfolio = () => {
                       </h4>
                       <ul className="space-y-2.5">
                         {solution.capabilities.map((cap) => (
-                          <li key={cap} className="flex items-start gap-2 text-sm text-foreground/80">
+                          <li
+                            key={cap}
+                            className="flex items-start gap-2 text-sm text-foreground/80"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-tyn-blue flex-shrink-0 mt-1.5" />
                             {cap}
                           </li>
