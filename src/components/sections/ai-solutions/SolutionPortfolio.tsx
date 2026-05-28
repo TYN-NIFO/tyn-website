@@ -12,8 +12,8 @@ import {
   Handshake,
   Headphones as HeadphonesIcon,
   BarChart3,
-  Zap,
 } from "lucide-react";
+import { TargetIcon } from "@/components/icons/TargetIcon";
 
 interface Solution {
   id: string;
@@ -337,11 +337,13 @@ export const SolutionPortfolio = () => {
                     </p>
                     <div className="flex items-center gap-3 text-xs font-medium h-5">
                       <div className="flex items-center gap-1 text-tyn-blue">
-                        <Zap className="w-3.5 h-3.5" />
+                        <TargetIcon className="w-3.5 h-3.5" />
                         <span>{solution.outcome}</span>
                       </div>
                       <span className="text-border">•</span>
-                      <div className="flex items-center gap-1.5 text-tyn-blue">
+                      <div
+                        className={`flex items-center gap-1.5 ${solution.status === "production" ? "text-[#007a3f]" : "text-amber-600"}`}
+                      >
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         {solution.status === "pre-production"
                           ? "Pre-production"
@@ -376,11 +378,13 @@ export const SolutionPortfolio = () => {
                       </div>
                       <div className="flex items-center gap-3 text-xs font-medium h-5">
                         <div className="flex items-center gap-1 text-tyn-blue">
-                          <Zap className="w-3.5 h-3.5" />
+                          <TargetIcon className="w-3.5 h-3.5" />
                           <span>{solution.outcome}</span>
                         </div>
                         <span className="text-border">•</span>
-                        <div className="flex items-center gap-1 text-tyn-blue">
+                        <div
+                          className={`flex items-center gap-1 ${solution.status === "production" ? "text-[#007a3f]" : "text-amber-600"}`}
+                        >
                           <CheckCircle2 className="w-3 h-3" />
                           {solution.status === "pre-production"
                             ? "Pre-production"
