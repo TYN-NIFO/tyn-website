@@ -11,6 +11,8 @@ import {
   ClipboardList,
   Handshake,
   Headphones as HeadphonesIcon,
+  BarChart3,
+  Zap,
 } from "lucide-react";
 
 interface Solution {
@@ -22,6 +24,7 @@ interface Solution {
   description: string;
   capabilities: string[];
   impact: string;
+  outcome: string;
   status?: "production" | "pre-production";
 }
 
@@ -45,6 +48,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "40–60% reduction in manual processing effort with improved audit readiness.",
+    outcome: "Cost Avoidance",
     status: "production",
   },
   {
@@ -66,6 +70,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "30–50% reduction in first-level legal review effort with improved contract governance.",
+    outcome: "Risk Reduction",
     status: "production",
   },
   {
@@ -87,6 +92,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "40–60% reduction in repetitive HR support interactions with faster employee resolution.",
+    outcome: "Effort Deflection",
     status: "production",
   },
   {
@@ -108,6 +114,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "50–60% reduction in account research effort with improved opportunity qualification quality.",
+    outcome: "Revenue Acceleration",
     status: "pre-production",
   },
   {
@@ -129,6 +136,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "40–60% reduction in manual invoice review effort with fewer downstream compliance incidents.",
+    outcome: "Fraud Prevention",
     status: "production",
   },
   {
@@ -150,6 +158,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Earlier operational risk identification and significant reduction in reactive escalation management.",
+    outcome: "Supply Continuity",
     status: "pre-production",
   },
   {
@@ -171,6 +180,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Faster vendor evaluation cycles with consistent, bias-reduced decision documentation.",
+    outcome: "Decision Velocity",
     status: "pre-production",
   },
   {
@@ -192,6 +202,7 @@ const solutions: Solution[] = [
     ],
     impact:
       "Improved negotiation preparedness and earlier identification of pricing risks and sourcing vulnerabilities.",
+    outcome: "Margin Protection",
     status: "pre-production",
   },
   {
@@ -213,7 +224,29 @@ const solutions: Solution[] = [
     ],
     impact:
       "Earlier escalation risk identification and measurable reduction in recurring operational service failures.",
+    outcome: "Churn Prevention",
     status: "pre-production",
+  },
+  {
+    id: "eval-arena",
+    name: "Eval Arena: AI Model Benchmarking Suite",
+    categories: ["AI Infrastructure"],
+    shortLine:
+      "Side-by-side AI model benchmarking from a single unified interface.",
+    icon: BarChart3,
+    description:
+      "A controlled evaluation environment for comparing model responses, latency, and performance metrics.",
+    capabilities: [
+      "Multi-provider prompt execution",
+      "Side-by-side response comparison",
+      "Latency and token tracking",
+      "Streaming + failover handling",
+      "Secure credential storage",
+      "Evaluation tagging",
+    ],
+    impact: "Faster provider evaluation and confident AI stack decisions.",
+    outcome: "Model Agility",
+    status: "production",
   },
 ];
 
@@ -225,6 +258,7 @@ const categories = [
   "Sales",
   "Operations",
   "Procurement",
+  "AI Infrastructure",
 ];
 
 export const SolutionPortfolio = () => {
@@ -269,7 +303,7 @@ export const SolutionPortfolio = () => {
         {/* Grid */}
         <div className="relative w-full transition-all duration-500 ease-in-out">
           {expandedId === null ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in justify-items-center lg:justify-items-start">
               {filtered.map((solution) => {
                 const Icon = solution.icon;
                 return (
@@ -301,11 +335,18 @@ export const SolutionPortfolio = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       {solution.shortLine}
                     </p>
-                    <div className="flex items-center gap-1.5 text-xs text-tyn-blue font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      {solution.status === "pre-production"
-                        ? "Pre-production"
-                        : "Production-ready"}
+                    <div className="flex items-center gap-3 text-xs font-medium h-5">
+                      <div className="flex items-center gap-1 text-tyn-blue">
+                        <Zap className="w-3.5 h-3.5" />
+                        <span>{solution.outcome}</span>
+                      </div>
+                      <span className="text-border">•</span>
+                      <div className="flex items-center gap-1.5 text-tyn-blue">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        {solution.status === "pre-production"
+                          ? "Pre-production"
+                          : "Production-ready"}
+                      </div>
                     </div>
                   </div>
                 );
@@ -332,12 +373,19 @@ export const SolutionPortfolio = () => {
                             {cat}
                           </span>
                         ))}
-                        <span className="px-2.5 py-0.5 rounded-full bg-tyn-blue/20 text-tyn-blue text-xs font-medium flex items-center gap-1">
+                      </div>
+                      <div className="flex items-center gap-3 text-xs font-medium h-5">
+                        <div className="flex items-center gap-1 text-tyn-blue">
+                          <Zap className="w-3.5 h-3.5" />
+                          <span>{solution.outcome}</span>
+                        </div>
+                        <span className="text-border">•</span>
+                        <div className="flex items-center gap-1 text-tyn-blue">
                           <CheckCircle2 className="w-3 h-3" />
                           {solution.status === "pre-production"
                             ? "Pre-production"
                             : "Production-ready"}
-                        </span>
+                        </div>
                       </div>
                       <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">
                         {solution.name}
