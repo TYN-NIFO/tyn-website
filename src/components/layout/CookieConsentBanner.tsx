@@ -104,7 +104,8 @@ export const CookieConsentBanner = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full"
+              className="w-full rounded-none border-border bg-background text-foreground hover:!border-border hover:!bg-muted hover:!text-foreground"
+              style={{ clipPath: 'polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%)' }}
               onClick={() => savePreference('declined')}
             >
               Decline Non-Essential Cookies
