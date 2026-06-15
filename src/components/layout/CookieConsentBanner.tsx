@@ -101,15 +101,20 @@ export const CookieConsentBanner = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full rounded-none border-border bg-background text-foreground hover:!border-border hover:!bg-muted hover:!text-foreground"
+            <div
+              className="w-full bg-border p-px"
               style={{ clipPath: 'polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%)' }}
-              onClick={() => savePreference('declined')}
             >
-              Decline Non-Essential Cookies
-            </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full rounded-none border-0 bg-background text-foreground hover:!bg-muted hover:!text-foreground"
+                style={{ clipPath: 'polygon(8.5% 0%, 100% 0%, 100% 80%, 91.5% 100%, 0% 100%, 0% 15%)' }}
+                onClick={() => savePreference('declined')}
+              >
+                Decline Non-Essential Cookies
+              </Button>
+            </div>
             <Button
               type="button"
               className="btn-hero w-full"
