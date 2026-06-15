@@ -12,12 +12,21 @@ function generateSubmissionId(): string {
 export async function POST(request: Request) {
     try {
         const data = await request.json();
-        const { fullName, designation, company, email, query, metadata } = data;
+        const { fullName, designation, company, email, query, privacyConsent, metadata } = data;
+
+        if (privacyConsent !== true) {
+            return NextResponse.json(
+                { success: false, error: 'Privacy policy consent is required.' },
+                { status: 400 }
+            );
+        }
 
         // Validate derived fields
         const sourcePage = metadata?.source_page || 'unknown';
         const ctaLabel = metadata?.cta || 'unknown';
         const timestamp = new Date().toISOString();
+        const privacyConsentGivenAt = metadata?.privacy_consent_given_at || timestamp;
+        const privacyPolicyUrl = metadata?.privacy_policy_url || '/policies/privacy-policy';
         const submissionId = generateSubmissionId();
 
         // 1. Write to Google Sheets
@@ -36,7 +45,7 @@ export async function POST(request: Request) {
 
         console.log('--- CONTACT FORM SUBMISSION PAYLOAD ---');
         console.log(JSON.stringify({
-            submissionId, timestamp, fullName, designation, company, email, query, sourcePage, ctaLabel
+            submissionId, timestamp, fullName, designation, company, email, query, sourcePage, ctaLabel, privacyConsent, privacyConsentGivenAt, privacyPolicyUrl
         }, null, 2));
 
         try {
@@ -126,6 +135,9 @@ export async function POST(request: Request) {
               <tr><th align="left">Timestamp</th><td>${timestamp}</td></tr>
               <tr><th align="left">Source Page</th><td>${sourcePage}</td></tr>
               <tr><th align="left">CTA Label</th><td>${ctaLabel}</td></tr>
+              <tr><th align="left">Privacy Consent</th><td>${privacyConsent ? 'Yes' : 'No'}</td></tr>
+              <tr><th align="left">Privacy Consent Timestamp</th><td>${privacyConsentGivenAt}</td></tr>
+              <tr><th align="left">Privacy Policy URL</th><td>${privacyPolicyUrl}</td></tr>
               <tr><th align="left">Full Name</th><td>${fullName}</td></tr>
               <tr><th align="left">Designation</th><td>${designation}</td></tr>
               <tr><th align="left">Company Name</th><td>${company}</td></tr>

@@ -3,7 +3,8 @@ import blog from './blog'
 import whitepaper from './whitepaper'
 import ynsight from './ynsight'
 import openPosition from './openPosition'
+import policy from './policy'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [blog, whitepaper, ynsight, openPosition],
+    types: [blog, whitepaper, ynsight, openPosition, policy],
 }

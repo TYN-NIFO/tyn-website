@@ -39,6 +39,16 @@ export interface Whitepaper extends SanityBody {
     fileUrl: string;
 }
 
+export interface Policy extends SanityBody {
+    _type: "policy";
+    title: string;
+    slug: {
+        current: string;
+    };
+    lastUpdated?: string;
+    content: PortableTextBlock[];
+}
+
 export interface Ynsight extends SanityBody {
     _type: "ynsight";
     title: string;

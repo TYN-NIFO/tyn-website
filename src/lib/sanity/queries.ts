@@ -43,6 +43,15 @@ export const GET_RELATED_BLOGS = groq`*[_type == "blog" && isPublished == true &
   readTime
 }`;
 
+// Policy Queries
+export const GET_POLICY_BY_SLUG = groq`*[_type == "policy" && slug.current == $slug && isPublished == true][0]{
+  _id,
+  title,
+  slug,
+  lastUpdated,
+  content
+}`;
+
 // Whitepaper Queries
 export const GET_WHITEPAPERS = groq`*[_type == "whitepaper"] | order(_createdAt desc){
   _id,

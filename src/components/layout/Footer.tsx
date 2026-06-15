@@ -169,9 +169,9 @@ export const Footer = () => {
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
           <p>© {new Date().getFullYear()} The Yellow Network. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+            <Link href="/policies/privacy-policy" onClick={(e) => handleLinkClick(e, '/policies/privacy-policy')} className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
             <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
-            <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-primary-foreground transition-colors">Cookie Policy</Link>
+            <Link href="/policies/cookie-policy" onClick={(e) => handleLinkClick(e, '/policies/cookie-policy')} className="hover:text-primary-foreground transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

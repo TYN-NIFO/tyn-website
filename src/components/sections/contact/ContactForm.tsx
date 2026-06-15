@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { ArrowRight, Shield, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -19,6 +20,9 @@ const contactSchema = z.object({
   company: z.string().trim().min(1, 'Company name is required').max(200, 'Max 200 characters'),
   email: z.string().trim().email('Please enter a valid email').max(255, 'Max 255 characters'),
   query: z.string().trim().min(1, 'Please tell us about your requirement').max(2000, 'Max 2000 characters'),
+  privacyConsent: z.boolean().refine((value) => value, {
+    message: 'Please confirm that you agree to the Privacy Policy before submitting.',
+  }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -41,9 +45,13 @@ export const ContactForm = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      privacyConsent: false,
+    },
   });
 
   const onSubmit = async (data: ContactFormData) => {
@@ -61,6 +69,8 @@ export const ContactForm = () => {
         page_url: window.location.href,
         device_type: getDeviceType(),
         referrer: document.referrer || 'Direct',
+        privacy_consent_given_at: new Date().toISOString(),
+        privacy_policy_url: `${window.location.origin}/policies/privacy-policy`,
       },
     };
 
@@ -208,6 +218,40 @@ export const ContactForm = () => {
               <p className="text-sm text-destructive">{errors.query.message}</p>
             )}
           </div>
+
+          <Controller
+            name="privacyConsent"
+            control={control}
+            render={({ field }) => (
+              <div className="space-y-2">
+                <div className="flex items-start gap-3 rounded-lg border border-border bg-muted/30 p-4">
+                  <Checkbox
+                    id="privacyConsent"
+                    checked={field.value}
+                    onCheckedChange={(checked) => field.onChange(checked === true)}
+                    onBlur={field.onBlur}
+                    aria-describedby={errors.privacyConsent ? 'privacyConsent-error' : undefined}
+                    className="mt-1 focus-visible:ring-accent"
+                  />
+                  <Label htmlFor="privacyConsent" className="text-sm leading-6 text-muted-foreground">
+                    I have read and agree to the{' '}
+                    <Link
+                      href="/policies/privacy-policy"
+                      className="font-medium text-tyn-blue underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      Privacy Policy
+                    </Link>{' '}
+                    and consent to the processing of my personal information for responding to my inquiry.
+                  </Label>
+                </div>
+                {errors.privacyConsent && (
+                  <p id="privacyConsent-error" className="text-sm text-destructive">
+                    {errors.privacyConsent.message}
+                  </p>
+                )}
+              </div>
+            )}
+          />
 
           <Button
             type="submit"

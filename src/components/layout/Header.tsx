@@ -115,7 +115,7 @@ export const Header = () => {
   };
 
   // Force solid navbar on specific pages
-  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname === '/ynfinity-events' || pathname?.startsWith('/resources');
+  const forceSolidNav = pathname === '/about' || pathname === '/careers' || pathname === '/contact' || pathname === '/ynfinity-events' || pathname?.startsWith('/resources') || pathname?.startsWith('/policies');
   const isSolid = isScrolled || forceSolidNav;
 
   useEffect(() => {
