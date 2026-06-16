@@ -20,7 +20,7 @@ const outcomes = [
 
 export const Outcomes = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-28 lg:pt-10 lg:pb-32 bg-background">
       <div className="container-main">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
