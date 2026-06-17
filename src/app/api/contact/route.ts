@@ -13,6 +13,7 @@ export async function POST(request: Request) {
     try {
         const data = await request.json();
         const { fullName, designation, company, email, query, privacyConsent, metadata } = data;
+        let emailNotificationSent = false;
 
         if (privacyConsent !== true) {
             return NextResponse.json(
@@ -149,12 +150,12 @@ export async function POST(request: Request) {
 
             const info = await transporter.sendMail(mailOptions);
             console.log('Email sent successfully. Response:', info.response);
+            emailNotificationSent = true;
         } catch (emailError: any) {
             console.error('Email Sending Error:', emailError);
-            throw new Error(`Email notification failed: ${emailError.message}`);
         }
 
-        return NextResponse.json({ success: true, submissionId });
+        return NextResponse.json({ success: true, submissionId, emailNotificationSent });
     } catch (error: any) {
         console.error('Contact Form Processing Error:', error);
         return NextResponse.json(

@@ -5,7 +5,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { ScrollToTopOnSamePageNav } from '@/components/layout/ScrollToTopOnSamePageNav';
-import { CookieConsentBanner } from '@/components/layout/CookieConsentBanner';
 import { useState } from 'react';
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -18,7 +17,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
                 <Sonner />
                 <ScrollToTopOnSamePageNav />
                 {children}
-                <CookieConsentBanner />
             </TooltipProvider>
         </QueryClientProvider>
     );
