@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ResourceCard } from "@/components/sections/resources/ResourceCard";
 import { getLocalBlogBySlug, localBlogs } from "@/data/localBlogs";
+import { OG_IMAGE, socialMetadata } from "@/lib/site";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -21,9 +22,21 @@ export async function generateMetadata({ params }: PageProps) {
     if (!blog) blog = getLocalBlogBySlug(slug) ?? null;
     if (!blog) return { title: "Blog Not Found" };
 
+    const title = `${blog.title} | The Yellow Network`;
+
     return {
-        title: `${blog.title} | The Yellow Network`,
+        title,
         description: blog.excerpt,
+        alternates: { canonical: `/resources/blog/${slug}` },
+        ...socialMetadata({
+            title,
+            description: blog.excerpt,
+            path: `/resources/blog/${slug}`,
+            type: "article",
+            images: blog.featuredImageUrl
+                ? [{ url: blog.featuredImageUrl, alt: blog.title }]
+                : [OG_IMAGE],
+        }),
     };
 }
 

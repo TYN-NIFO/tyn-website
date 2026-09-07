@@ -8,6 +8,7 @@ import type { PortableTextBlock } from "@portabletext/types";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
+import { socialMetadata } from "@/lib/site";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -18,9 +19,18 @@ export async function generateMetadata({ params }: PageProps) {
     const ynsight = await client.fetch<Ynsight>(GET_YNSIGHT_BY_SLUG, { slug });
     if (!ynsight) return { title: "Use Case Not Found" };
 
+    const title = `${ynsight.title} | The Yellow Network`;
+
     return {
-        title: `${ynsight.title} | The Yellow Network`,
+        title,
         description: ynsight.problemStatement,
+        alternates: { canonical: `/resources/use-case/${slug}` },
+        ...socialMetadata({
+            title,
+            description: ynsight.problemStatement,
+            path: `/resources/use-case/${slug}`,
+            type: "article",
+        }),
     };
 }
 
