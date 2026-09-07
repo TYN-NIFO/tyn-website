@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Providers } from './providers';
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, socialMetadata } from '@/lib/site';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -10,12 +11,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    title: 'The Yellow Network | Enterprise AI Consulting',
-    description:
-        'We help leaders cut through the vendor/LLM noise, choose what actually matters, and implement systems that intelligently create real business lift.',
+    metadataBase: new URL(SITE_URL),
+    title: `${SITE_NAME} | Enterprise AI Consulting`,
+    description: SITE_DESCRIPTION,
+    applicationName: SITE_NAME,
+    alternates: {
+        canonical: '/',
+    },
     icons: {
         icon: '/favicon.png',
     },
+    ...socialMetadata(),
 };
 
 export default function RootLayout({

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Download } from "lucide-react";
 import { WhitepaperActions } from "@/app/resources/whitepaper/[slug]/WhitepaperActions";
+import { socialMetadata } from "@/lib/site";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -14,9 +15,18 @@ export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params;
     const whitepaper = localWhitepapers.find((w) => w.slug === slug);
     if (!whitepaper) return { title: "Whitepaper Not Found" };
+    const title = `${whitepaper.title} | The Yellow Network`;
+
     return {
-        title: `${whitepaper.title} | The Yellow Network`,
+        title,
         description: whitepaper.description,
+        alternates: { canonical: `/resources/whitepaper/${slug}` },
+        ...socialMetadata({
+            title,
+            description: whitepaper.description,
+            path: `/resources/whitepaper/${slug}`,
+            type: "article",
+        }),
     };
 }
 

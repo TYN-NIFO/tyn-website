@@ -6,10 +6,17 @@ import { EventCarousel } from '@/components/sections/ynfinity-events/EventCarous
 import { EventHighlights } from '@/components/sections/ynfinity-events/EventHighlights';
 import { EventSpeakers } from '@/components/sections/ynfinity-events/EventSpeakers';
 import { EventMarquees } from '@/components/sections/ynfinity-events/EventMarquees';
+import { socialMetadata } from '@/lib/site';
+
+const title = 'Ynfinity Events | The Yellow Network';
+const description =
+    'A curated gathering of enterprise leaders, innovators, and ecosystem stakeholders shaping the next wave of transformation.';
 
 export const metadata = {
-    title: 'Ynfinity Events | Bold AI Insights',
-    description: 'A curated gathering of enterprise leaders, innovators, and ecosystem stakeholders shaping the next wave of transformation.'
+    title,
+    description,
+    alternates: { canonical: '/ynfinity-events' },
+    ...socialMetadata({ title, description, path: '/ynfinity-events' }),
 };
 
 export default function YnfinityEventsPage() {

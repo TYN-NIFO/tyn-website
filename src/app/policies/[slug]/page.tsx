@@ -7,6 +7,7 @@ import { Policy } from "@/lib/sanity/types";
 import type { PortableTextBlock } from "@portabletext/types";
 import { ArrowLeft, Calendar } from "lucide-react";
 import Link from "next/link";
+import { socialMetadata } from "@/lib/site";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -18,8 +19,12 @@ export async function generateMetadata({ params }: PageProps) {
 
     if (!policy) return { title: "Policy Not Found" };
 
+    const title = `${policy.title} | The Yellow Network`;
+
     return {
-        title: `${policy.title} | The Yellow Network`,
+        title,
+        alternates: { canonical: `/policies/${slug}` },
+        ...socialMetadata({ title, path: `/policies/${slug}` }),
     };
 }
 
