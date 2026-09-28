@@ -19,9 +19,14 @@ const teamMembers = [
     image: "/assets/Profile pics/velan.png",
   },
   {
-    name: "Rathnasundara Devi",
-    role: "Head-Administration",
+    name: "Rathnasundara Devi S",
+    role: "Head - Administration",
     image: "/assets/Profile pics/rathna.png",
+  },
+  {
+    name: "Amit Durgaprasad",
+    role: "Consulting Partner",
+    image: "/assets/Profile pics/Amit.png",
   },
   {
     name: "Parthiban",
@@ -34,23 +39,23 @@ const teamMembers = [
     image: "/assets/Profile pics/Sathyanarayanan.jpeg",
   },
   {
-    name: "Vishnu A",
-    role: "Manager, Innovation & Academic Partnerships",
+    name: "Dr. Vishnu A",
+    role: "Engagement Lead",
     image: "/assets/Profile pics/Vishnu.jpeg",
   },
   {
     name: "Sourish Ghosh",
-    role: "Customer Success Manager",
+    role: "Business Growth Manager",
     image: "/assets/Profile pics/Sourish_Ghosh.png",
   },
   {
     name: "Maharshi Vidhyarthi",
-    role: "Customer Success Manager",
+    role: "Engagement Lead",
     image: "/assets/Profile pics/maharishi.jpg",
   },
   {
-    name: "Anandapadmanaban K (AK)",
-    role: "AI solutions consultant",
+    name: "K Anandpadmanaban",
+    role: "Engagement Lead",
     image: "/assets/Profile pics/Anand.png",
   },
   {
@@ -59,14 +64,39 @@ const teamMembers = [
     image: "/assets/Profile pics/Rakesh.png",
   },
   {
+    name: "Ravin",
+    role: "AI Engineer (SRE)",
+    image: "/assets/Profile pics/Ravin.png",
+  },
+  {
+    name: "Surya",
+    role: "AI Engineer",
+    image: "/assets/Profile pics/Surya_Profile_Photo.jpg",
+  },
+  {
     name: "Pravinkumar Raja",
     role: "Tech Lead - Workflow Automation",
     image: "/assets/Profile pics/Pravin.jpeg",
   },
   {
-    name: "Ravin",
-    role: "AI Engineer (SRE)",
-    image: "/assets/Profile pics/Ravin.png",
+    name: "Varshiga Mohankumar",
+    role: "Software Developer",
+    image: "/assets/Profile pics/Varshiga.jpg",
+  },
+  {
+    name: "Lakshmi Prabha",
+    role: "Software Developer",
+    image: "/assets/Profile pics/Laxmi Prabha.png",
+  },
+  {
+    name: "Jashera S",
+    role: "Software Developer",
+    image: "/assets/Profile pics/Jashera_1.jpg",
+  },
+  {
+    name: "Visalini K",
+    role: "Software Developer",
+    image: "/assets/Profile pics/Vishalini.png",
   },
 ];
 
