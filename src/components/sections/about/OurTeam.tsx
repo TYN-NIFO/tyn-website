@@ -98,6 +98,11 @@ const teamMembers = [
     role: "Software Developer",
     image: "/assets/Profile pics/Vishalini.png",
   },
+  {
+    name: "Sanjai Kumar R",
+    role: "Automation Tester",
+    image: "/assets/Profile pics/Sanjay.jpeg",
+  },
 ];
 
 export const OurTeam = () => {
