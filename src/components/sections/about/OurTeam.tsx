@@ -81,7 +81,7 @@ const teamMembers = [
   {
     name: "Varshiga Mohankumar",
     role: "Software Developer",
-    image: "/assets/Profile pics/Varshiga.jpg",
+    image: "/assets/Profile pics/Varshiga.png",
   },
   {
     name: "Lakshmi Prabha",
