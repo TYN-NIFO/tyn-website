@@ -21,29 +21,30 @@ type ClientLogo = {
 };
 
 const ROW_HEIGHT = 64; // every logo's artwork is vertically centred in this height
-const LOGO_GAP = 56; // visible space between neighbouring logos (px)
+const LOGO_GAP = 40; // visible space between neighbouring logos (px)
 
-const DEFAULT_FIT: [number, number] = [144, 56];
 
 // Two static rows (7 + 6). TVS and Godrej Properties sit at the centre of the bottom row;
 // Godrej Capital is in the top row, so the two Godrej logos are never side by side.
+// Sizes are tuned optically (not just by area): wide thin wordmarks get more width,
+// dense/bold or squarish marks (Godrej, TVS, TATA) get less so everything reads the same size.
 const logoRows: ClientLogo[][] = [
   [
-    { src: "/assets/client logos/vedanta logo.png", alt: "Vedanta", nw: 1551, nh: 432, bbox: [41, 1510, 61, 370], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/Godrej Capital Black.png", alt: "Godrej Capital", nw: 2592, nh: 694, bbox: [0, 2591, 0, 693], fit: [112, 56] },
-    { src: "/assets/client logos/duroflex.png", alt: "Duroflex", nw: 1280, nh: 582, bbox: [72, 1210, 203, 380], fit: [288, 96] },
-    { src: "/assets/client logos/TATA-Steel-logo.png", alt: "TATA Steel", nw: 300, nh: 164, bbox: [0, 299, 0, 163], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/ceil logo.png", alt: "Ceil", nw: 834, nh: 334, bbox: [33, 799, 56, 276], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/Lnt.png", alt: "L&T Valves", nw: 502, nh: 180, bbox: [45, 471, 24, 146], fit: [176, 64] },
-    { src: "/assets/client logos/indiafirst logo.png", alt: "IndiaFirst", nw: 789, nh: 133, bbox: [0, 767, 0, 132], fit: DEFAULT_FIT },
+    { src: "/assets/client logos/vedanta logo.png", alt: "Vedanta", nw: 1484, nh: 321, bbox: [6, 1475, 10, 319], fit: [163, 36] },
+    { src: "/assets/client logos/Godrej Capital Black.png", alt: "Godrej Capital", nw: 2592, nh: 694, bbox: [0, 2591, 0, 693], fit: [112, 30] },
+    { src: "/assets/client logos/duroflex.png", alt: "Duroflex", nw: 1160, nh: 207, bbox: [10, 1148, 21, 198], fit: [172, 32] },
+    { src: "/assets/client logos/TATA-Steel-logo.png", alt: "TATA Steel", nw: 300, nh: 164, bbox: [0, 299, 0, 163], fit: [101, 56] },
+    { src: "/assets/client logos/ceil logo.png", alt: "Ceil", nw: 792, nh: 260, bbox: [9, 775, 20, 240], fit: [160, 52] },
+    { src: "/assets/client logos/Lnt.png", alt: "L&T Valves", nw: 431, nh: 125, bbox: [3, 429, 1, 123], fit: [147, 43] },
+    { src: "/assets/client logos/indiafirst logo.png", alt: "IndiaFirst", nw: 789, nh: 133, bbox: [0, 767, 0, 132], fit: [180, 32] },
   ],
   [
-    { src: "/assets/client logos/kissflow logo.png", alt: "Kissflow", nw: 600, nh: 180, bbox: [1, 597, 36, 129], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/spark beyond logo.png", alt: "SparkBeyond", nw: 442, nh: 160, bbox: [6, 439, 63, 124], fit: [208, 75] },
-    { src: "/assets/client logos/tvs logo.png", alt: "TVS", nw: 1725, nh: 1403, bbox: [45, 1522, 42, 1365], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/Godrej Properties Black.png", alt: "Godrej Properties", nw: 3392, nh: 694, bbox: [0, 3391, 0, 693], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/CoreStack logo.png", alt: "CoreStack", nw: 2000, nh: 500, bbox: [50, 1948, 119, 377], fit: DEFAULT_FIT },
-    { src: "/assets/client logos/Pluralsight_Logo.png", alt: "Pluralsight", nw: 1280, nh: 278, bbox: [5, 1274, 5, 272], fit: DEFAULT_FIT },
+    { src: "/assets/client logos/kissflow logo.png", alt: "Kissflow", nw: 600, nh: 108, bbox: [1, 597, 6, 99], fit: [189, 34] },
+    { src: "/assets/client logos/spark beyond logo.png", alt: "SparkBeyond", nw: 442, nh: 72, bbox: [6, 439, 6, 67], fit: [240, 39] },
+    { src: "/assets/client logos/tvs logo.png", alt: "TVS", nw: 1531, nh: 1403, bbox: [13, 1490, 42, 1365], fit: [63, 58] },
+    { src: "/assets/client logos/Godrej Properties Black.png", alt: "Godrej Properties", nw: 3392, nh: 694, bbox: [0, 3391, 0, 693], fit: [144, 30] },
+    { src: "/assets/client logos/CoreStack logo.png", alt: "CoreStack", nw: 1925, nh: 307, bbox: [14, 1912, 27, 285], fit: [203, 32] },
+    { src: "/assets/client logos/Pluralsight_Logo.png", alt: "Pluralsight", nw: 1280, nh: 278, bbox: [5, 1274, 5, 272], fit: [163, 36] },
   ],
 ];
 
@@ -95,7 +96,7 @@ export const ClientLogosCarousel = () => {
           {logoRows.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="flex flex-wrap items-center justify-center gap-y-10"
+              className="flex flex-wrap lg:flex-nowrap lg:max-xl:[zoom:0.85] items-center justify-center gap-y-10"
               style={{ columnGap: LOGO_GAP }}
             >
               {row.map((logo) => (

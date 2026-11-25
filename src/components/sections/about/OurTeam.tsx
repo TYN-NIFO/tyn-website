@@ -81,7 +81,7 @@ const teamMembers = [
   {
     name: "Varshiga Mohankumar",
     role: "Software Developer",
-    image: "/assets/Profile pics/Varshiga.jpg",
+    image: "/assets/Profile pics/Varshiga.png",
   },
   {
     name: "Lakshmi Prabha",
@@ -100,8 +100,13 @@ const teamMembers = [
   },
   {
     name: "Sanjai Kumar R",
-    role: "Automation Tester",
+    role: "Software Developer",
     image: "/assets/Profile pics/Sanjay.jpeg",
+  },
+  {
+    name: "Lavanya Devaraj",
+    role: "Software Developer",
+    image: "/assets/Profile pics/Lavanya.jpeg",
   },
 ];
 
